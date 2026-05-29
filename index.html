@@ -84,8 +84,22 @@
     </div>
   </section>
 
+  <!-- BUILD MATERIALS (Home Depot / Lowe's) -->
+  <section class="section" id="materials">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Build materials</div>
+          <h2>Get the parts</h2>
+        </div>
+      </div>
+      <div class="disclosure-strip">The exact materials from our builds, at <strong>Home Depot</strong> &amp; <strong>Lowe's</strong>. Direct affiliate links are coming once those programs approve us — for now these take you straight to the store.</div>
+      <div class="grid grid--4" id="materials-grid"></div>
+    </div>
+  </section>
+
   <!-- ARTICLES -->
-  <section class="section" id="articles">
+  <section class="section section--tint" id="articles">
     <div class="container">
       <div class="section-head">
         <div>
@@ -211,6 +225,32 @@
       + '<div class="pimg"><img loading="lazy" src="'+g[3]+'" alt="'+g[0].replace(/"/g,'')+'"></div>'
       + '<h3>'+g[0]+'</h3><p>'+g[1]+'</p>'
       + '<a class="buy" href="'+g[2]+'" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>';
+  }).join('');
+
+  // ---- Build materials at Home Depot / Lowe's (plain links now; swap to affiliate on approval) ----
+  // [name, use-case, Home Depot URL, Lowe's URL]
+  var MATERIALS = [
+    ["12\" Turbine Roof Vent","$30 attic vent build","https://www.homedepot.com/s/whirlybird%20turbine%20vent","https://www.lowes.com/search?searchTerm=turbine%20roof%20vent"],
+    ["Radiant Barrier Roll","$30 foil attic cooling","https://www.homedepot.com/s/radiant%20barrier%20insulation","https://www.lowes.com/search?searchTerm=radiant%20barrier%20insulation"],
+    ["Soffit Vent Baffles","$5 mesh attic intake","https://www.homedepot.com/s/soffit%20vent%20baffles","https://www.lowes.com/search?searchTerm=soffit%20vent%20baffle"],
+    ["White Roof Coating","$40 cool-roof paint","https://www.homedepot.com/s/elastomeric%20roof%20coating%20white","https://www.lowes.com/search?searchTerm=elastomeric%20roof%20coating%20white"],
+    ["Whole House Fan","Night-flush cooling","https://www.homedepot.com/s/whole%20house%20fan","https://www.lowes.com/search?searchTerm=whole%20house%20fan"],
+    ["6\" Inline Duct Fan","$80 ice-battery airflow","https://www.homedepot.com/s/inline%20duct%20booster%20fan","https://www.lowes.com/search?searchTerm=inline%20duct%20booster%20fan"],
+    ["4\" PVC Pipe","$300 earth-tube run","https://www.homedepot.com/s/4%20inch%20pvc%20pipe","https://www.lowes.com/search?searchTerm=4%20inch%20pvc%20pipe"],
+    ["MRCOOL DIY Mini-Split","$500 solar AC build","https://www.homedepot.com/s/mrcool%20diy%20mini%20split","https://www.lowes.com/search?searchTerm=mrcool%20diy%20mini%20split"],
+    ["Solar Attic Fan","$80 solar attic fan","https://www.homedepot.com/s/solar%20attic%20fan","https://www.lowes.com/search?searchTerm=solar%20attic%20fan"],
+    ["Rigid Foam Board","Earth-tube box / insulation","https://www.homedepot.com/s/rigid%20foam%20board%20insulation","https://www.lowes.com/search?searchTerm=rigid%20foam%20insulation%20board"],
+    ["Foam Weatherstripping","Air-sealing","https://www.homedepot.com/s/foam%20weatherstripping","https://www.lowes.com/search?searchTerm=foam%20weatherstripping"],
+    ["Reflectix Bubble Insulation","$40 floor liner","https://www.homedepot.com/s/reflectix","https://www.lowes.com/search?searchTerm=reflectix"]
+  ];
+  var mg = document.getElementById('materials-grid');
+  if (mg) mg.innerHTML = MATERIALS.map(function(m,i){
+    return '<div class="matcard reveal" style="transition-delay:'+((i%4)*40)+'ms">'
+      + '<h3>'+m[0]+'</h3><p>'+m[1]+'</p>'
+      + '<div class="stores">'
+      + '<a class="store-btn store-hd" href="'+m[2]+'" target="_blank" rel="nofollow noopener">Home Depot</a>'
+      + '<a class="store-btn store-lowes" href="'+m[3]+'" target="_blank" rel="nofollow noopener">Lowe’s</a>'
+      + '</div></div>';
   }).join('');
 
   // ---- scroll-reveal: fade/slide elements in as you scroll ----
