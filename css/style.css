@@ -178,6 +178,17 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .center { text-align:center; }
 .stack > * + * { margin-top: 1rem; }
 
+/* product image (Amazon) */
+.pcard .pimg { background:#fff; border-radius:10px; height:160px; display:grid; place-items:center; padding:.7rem; margin-bottom:.9rem; overflow:hidden; }
+.pcard .pimg img { max-height:100%; max-width:100%; width:auto; object-fit:contain; transition: transform .25s ease; }
+.pcard:hover .pimg img { transform: scale(1.04); }
+
+/* scroll-reveal animation (interactive on scroll). Scoped to .js so no-JS
+   visitors and crawlers still see all content (never hidden without JS). */
+.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce){ .js .reveal { opacity:1 !important; transform:none !important; transition:none !important; } }
+
 @media (max-width: 980px){ .grid--4 { grid-template-columns: repeat(3,1fr);} }
 @media (max-width: 860px){ .grid--3,.grid--4 { grid-template-columns: repeat(2,1fr);} .footer-grid{ grid-template-columns:1fr 1fr;} }
 @media (max-width: 620px){

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sketchy Survival 101 — Physics-first survival &amp; home science</title>
@@ -181,11 +182,11 @@
     ["g0aE1zaXHb0","This $300 Sand Drum Heats Any Home All Winter","153K views"]
   ];
   var vg = document.getElementById('video-grid');
-  if (vg) vg.innerHTML = VIDEOS.map(function(v){
+  if (vg) vg.innerHTML = VIDEOS.map(function(v,i){
     var id=v[0], title=v[1], views=v[2];
     var max="https://i.ytimg.com/vi/"+id+"/maxresdefault.jpg";
     var hq="https://i.ytimg.com/vi/"+id+"/hqdefault.jpg";
-    return '<article class="vcard">'
+    return '<article class="vcard reveal" style="transition-delay:'+((i%4)*50)+'ms">'
       + '<a class="stretched" href="https://www.youtube.com/watch?v='+id+'" target="_blank" rel="noopener" aria-label="'+title.replace(/"/g,'')+'"></a>'
       + '<div class="thumb"><span class="views">'+views+'</span><div class="play"><span>▶</span></div>'
       + '<img loading="lazy" src="'+max+'" onerror="this.onerror=null;this.src=\''+hq+'\'" alt="'+title.replace(/"/g,'')+'"></div>'
@@ -193,22 +194,37 @@
   }).join('');
 
   // ---- Recommended gear (Amazon affiliate, tag ss1010b-20) ----
+  // [name, pitch, affiliate link (ASIN-pinned, tag ss1010b-20), product image] — verified 2026-05-29
   var GEAR = [
-    ["🔋","Portable Solar Panel","The grid goes down. Your power doesn't.","https://amzn.to/4nBBgOd"],
-    ["🔌","Anker SOLIX C1000 Power Station","Full charge in 49 minutes. Three days of backup power.","https://amzn.to/4uDajvD"],
-    ["⚡","4000W Pure Sine Wave Inverter","Run your whole house off your truck battery.","https://amzn.to/3OOl7be"],
-    ["💧","Big Berkey Water Filter","Stop drinking what they're putting in your tap water.","https://amzn.to/4ns3J8T"],
-    ["🔥","FLIR Thermal Imaging Camera","See exactly where your money leaks out of your walls.","https://amzn.to/42WGlqA"],
-    ["📻","FosPower Emergency Radio + Bank","Solar, hand-crank, AM/FM/NOAA. When everything's dead, this isn't.","https://amzn.to/42VbVoz"],
-    ["🍳","Lodge Cast Iron Dutch Oven","Your great-grandkids will cook with this.","https://amzn.to/4tjh98t"],
-    ["🌡️","Etekcity Infrared Thermometer","Prove the physics on your own wall in 30 seconds.","https://amzn.to/43lzMhu"]
+    ["Renogy 220W Portable Solar Panel","The grid goes down. Your power doesn't.","https://www.amazon.com/dp/B0D4QBQ3S9?tag=ss1010b-20","https://m.media-amazon.com/images/I/616qwoHPPEL._AC_SL1500_.jpg"],
+    ["Anker SOLIX C1000 Power Station","Charges fast, runs for days. Zero permission needed.","https://www.amazon.com/dp/B0FN7MSY4L?tag=ss1010b-20","https://m.media-amazon.com/images/I/71MTJMuNQQL._AC_SL1500_.jpg"],
+    ["Renogy 2000W Pure Sine Inverter","Clean AC power for tools and electronics off any battery.","https://www.amazon.com/dp/B0D53889TT?tag=ss1010b-20","https://m.media-amazon.com/images/I/61-UgNUZt-L._AC_SL1500_.jpg"],
+    ["Big Berkey Water Filter","Stop drinking what they're putting in your tap water.","https://www.amazon.com/dp/B00CYW3EVO?tag=ss1010b-20","https://m.media-amazon.com/images/I/61u7kJNAdcL._AC_SL1500_.jpg"],
+    ["FLIR TG165-X Thermal Camera","See exactly where your money leaks out of your walls.","https://www.amazon.com/dp/B08D3YC5CW?tag=ss1010b-20","https://m.media-amazon.com/images/I/61TTozR3jYL._SL1500_.jpg"],
+    ["FosPower Emergency Radio + Bank","Solar, hand-crank, AM/FM/NOAA. When everything's dead, this isn't.","https://www.amazon.com/dp/B07FKYHTWP?tag=ss1010b-20","https://m.media-amazon.com/images/I/71B9hiytZnL._AC_SL1500_.jpg"],
+    ["MRCOOL 12K BTU DIY Mini-Split","Off-grid-ready AC and heat — the hero of our $500 solar AC build.","https://www.amazon.com/dp/B0DYK9J9M1?tag=ss1010b-20","https://m.media-amazon.com/images/I/711f-w1R+OL._AC_SL1500_.jpg"],
+    ["Etekcity Infrared Thermometer","Prove the physics on your own wall in 30 seconds.","https://www.amazon.com/dp/B0B71HFH9K?tag=ss1010b-20","https://m.media-amazon.com/images/I/61zQDIcb0FL._AC_SL1500_.jpg"]
   ];
   var gg = document.getElementById('gear-grid');
-  if (gg) gg.innerHTML = GEAR.map(function(g){
-    return '<div class="pcard"><div class="picon">'+g[0]+'</div>'
-      + '<h3>'+g[1]+'</h3><p>'+g[2]+'</p>'
-      + '<a class="buy" href="'+g[3]+'" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>';
+  if (gg) gg.innerHTML = GEAR.map(function(g,i){
+    return '<div class="pcard reveal" style="transition-delay:'+((i%4)*50)+'ms">'
+      + '<div class="pimg"><img loading="lazy" src="'+g[3]+'" alt="'+g[0].replace(/"/g,'')+'"></div>'
+      + '<h3>'+g[0]+'</h3><p>'+g[1]+'</p>'
+      + '<a class="buy" href="'+g[2]+'" target="_blank" rel="sponsored nofollow noopener">View on Amazon →</a></div>';
   }).join('');
+
+  // ---- scroll-reveal: fade/slide elements in as you scroll ----
+  ['.section-head','.card'].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){ el.classList.add('reveal'); });
+  });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .12, rootMargin: "0px 0px -6% 0px" });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
 </script>
 </body>
 </html>
