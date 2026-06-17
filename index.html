@@ -351,28 +351,35 @@
     }
   }
 
-  // ---- staggered scroll reveals ----
+  // ---- staggered scroll reveals that PLAY IN on the way down and REVERSE OUT on
+  //      the way up, re-firing every time (the animejs.com behaviour). Driven by a
+  //      bidirectional IntersectionObserver (layout-based, reliable in every browser);
+  //      anime.js does the staggered motion + easing. ----
   document.querySelectorAll('.section-head').forEach(function (el) { el.classList.add('reveal'); });
   document.querySelectorAll('.grid > *').forEach(function (el) { el.classList.add('reveal'); });
 
-  if ('IntersectionObserver' in window) {
+  function itemsOf(el) {
+    return el.classList.contains('grid') ? el.querySelectorAll(':scope > .reveal') : [el];
+  }
+  function revealIn(items) {
+    utils.remove(items);                 // cancel any in-flight reverse, animate from current value
+    animate(items, { opacity: 1, translateY: 0, duration: 680, delay: stagger(60), ease: 'outExpo' });
+  }
+  function revealOut(items) {
+    utils.remove(items);
+    animate(items, { opacity: 0, translateY: 24, duration: 420, delay: stagger(26), ease: 'out(2)' });
+  }
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    utils.set('.reveal', { opacity: 1, translateY: 0 });
+  } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        var el = e.target;
-        io.unobserve(el);
-        var isGrid = el.classList.contains('grid');
-        var items = isGrid ? el.querySelectorAll(':scope > .reveal') : [el];
-        if (reduce) { utils.set(items, { opacity: 1, translateY: 0 }); return; }
-        animate(items, {
-          opacity: [0, 1], translateY: [22, 0], duration: 680,
-          delay: isGrid ? stagger(55) : 0, ease: 'outExpo'
-        });
+        var items = itemsOf(e.target);
+        if (e.isIntersecting) revealIn(items); else revealOut(items);
       });
-    }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.section-head, .grid').forEach(function (el) { io.observe(el); });
-  } else {
-    utils.set('.reveal', { opacity: 1, translateY: 0 });
   }
 </script>
 </body>
