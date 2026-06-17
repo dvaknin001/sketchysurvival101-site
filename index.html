@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="scroll-progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html"><span class="mark">SS</span> Sketchy Survival 101</a>
@@ -253,17 +254,125 @@
       + '</div></div>';
   }).join('');
 
-  // ---- scroll-reveal: fade/slide elements in as you scroll ----
-  ['.section-head','.card'].forEach(function(sel){
-    document.querySelectorAll(sel).forEach(function(el){ el.classList.add('reveal'); });
-  });
+  // Scroll-reveal + hero motion are handled by the anime.js module below.
+</script>
+
+<!-- ===========================================================
+     Motion layer — anime.js v4 (progressive enhancement).
+     Inspired by animejs.com: staggered scroll reveals, decelerating
+     expo/spring easing, word-by-word headline, count-up stats,
+     and a scroll-progress bar. Fully gated on prefers-reduced-motion,
+     and degrades to fully-visible content if the module fails to load.
+     =========================================================== -->
+<script type="module">
+  import { animate, stagger, utils, spring } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- scroll-progress bar (rAF-throttled, passive) ----
+  (function () {
+    var bar = document.querySelector('.scroll-progress');
+    if (!bar) return;
+    var ticking = false;
+    function update() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      bar.style.transform = 'scaleX(' + p + ')';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(update); ticking = true; }
+    }, { passive: true });
+    update();
+  })();
+
+  // ---- split an element's text into per-word spans (keeps child elements like .hl) ----
+  function splitWords(el) {
+    var nodes = Array.prototype.slice.call(el.childNodes);
+    var words = [];
+    el.textContent = '';
+    nodes.forEach(function (node) {
+      if (node.nodeType === 3) {
+        node.textContent.split(/(\s+)/).forEach(function (part) {
+          if (part === '') return;
+          if (/^\s+$/.test(part)) { el.appendChild(document.createTextNode(part)); return; }
+          var s = document.createElement('span');
+          s.className = 'word';
+          s.textContent = part;
+          el.appendChild(s);
+          words.push(s);
+        });
+      } else {
+        if (node.classList) node.classList.add('word');
+        el.appendChild(node);
+        words.push(node);
+      }
+    });
+    return words;
+  }
+
+  // ---- hero entrance ----
+  var hero = document.querySelector('.hero');
+  if (hero) {
+    var h1 = hero.querySelector('h1');
+    var words = h1 ? splitWords(h1) : [];
+    var eyebrow = hero.querySelector('.eyebrow');
+    var lead = hero.querySelector('p:not(.eyebrow)');
+    var actions = hero.querySelector('.hero-actions');
+    var stats = hero.querySelector('.hero-stats');
+
+    if (reduce) {
+      utils.set([eyebrow, h1, lead, actions, stats].filter(Boolean), { opacity: 1 });
+    } else {
+      utils.set(h1, { opacity: 1 });
+      utils.set(words, { opacity: 0 });
+      if (eyebrow) animate(eyebrow, { opacity: [0, 1], translateY: [12, 0], duration: 550, ease: 'outExpo' });
+      animate(words, { opacity: [0, 1], translateY: [26, 0], duration: 900, delay: stagger(38, { start: 120 }), ease: spring({ bounce: .18 }) });
+      if (lead) animate(lead, { opacity: [0, 1], translateY: [16, 0], duration: 700, delay: 320, ease: 'outExpo' });
+      if (actions) animate(actions, { opacity: [0, 1], translateY: [16, 0], duration: 700, delay: 440, ease: 'outExpo' });
+      if (stats) animate(stats, { opacity: [0, 1], translateY: [16, 0], duration: 700, delay: 540, ease: 'outExpo' });
+    }
+
+    // count-up the hero stats ("38K+", "140+", "5M+")
+    if (!reduce) {
+      hero.querySelectorAll('.hero-stats .stat b').forEach(function (el) {
+        var raw = el.textContent.trim();
+        var m = raw.match(/^([\d.]+)\s*([KMB]?)\s*(\+?)$/i);
+        if (!m) return;
+        var target = parseFloat(m[1]), suffix = m[2] || '', plus = m[3] || '';
+        var obj = { v: 0 };
+        el.textContent = '0' + suffix + plus;
+        animate(obj, {
+          v: target, duration: 1700, delay: 620, ease: 'outExpo',
+          onUpdate: function () { el.textContent = Math.round(obj.v) + suffix + plus; },
+          onComplete: function () { el.textContent = raw; }
+        });
+      });
+    }
+  }
+
+  // ---- staggered scroll reveals ----
+  document.querySelectorAll('.section-head').forEach(function (el) { el.classList.add('reveal'); });
+  document.querySelectorAll('.grid > *').forEach(function (el) { el.classList.add('reveal'); });
+
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: .12, rootMargin: "0px 0px -6% 0px" });
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        io.unobserve(el);
+        var isGrid = el.classList.contains('grid');
+        var items = isGrid ? el.querySelectorAll(':scope > .reveal') : [el];
+        if (reduce) { utils.set(items, { opacity: 1, translateY: 0 }); return; }
+        animate(items, {
+          opacity: [0, 1], translateY: [22, 0], duration: 680,
+          delay: isGrid ? stagger(55) : 0, ease: 'outExpo'
+        });
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    document.querySelectorAll('.section-head, .grid').forEach(function (el) { io.observe(el); });
   } else {
-    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    utils.set('.reveal', { opacity: 1, translateY: 0 });
   }
 </script>
 </body>

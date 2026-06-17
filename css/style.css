@@ -183,11 +183,36 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .pcard .pimg img { max-height:100%; max-width:100%; width:auto; object-fit:contain; transition: transform .25s ease; }
 .pcard:hover .pimg img { transform: scale(1.04); }
 
-/* scroll-reveal animation (interactive on scroll). Scoped to .js so no-JS
-   visitors and crawlers still see all content (never hidden without JS). */
-.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
+/* ===========================================================
+   Motion layer (anime.js, v3 — inspired by animejs.com)
+   All hiding is scoped to .js so no-JS visitors + crawlers see
+   everything. prefers-reduced-motion fully disables motion.
+   anime.js writes inline styles each frame, so .reveal has NO CSS
+   transition here (that would fight the JS tween).
+   =========================================================== */
+.js .reveal { opacity: 0; transform: translateY(20px); will-change: opacity, transform; }
 .js .reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce){ .js .reveal { opacity:1 !important; transform:none !important; transition:none !important; } }
+
+/* hero entrance — hide initially only while JS is active */
+.js .hero .eyebrow,
+.js .hero h1,
+.js .hero p:not(.eyebrow),
+.js .hero-actions,
+.js .hero-stats { opacity: 0; }
+.hero h1 .word { display: inline-block; will-change: transform, opacity; }
+
+/* scroll-progress bar (the animejs.com-style scroll feedback) */
+.scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; transform: scaleX(0); transform-origin: 0 50%; background: linear-gradient(90deg, var(--yellow), var(--yellow-2)); z-index: 60; pointer-events: none; }
+
+@media (prefers-reduced-motion: reduce){
+  .js .reveal { opacity:1 !important; transform:none !important; }
+  .js .hero .eyebrow,
+  .js .hero h1,
+  .js .hero p:not(.eyebrow),
+  .js .hero-actions,
+  .js .hero-stats { opacity: 1 !important; }
+  .scroll-progress { display: none; }
+}
 
 /* build-materials cards (Home Depot / Lowe's) */
 .matcard { background: var(--bg-3); border:1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.05rem 1.05rem; display:flex; flex-direction:column; gap:.35rem; transition: transform .15s ease, border-color .15s ease; }
