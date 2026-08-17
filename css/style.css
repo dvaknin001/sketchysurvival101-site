@@ -108,7 +108,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 /* section headings */
 .section-head { display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; margin-bottom: 1.8rem; flex-wrap:wrap; }
 .section-head .kicker { color: var(--yellow); font-weight:800; letter-spacing:.1em; text-transform:uppercase; font-size: var(--step--1); margin-bottom:.35rem; }
-.section-head h2 { font-family: var(--f-display); font-weight:400; text-transform:uppercase; letter-spacing:.01em; font-size: var(--step-3); margin:0; color:#fff; }
+.section-head h1, .section-head h2 { font-family: var(--f-display); font-weight:400; text-transform:uppercase; letter-spacing:.01em; font-size: var(--step-3); margin:0; color:#fff; }
 .section-head .link { font-weight:700; color: var(--yellow); white-space:nowrap; }
 
 /* grids */
