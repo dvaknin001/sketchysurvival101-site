@@ -226,19 +226,21 @@
   t && t.addEventListener('click', function () { var o = m.classList.toggle('open'); t.setAttribute('aria-expanded', o ? 'true' : 'false'); });
 
   // ---- Top videos (click thumbnail -> straight to the YouTube video) ----
+  // Static fallback (no-JS / API-error). Refreshed 2026-08-17 from the newest
+  // uploads, views-sorted. The live fetch below replaces this when it succeeds.
   var VIDEOS = [
-    ["zn5IiwhAxgU","This $300 Tunnel Cools Any Home 55°F FOREVER","1.3M views"],
-    ["Iny5umEoB-0","The $7 Powder That Beats Your $3,000 AC Unit","799K views"],
-    ["j-T0gobwl5g","The Physics of Freezing: Why Most Preppers Will Freeze","649K views"],
-    ["390CFzk3-Ak","Ghost Shelter Secrets: Hide From Thermal Drones Like A Pro","452K views"],
-    ["l8v8l1qRxa0","The $5 Car Heat Hacks That Save You $70 A Night","374K views"],
-    ["9S5pBQGbCQQ","This TINY Campfire Generates MORE HEAT Than a Bonfire","370K views"],
-    ["qF14Zu3-dps","The $30 Homeless Heat Hack That Beats Your $700 Tent","311K views"],
-    ["aVecXgK3EbI","This $500 Plug-In Solar Beats Your $20,000 Roof Panels","194K views"],
-    ["8YvkZxtg-Ck","This $100 DIY Solar Beats Your $20,000 Roof Panels","173K views"],
-    ["BF7oYgEChAI","The Thermodynamics of Snow: Why Igloos Beat Tents","169K views"],
-    ["mbHqheuOvzM","This Home Heats Itself Indefinitely — Why It Was Buried","163K views"],
-    ["g0aE1zaXHb0","This $300 Sand Drum Heats Any Home All Winter","153K views"]
+    ["_hbRhrU0Vt0","The Physics of Blackouts: Why Your Car Runs the Fridge, Not the House","1.5K views"],
+    ["YokMqk4IGhY","Your Portable AC Has One Hose That A $15 Fix Makes It Cool Like a $700 One","1K views"],
+    ["LCnZicrv0sk","How Buried Clay Pots Cut Roof Heat in Half WITHOUT Electricity","847 views"],
+    ["aTROLdz2_wo","The $60 Box That Beats a $16,000 Home Battery on Your Power Bill","717 views"],
+    ["eeW6lmyg-WM","The Silent Fridge Einstein Patented Before Freon Killed It","710 views"],
+    ["DlvYy7O97ts","He Mixed Cement With Sawdust and Uncovered the Block Big Foam Buried","577 views"],
+    ["SY4N1j35564","This \"O Shape\" Home Cools For $0 and Beats a $5,000 AC. Why Is It Illegal?","572 views"],
+    ["ydRuPgBVuMM","A $20 Metal Trash Can Can Save Your Electronics From an EMP","564 views"],
+    ["jtWcED0CxOM","This $20 PVC Pipe Becomes a Wind Generator in One Weekend","512 views"],
+    ["qMbxrpXS3O4","Your Life As A Prepper After The Grid Goes Down","499 views"],
+    ["zBHUmlS9D0c","Your Front Door Fails at 150 Pounds. The Fix Costs $5","478 views"],
+    ["RiemtHyujbU","NASA Buried This $30 Attic Foil That Cuts Roof Heat Gain 40%","473 views"]
   ];
   var vg = document.getElementById('video-grid');
   if (vg) vg.innerHTML = VIDEOS.map(function(v,i){
@@ -303,6 +305,109 @@
   }).join('');
 
   // Scroll-reveal + hero motion are handled by the anime.js module below.
+</script>
+
+<!-- ===========================================================
+     LIVE DATA — self-updating from the YouTube Data API v3 on every load.
+     Progressive enhancement: the hardcoded VIDEOS array + "38K+/140+/5M+"
+     hero stats above stay as the no-JS / API-error fallback; we only
+     replace them once a fetch succeeds. Everything is wrapped in try/catch
+     via promise .catch so a failed fetch never blanks the page.
+     API key is HTTP-referrer restricted, so it is safe to embed client-side.
+     =========================================================== -->
+<script>
+(function () {
+  var KEY = 'AIzaSyAHw10t7fqzGJ7pYBnX5r9ltmU1KYMRU7s';
+  var CHANNEL = 'UC2sAny8hk9VtLrE4ylZbGjQ';
+  var UPLOADS = 'UU2sAny8hk9VtLrE4ylZbGjQ';   // uploads playlist = channel id with UC -> UU
+  var API = 'https://www.googleapis.com/youtube/v3/';
+
+  function getJSON(url) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
+  }
+  // compact view label: 1300000 -> "1.3M views", 1497 -> "1.5K views", 574 -> "574 views"
+  function compactViews(n) {
+    n = Number(n) || 0;
+    if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M views';
+    if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K views';
+    return n.toLocaleString('en-US') + ' views';
+  }
+  // compact hero stat: 41000 -> "41K+", 7191093 -> "7.2M+", 202 -> "202+"
+  function compactStat(n) {
+    n = Number(n) || 0;
+    if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M+';
+    if (n >= 1e3) return Math.round(n / 1e3) + 'K+';
+    return n + '+';
+  }
+  function attr(s) {   // safe for an HTML attribute value
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function html(s) {   // safe for HTML text content
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // ---- HERO STATS: channels?part=statistics -> subs / videos / views ----
+  var statsPromise = getJSON(API + 'channels?part=statistics&id=' + CHANNEL + '&key=' + KEY)
+    .then(function (d) {
+      var s = d && d.items && d.items[0] && d.items[0].statistics;
+      if (!s || s.subscriberCount == null) throw new Error('no statistics');
+      return { subs: +s.subscriberCount, views: +s.viewCount, videos: +s.videoCount };
+    });
+  // Expose to the motion module so the count-up animates to the LIVE numbers.
+  window.__ssStats = { promise: statsPromise, compactStat: compactStat };
+  // Fallback path: if the motion module never loads (CDN blocked), still show
+  // the live numbers. The module sets data-stats-animating when it takes over.
+  statsPromise.then(function (v) {
+    if (document.documentElement.hasAttribute('data-stats-animating')) return;
+    var b = document.querySelectorAll('.hero-stats .stat b'); // order: subs, videos, views
+    if (b[0]) b[0].textContent = compactStat(v.subs);
+    if (b[1]) b[1].textContent = compactStat(v.videos);
+    if (b[2]) b[2].textContent = compactStat(v.views);
+  }).catch(function () { /* keep the static "38K+/140+/5M+" fallback */ });
+
+  // ---- VIDEO GRID: uploads -> ids -> videos?part=statistics,snippet -> sort by views ----
+  getJSON(API + 'playlistItems?part=snippet,contentDetails&playlistId=' + UPLOADS + '&maxResults=20&key=' + KEY)
+    .then(function (d) {
+      var items = (d && d.items) || [];
+      var ids = items.map(function (it) {
+        return it.contentDetails && it.contentDetails.videoId;
+      }).filter(Boolean);
+      if (!ids.length) throw new Error('no uploads');
+      return getJSON(API + 'videos?part=statistics,snippet&id=' + ids.join(',') + '&key=' + KEY);
+    })
+    .then(function (d) {
+      var vids = ((d && d.items) || []).map(function (v) {
+        return {
+          id: v.id,
+          title: (v.snippet && v.snippet.title) || '',
+          views: (v.statistics && Number(v.statistics.viewCount)) || 0
+        };
+      }).sort(function (a, b) { return b.views - a.views; }).slice(0, 15); // best performers lead
+      if (!vids.length) throw new Error('no videos');
+
+      var vg = document.getElementById('video-grid');
+      if (!vg) return;
+      // Same card markup / classes as the static renderVideos above.
+      vg.innerHTML = vids.map(function (v, i) {
+        var id = v.id, title = v.title, views = compactViews(v.views);
+        var max = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
+        var hq = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+        return '<article class="vcard reveal" style="transition-delay:' + ((i % 4) * 50) + 'ms">'
+          + '<a class="stretched" href="https://youtu.be/' + id + '" target="_blank" rel="noopener" aria-label="' + attr(title) + '"></a>'
+          + '<div class="thumb"><span class="views">' + views + '</span><div class="play"><span>▶</span></div>'
+          + '<img loading="lazy" src="' + max + '" onerror="this.onerror=null;this.src=\'' + hq + '\'" alt="' + attr(title) + '"></div>'
+          + '<div class="vbody"><h3 class="vtitle">' + html(title) + '</h3></div></article>';
+      }).join('');
+      // The scroll-reveal observer already ran on load, so reveal-in these fresh
+      // cards via the site's own .in state (see ".js .reveal.in" in style.css).
+      vg.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    })
+    .catch(function () { /* keep the static video grid */ });
+})();
 </script>
 
 <!-- ===========================================================
@@ -381,9 +486,19 @@
       if (stats) animate(stats, { opacity: [0, 1], translateY: [16, 0], duration: 700, delay: 540, ease: 'outExpo' });
     }
 
-    // count-up the hero stats ("38K+", "140+", "5M+")
-    if (!reduce) {
-      hero.querySelectorAll('.hero-stats .stat b').forEach(function (el) {
+    // count-up the hero stats, animating to the LIVE API numbers when they
+    // arrive (falls back to the static "38K+/140+/5M+" on error or timeout).
+    var statB = hero.querySelectorAll('.hero-stats .stat b'); // order: subs, videos, views
+    function applyLiveStats(v) {
+      if (!window.__ssStats) return;
+      var f = window.__ssStats.compactStat;
+      if (statB[0]) statB[0].textContent = f(v.subs);
+      if (statB[1]) statB[1].textContent = f(v.videos);
+      if (statB[2]) statB[2].textContent = f(v.views);
+    }
+    function runCountUp() {
+      if (reduce) return; // reduced motion: leave the (live or static) number as-is
+      statB.forEach(function (el) {
         var raw = el.textContent.trim();
         var m = raw.match(/^([\d.]+)\s*([KMB]?)\s*(\+?)$/i);
         if (!m) return;
@@ -396,6 +511,17 @@
           onComplete: function () { el.textContent = raw; }
         });
       });
+    }
+    var sp = window.__ssStats && window.__ssStats.promise;
+    if (sp && typeof sp.then === 'function') {
+      document.documentElement.setAttribute('data-stats-animating', ''); // we own the stats now
+      var started = false;
+      var start = function () { if (started) return; started = true; runCountUp(); };
+      sp.then(function (v) { try { applyLiveStats(v); } catch (e) {} })
+        .then(function () { start(); }, function () { start(); });
+      setTimeout(start, 2500); // never wait more than 2.5s for the API before animating the fallback
+    } else {
+      runCountUp();
     }
   }
 

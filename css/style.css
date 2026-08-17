@@ -152,6 +152,11 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .card__excerpt { color: var(--ink-soft); font-size:.95rem; }
 .card__more { margin-top:auto; font-weight:800; color: var(--yellow); font-size:.9rem; }
 
+/* price slash on free downloads: struck-through was-price + brand-yellow FREE badge */
+.price { display:flex; align-items:center; gap:.55rem; margin-top:auto; margin-bottom:.7rem; }
+.price-was { color: var(--muted); text-decoration: line-through; font-weight:700; font-size:1.05rem; }
+.price-free { background: var(--yellow); color: var(--on-yellow); font-weight:800; font-size:.78rem; letter-spacing:.04em; text-transform:uppercase; padding:.24rem .55rem; border-radius:6px; }
+
 /* callout / disclosure strip */
 .callout { background: var(--bg-3); border:1px solid var(--line); border-left:4px solid var(--yellow); border-radius: var(--radius-sm); padding: 1rem 1.2rem; margin: 1.6rem 0; color: var(--ink-soft); }
 .callout strong { color:#fff; }
