@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flash Flood Survival Cheat Sheet — Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --cyan:#1fa7c4; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:12mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:14px; }
+  .head h1{ font-size:38px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:20px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:10px; }
+  .art{ width:100%; border:2px solid var(--ink); border-radius:6px; }
+  .artcap{ font-size:10px; color:var(--soft); text-align:center; margin-top:3px; font-family:Archivo,Arial,sans-serif; }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:13.5px; line-height:1.45; margin-bottom:7px; padding-left:26px; position:relative; }
+  ol li{ counter-increment:step; }
+  ol li::before{ content:counter(step); position:absolute; left:0; top:0; width:19px; height:19px; background:var(--yellow); color:var(--ink); font-family:Anton; font-size:12px; border-radius:50%; text-align:center; line-height:19px; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:14px; height:14px; border:2px solid var(--ink); border-radius:3px; }
+  .ladder{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:12px; }
+  .ladder div{ display:flex; align-items:center; gap:12px; padding:9px 12px; border-top:1px solid var(--line); }
+  .ladder div:first-child{ border-top:none; }
+  .depth{ font-family:Anton; font-size:22px; color:var(--cyan); min-width:78px; }
+  .depth.d3{ color:#b23; } .depth.d2{ color:var(--yellow-2); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:12px 14px; background:#fbfbf7; }
+  .box h2{ background:#b23; }
+  .kit{ display:flex; gap:12px; }
+  .kit .item{ flex:1; border:2px solid var(--ink); border-radius:6px; padding:10px; }
+  .kit .price{ font-family:Anton; font-size:20px; color:var(--yellow-2); }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:12px 14px; margin-top:12px; background:var(--ink); color:#fff; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:10px; color:var(--soft); margin-top:8px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:13.5px; line-height:1.5; margin:0 0 10px; }
+  .lead{ font-size:14.5px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet</div>
+    <h1>Flash Flood Survival</h1>
+    <div class="sub">The physics of why moving water kills, and the roughly 40 dollar kit that gets you out.</div>
+  </div>
+
+  <p class="lead">Flash floods kill fast because moving water is far heavier and stronger than it looks. A shallow brown sheet across a road is not a puddle. It is a freight load of moving weight. Here is what actually moves a car, how to escape one, and the cheap gear that buys you the head start.</p>
+
+  <div class="row">
+    <div class="col">
+      <h2>The depths that kill</h2>
+      <div class="ladder">
+        <div><span class="depth">6 in</span><span>Fast moving water knocks a grown adult flat, reaches a car floor, kills traction, and starts the car sliding.</span></div>
+        <div><span class="depth d2">1 ft</span><span>Many cars float outright and go where the water goes.</span></div>
+        <div><span class="depth d3">2 ft</span><span>Moves most vehicles on the road, trucks included.</span></div>
+      </div>
+      <h2>Why it hits so hard</h2>
+      <ul class="check">
+        <li>Water is more than 700 times heavier than the same amount of air.</li>
+        <li>Force grows with the square of speed: double the speed is 4 times the push, triple is 9 times.</li>
+        <li>Water at just 7 miles an hour pushes about as hard as a 200 mile an hour wind.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <img class="art" src="flood-art-1.png" alt="">
+      <div class="artcap">Your car is a sealed pocket of air. To the water, it is a boat.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">If your car is in the water</div>
+    <h1>Seatbelt. Window. Out.</h1>
+    <div class="sub">The order matters more than strength. The whole escape happens in about the first minute, while the car still rides high.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>The escape sequence</h2>
+      <ol>
+        <li>Seatbelt off, yours first, then the kids.</li>
+        <li>Get a window open. Push the kids out first, oldest to youngest, then you go last.</li>
+        <li>Try the power windows right away, before the electronics drown. They often work for a little while.</li>
+        <li>If the switch is dead, use a spring loaded punch on a bottom corner of a side window. Not the windshield, it is laminated and will not shatter.</li>
+        <li>If the car is still floating, climb onto the roof and stay with it. It is a bigger, more visible raft than you are.</li>
+        <li>Only let go into the current if the car is going under. Then float on your back, feet pointed downstream, and steer to the bank.</li>
+      </ol>
+    </div>
+    <div class="col">
+      <img class="art" src="flood-art-2.png" alt="">
+      <div class="artcap">Keep the punch clipped where your hand finds it blind.</div>
+      <img class="art" src="flood-art-4.png" alt="" style="margin-top:10px;">
+      <div class="artcap">Still floating? The roof beats the current.</div>
+    </div>
+  </div>
+  <div class="box" style="margin-top:6px;">
+    <h2>Do not</h2>
+    <ul class="check">
+      <li>Do not fight the doors. Under a couple of feet of water they take hundreds of pounds to open.</li>
+      <li>Do not stand or wade in fast moving floodwater at any depth. A foot pinned between rocks while the current folds you forward is one of the deadliest traps there is.</li>
+      <li>Do not assume your window breaks. Some newer cars use laminated side glass too. Check the little label in the corner of your window before you ever need it.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">The kit and the ground</div>
+    <h1>Under 40 Dollars</h1>
+    <div class="sub">Portable, cord free, and it travels with you everywhere you go.</div>
+  </div>
+  <div class="kit">
+    <div class="item"><div class="price">about 8 dollars</div><b>Spring loaded window punch.</b> Mounted where your hand finds it blind, on the visor or door pocket. Not buried in the trunk.</div>
+    <div class="item"><div class="price">about 30 dollars</div><b>Hand crank weather radio.</b> Picks up weather service alerts straight from the transmitter. No towers, no data, no dead battery.</div>
+  </div>
+
+  <div class="row" style="margin-top:14px;">
+    <div class="col">
+      <h2>Read the ground</h2>
+      <p>A dry wash is not land. It is a river holding its breath. Learn to spot the kill zones from a quarter mile off.</p>
+      <ul class="check">
+        <li>The smooth sandy channel that looks like a campsite.</li>
+        <li>The canyon narrows.</li>
+        <li>The highway underpass that becomes a bathtub with no drain.</li>
+        <li>The low crossing where the road dips to the creek bed.</li>
+        <li>The dip in the road with a depth marker beside it.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <img class="art" src="flood-art-3.png" alt="">
+      <div class="artcap">A mountain is a funnel. Rain miles away arrives as a wall.</div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:6px;">
+    <h2>The rules that keep you alive</h2>
+    <ul class="check">
+      <li>Turn around, do not drown. Never drive into water covering the road, no matter how shallow it looks.</li>
+      <li>Never camp, park, or stop in a wash or low channel, even bone dry, even under blue sky.</li>
+      <li>When rain falls upstream, treat it like it fell on you.</li>
+      <li>If your car stalls in rising water, get out right away and climb to high ground. Cars are replaceable.</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> youtube.com/@SketchySurvival101<br>
+    <b>More free sheets:</b> sketchysurvival101.com/free<br>
+    Subscribe so the next flash flood does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. This sheet is a portable backup, not a substitute for official warnings or for turning around at a flooded road.</div>
+</section>
+
+</body>
+</html>
