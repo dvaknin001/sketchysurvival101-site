@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blackout Power Kit Cheat Sheet — Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:12mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:14px; }
+  .head h1{ font-size:38px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:20px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:10px; }
+  .art{ width:100%; border:2px solid var(--ink); border-radius:6px; }
+  .artcap{ font-size:10px; color:var(--soft); text-align:center; margin-top:3px; font-family:Archivo,Arial,sans-serif; }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:13.5px; line-height:1.45; margin-bottom:7px; padding-left:26px; position:relative; }
+  ol li{ counter-increment:step; }
+  ol li::before{ content:counter(step); position:absolute; left:0; top:0; width:19px; height:19px; background:var(--yellow); color:var(--ink); font-family:Anton; font-size:12px; border-radius:50%; text-align:center; line-height:19px; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:14px; height:14px; border:2px solid var(--ink); border-radius:3px; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:12px; }
+  .num div{ display:flex; align-items:center; gap:12px; padding:9px 12px; border-top:1px solid var(--line); }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:22px; color:var(--amber); min-width:120px; }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:12px 14px; background:#fbfbf7; }
+  .box h2{ background:#b23; }
+  .kit{ display:flex; gap:12px; }
+  .kit .item{ flex:1; border:2px solid var(--ink); border-radius:6px; padding:10px; }
+  .kit .price{ font-family:Anton; font-size:19px; color:var(--amber); }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:12px 14px; margin-top:12px; background:var(--ink); color:#fff; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:10px; color:var(--soft); margin-top:8px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:13.5px; line-height:1.5; margin:0 0 10px; }
+  .lead{ font-size:14.5px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet</div>
+    <h1>Blackout Power Kit</h1>
+    <div class="sub">Keep one house lit while the street goes dark, for about 400 dollars, not twelve thousand.</div>
+  </div>
+
+  <p class="lead">The backup power industry sizes your whole house at twenty thousand watts and sells you a twelve thousand dollar machine. Your real survival load, the fridge, the phones, the router, and one warm room, is about a thousand watt hours a day. Size to that honest number and a small power station plus a folding panel carries you.</p>
+
+  <div class="row">
+    <div class="col">
+      <h2>The one number</h2>
+      <div class="num">
+        <div><span class="big">40 to 80 W</span><span>A modern fridge only sips this on average, because the compressor barely runs. It cycles on and off all day.</span></div>
+        <div><span class="big">1000 Wh</span><span>What that fridge uses in a full day, about as much as a single bare bulb left on.</span></div>
+        <div><span class="big">1000 to 1200 Wh</span><span>Your real survival load: fridge, three lamps, two phones, and the router, for a whole day.</span></div>
+      </div>
+      <p>The sales quote is built for twenty thousand watts. Your actual survival draw is a rounding error on that sheet.</p>
+    </div>
+    <div class="col">
+      <img class="art" src="power-art-2.png" alt="">
+      <div class="artcap">A fridge is insulation with a small pump. The pump barely runs.</div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:6px;">The overnight test</h2>
+  <ul class="check">
+    <li>Charge the station full. Plug your actual fridge into it tonight and watch the percentage over 24 hours.</li>
+    <li>A healthy fridge drops about 30 to 40 percent overnight. If it drops much more, your fridge runs hot or old, so size the station up.</li>
+    <li>That single test measures your real duty cycle better than any spreadsheet.</li>
+  </ul>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">What to buy</div>
+    <h1>The Kit, Under 600</h1>
+    <div class="sub">Lives on a closet shelf, weighs about as much as a packed cooler, needs no permit and no installer.</div>
+  </div>
+  <div class="kit">
+    <div class="item"><div class="price">300 to 450 dollars</div><b>Lithium iron phosphate power station.</b> Around a thousand watt hours. Pure sine wave. Inverter rated at least fifteen hundred watts so it handles the fridge startup surge.</div>
+    <div class="item"><div class="price">100 to 150 dollars</div><b>200 watt folding solar panel.</b> Buy the same brand as the station, or confirm the plug and the voltage match before you order.</div>
+    <div class="item"><div class="price">extension</div><b>Grounded heavy duty cord</b> rated well above the fridge draw. Power the fridge by cord, straight from the station.</div>
+  </div>
+
+  <div class="row" style="margin-top:14px;">
+    <div class="col">
+      <h2>Does the math close</h2>
+      <ul class="check">
+        <li>Two hundred watts of panel times about 5 peak sun hours is a thousand watt hours on paper, call it around eight hundred after real world losses.</li>
+        <li>Most of the country gets 4 to 5 peak sun hours a day, closer to 4 up north, less in deep winter.</li>
+        <li>On a sunny day the panel gives back most of what you spent, the battery bridges the rest, and on a gray day you shed load until only the fridge draws.</li>
+        <li>So a one day battery holds for as long as the sun keeps showing up.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <img class="art" src="power-art-3.png" alt="">
+      <div class="artcap">Every sunny afternoon puts most of the day back.</div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:6px;">
+    <h2>Good to know</h2>
+    <ul class="check">
+      <li>A wall charge fills in one to two hours, so top it to full the moment a storm is in the forecast.</li>
+      <li>Many lithium iron phosphate stations will not charge below freezing without built in heating. In winter keep the station indoors and run only the panel cable out into the cold.</li>
+      <li>An unopened fridge holds safe cold about 4 hours, a full freezer about 48. Keep a thermometer inside and let the temperature make the call.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">The rules and the real danger</div>
+    <h1>Run Cords, Not Schemes</h1>
+    <div class="sub">This is an essential load backup. It will not run central air, an electric furnace, or a dryer, and it does not have to.</div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <img class="art" src="power-art-4.png" alt="">
+      <div class="artcap">One warm window says somebody in this house saw it coming.</div>
+    </div>
+    <div class="col">
+      <img class="art" src="power-art-1.png" alt="">
+      <div class="artcap">A box the size of a cooler, about 400 dollars.</div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:10px;">
+    <h2>Safety, do not skip</h2>
+    <ul class="check">
+      <li>Buy pure sine wave only. Cheaper stepped power can leave a fridge running hot instead of purring.</li>
+      <li>Power your appliances by cord, straight from the station. Never wire power backwards into a wall outlet to feed the house. That can electrocute a utility worker down the street.</li>
+      <li>Never run a gas generator in a garage or up against a window. The carbon monoxide kills people in their sleep. If you own one, put it far outside and get a carbon monoxide alarm.</li>
+    </ul>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> youtube.com/@SketchySurvival101<br>
+    <b>More free sheets:</b> sketchysurvival101.com/free<br>
+    Subscribe so the next blackout does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Numbers here come straight from the video. Prices move, so check the current listing.</div>
+</section>
+
+</body>
+</html>
