@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trombe Wall Cheat Sheet — Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:12mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:14px; }
+  .head h1{ font-size:34px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:20px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:10px; }
+  .art{ width:100%; border:2px solid var(--ink); border-radius:6px; }
+  .artcap{ font-size:10px; color:var(--soft); text-align:center; margin-top:3px; font-family:Archivo,Arial,sans-serif; }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:13.5px; line-height:1.45; margin-bottom:7px; padding-left:26px; position:relative; }
+  ol{ counter-reset:step; }
+  ol li{ counter-increment:step; margin-bottom:11px; }
+  ol li::before{ content:counter(step); position:absolute; left:0; top:0; width:19px; height:19px; background:var(--yellow); color:var(--ink); font-family:Anton; font-size:12px; border-radius:50%; text-align:center; line-height:19px; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:14px; height:14px; border:2px solid var(--ink); border-radius:3px; }
+  li b{ font-family:Archivo,Arial,sans-serif; font-weight:800; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:12px; }
+  .num div{ display:flex; align-items:center; gap:12px; padding:9px 12px; border-top:1px solid var(--line); }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:20px; color:var(--amber); min-width:110px; }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:12px 14px; background:#fbfbf7; }
+  .box.danger h2{ background:#b23; }
+  .kit{ display:flex; gap:12px; flex-wrap:wrap; }
+  .kit .item{ flex:1 1 45%; border:2px solid var(--ink); border-radius:6px; padding:10px; }
+  .kit .price{ font-family:Anton; font-size:18px; color:var(--amber); }
+  .total{ border:3px solid var(--yellow); border-radius:6px; padding:10px 12px; margin-top:12px; background:#fffdf0; }
+  .total .big{ min-width:auto; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:12px 14px; margin-top:14px; background:var(--ink); color:#fff; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:10px; color:var(--soft); margin-top:8px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:13.5px; line-height:1.5; margin:0 0 10px; }
+  .lead{ font-size:14.5px; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet</div>
+    <h1>The 60 Dollar Wall That Beats a 10,000 Dollar Furnace</h1>
+    <div class="sub">A DIY Trombe wall. Free daytime heat from the winter sun, no power, no fuel, no fan.</div>
+  </div>
+
+  <p class="lead">A Trombe wall is a stack of black painted concrete blocks behind a clear sheet, leaning on your sunny south wall. Sunlight passes the clear cover, hits the black face, and turns to heat. Warm air rises out a top vent while cool air is pulled in a low vent, a self feeding loop called a thermosiphon. No fan, no pump, no power. It heats only while the sun is up, and you close two little vents at dusk so it cannot run backward at night.</p>
+
+  <div class="row">
+    <div class="col">
+      <h2>Why it works</h2>
+      <div class="num">
+        <div><span class="big">Space heater</span><span>A patch of direct winter sun the size of a plywood sheet carries about as much power as a big plug in space heater.</span></div>
+        <div><span class="big">Over 100 F</span><span>Outlet air can climb past 100 degrees Fahrenheit on a good day. Even 80 degree air into a 50 degree room feels warm.</span></div>
+        <div><span class="big">Head on</span><span>A vertical south wall catches low winter sun almost head on, and mostly sheds the high summer sun.</span></div>
+        <div><span class="big">Matte black</span><span>Matte black soaks up far more sunlight than pale siding, so the black face is the engine.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <img class="art" src="trombe-art-1.png" alt="">
+      <div class="artcap">Black blocks behind a clear sheet on a sunny wall. Warm air rises off the hot face.</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Real proof</h2>
+    <p style="margin:0;">The visitor center at Zion National Park runs a much bigger built in Trombe wall that covers about a fifth of its winter heat. A new gas furnace runs about 4,000 to 8,000 dollars installed, and a heat pump swap can top 10,000 to 12,000. This wall still runs in a blackout when the furnace is dead.</p>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">What to buy</div>
+    <h1>The Shopping List</h1>
+    <div class="sub">About 130 dollars all new, about 60 dollars if the blocks and the poly are scavenged.</div>
+  </div>
+
+  <div class="kit">
+    <div class="item"><div class="price">about 60 dollars</div><b>Twin wall polycarbonate.</b> One 4 by 8 foot sheet, less on a farm store closeout or a used greenhouse panel.</div>
+    <div class="item"><div class="price">about 10 dollars</div><b>Flat black high heat paint.</b> For the block face, so it soaks up the sun.</div>
+    <div class="item"><div class="price">about 10 dollars</div><b>Foam weatherstrip tape and a foam board</b> for the window panel.</div>
+    <div class="item"><div class="price">free to a few dollars</div><b>Scrap lumber for the frame,</b> free off a pallet, or a few dollars.</div>
+    <div class="item"><div class="price">about 2 dollars each</div><b>Concrete blocks,</b> new, and often free on the curb.</div>
+    <div class="item"><div class="price">tools and time</div><b>A saw, a drill, a brush.</b> One afternoon to build, plus a day for the paint to cure.</div>
+  </div>
+
+  <div class="total row" style="align-items:center;">
+    <span class="big" style="color:var(--amber);">About 60 to 130 dollars</span>
+    <span>Sixty dollars scavenged, about 130 dollars all new. Either way it beats a furnace bill by thousands, and it runs when the grid is down.</span>
+  </div>
+
+  <h2 style="margin-top:14px;">Build it in one afternoon</h2>
+  <ol>
+    <li><b>Pick the wall.</b> Choose a south facing wall in the Northern Hemisphere that stays sunny from about 9 in the morning to 3 in the afternoon, right under a window that opens.</li>
+    <li><b>Stack and paint the blocks.</b> Stack concrete blocks under the window, hollow cores standing up, low and wide, and brace it if you go higher. Paint the face flat black and let it cure fully outside. No blocks? Use black painted water jugs.</li>
+    <li><b>Mount the clear sheet.</b> Mount the twin wall polycarbonate about 2 inches off the black face on a scrap lumber frame, all four sides. Seal the outside edges with foam tape and screw the frame into the wall.</li>
+    <li><b>Cut the vents.</b> Fill the window with a foam panel. Cut a low opening and a high opening, each about the size of a sheet of paper. Put a divider down the gap so cool room air goes in low, down to the bottom, up the hot front, and back out warm up high.</li>
+  </ol>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">The loop and the night setup</div>
+    <h1>Close It At Dusk</h1>
+    <div class="sub">The thermosiphon runs itself all day. At night you shut it down so it cannot pull heat back out.</div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h2>The air loop</h2>
+      <p>Cool room air is pulled in the low vent, sinks to the bottom of the gap, warms as it climbs the hot black face, and returns to the room through the high vent. It feeds itself with no fan and no power, as long as the sun is on the wall.</p>
+      <h2 style="margin-top:6px;">Night setup, every dusk</h2>
+      <ul class="check">
+        <li>Tape a garbage bag flap over the inside of the upper vent, top edge only, so it acts as a one way valve.</li>
+        <li>Stuff foam plugs into both vents at dusk, every dusk, so warm room air cannot drain back out through the cold wall overnight.</li>
+        <li>Water holds more heat per pound than concrete, so black painted water jugs work as the mass too.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <img class="art" src="trombe-art-2.png" alt="">
+      <div class="artcap">Cool air in low, down the gap, up the hot face, warm air out high.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Before you build</div>
+    <h1>Stay Safe, Then Enjoy the Heat</h1>
+    <div class="sub">A few rules keep this cheap wall from becoming a hazard. Read them before you cut a single vent.</div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <img class="art" src="trombe-art-3.png" alt="">
+      <div class="artcap">The night damper: a garbage bag flap on the top vent, foam plugs in both.</div>
+    </div>
+    <div class="col">
+      <div class="box danger">
+        <h2>Safety, do not skip</h2>
+        <ul class="check">
+          <li>Never block a bedroom's only fire escape window. If that is the only way out, use a different wall.</li>
+          <li>Cure the high heat black paint fully outside before you seal the glass, so the fumes finish outdoors.</li>
+          <li>Screw the frame into the wall. A loose sheet becomes a sail in a storm.</li>
+          <li>Keep the block stack low and wide, or brace it. A tall loose stack can tip.</li>
+          <li>Water jugs can freeze and split on a brutal night. Drain them in a hard freeze if the wall is not running.</li>
+          <li>In summer, close and cover it or the room overheats.</li>
+          <li>This is for education. Know your own skills and your local codes before you build.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> <a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">youtube.com/@SketchySurvival101</a><br>
+    <b>More free sheets:</b> sketchysurvival101.com/free<br>
+    Subscribe so the next cold snap does not catch you paying to stay warm.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Numbers here come straight from the video. Prices move, so check the current listing.</div>
+</section>
+
+</body>
+</html>
