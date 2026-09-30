@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radiator Foil Cheat Sheet. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:31px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:19px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  .art{ width:100%; border:2px solid var(--ink); border-radius:6px; display:block; }
+  .artcap{ font-size:10px; color:var(--soft); text-align:center; margin:3px 0 10px; font-family:Archivo,Arial,sans-serif; }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12.5px; line-height:1.4; margin-bottom:5px; padding-left:26px; position:relative; }
+  ol li{ counter-increment:step; }
+  ol li::before{ content:counter(step); position:absolute; left:0; top:0; width:19px; height:19px; background:var(--yellow); color:var(--ink); font-family:Anton; font-size:12px; border-radius:50%; text-align:center; line-height:19px; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:14px; height:14px; border:2px solid var(--ink); border-radius:3px; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:12px; line-height:1.38; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:16px; color:var(--amber); min-width:96px; flex:0 0 96px; }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box ul{ margin-bottom:0; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12.5px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13.5px; }
+  .eq{ font-family:Archivo,Arial,sans-serif; font-weight:800; font-size:12.5px; background:var(--ink); color:var(--yellow); padding:6px 10px; border-radius:5px; margin:4px 0 8px; display:block; }
+  .note{ font-size:11px; color:var(--soft); }
+</style>
+</head>
+<body>
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet · Winter Heat</div>
+    <h1>$5 of Foil Behind Your Radiator Cuts Its Wall Heat Loss in Half</h1>
+    <div class="sub">Every radiator on an outside wall is heating the street. One flat sheet of kitchen foil, facing the metal across the air gap, sends that heat back into the room.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>The fix in one line</h2>
+      <p class="lead">Buy a 50 square foot roll of heavy duty aluminum foil. Tape a sheet flat to the wall behind each radiator on an outside wall, facing the radiator across the air gap. In a university test, one plain sheet of kitchen foil cut the heat leaking through the wall behind the radiator by more than half.</p>
+      <div class="eq">The feel test: hand on the wall just above a running radiator, then 3 feet to the side.</div>
+      <p>The patch by the radiator is warm, sometimes hot. The wall beside it is room temperature. Same plaster, same studs, same cold night outside.</p>
+      <img class="art" src="radiator-foil-art-1.jpg" alt="Radiator under a window with foil taped to the wall behind it">
+      <div class="artcap">Foil on the wall, facing the radiator. The infrared bounces back toward the radiator and up into the room.</div>
+    </div>
+    <div class="col">
+      <h2>Why the wall runs hot</h2>
+      <div class="num">
+        <div><span class="big">140 to 180 F</span><span>Surface of a hot water radiator, depending on the boiler setting.</span></div>
+        <div><span class="big">about 90%</span><span>How strongly painted metal radiates compared with a perfect black surface. Painted plaster soaks that infrared up just as well.</span></div>
+        <div><span class="big">about 25 W</span><span>Infrared per square foot of wall, with the radiator back at 160 F and the wall at 75 F.</span></div>
+        <div><span class="big">about 200 W</span><span>Landing on the plaster behind a typical 2 foot by 4 foot radiator back whenever the boiler runs.</span></div>
+        <div><span class="big">about 60%</span><span>How much faster a 100 F wall patch pushes heat outward on a 20 F night than the plain wall beside it.</span></div>
+      </div>
+      <p class="note">Most of that heat comes back into the room. A slice soaks through the plaster and framing and leaks out through the siding. How big a slice depends on what is inside the wall. See the flashlight test on page 3.</p>
+      <h2>Why foil works</h2>
+      <p>Emissivity is how strongly a surface gives off infrared, on a scale from 0 to 1. A painted wall sits near 0.9. Bright aluminum foil sits near 0.03. A surface that barely gives off infrared also barely absorbs it, so foil reflects roughly 97 percent of the infrared that hits it. The plaster behind it runs cooler, and a cooler inside face drives less heat out through the wall. Same reason a vacuum flask is silvered inside.</p>
+      <div class="box">
+        <h2>The foil must face open air</h2>
+        <p style="margin-bottom:0;">Infrared has to cross empty space to be reflected. Foil pressed between two solid layers just passes heat through by contact, so foil board glued face down onto plaster does almost nothing. Your radiator already gives you the air space: panel radiators hang an inch or two off the plaster, and old cast iron radiators on legs usually sit 2 to 4 inches out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Winter Heat · Page 2 · The Build</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Shopping list</h2>
+      <ul class="check">
+        <li><b>Heavy duty aluminum foil,</b> the 50 square foot roll. At Walmart it is 4 dollars and 98 cents. Heavy duty, not the thin stuff: crinkles barely hurt the reflection, tears do.</li>
+        <li><b>Aluminum foil tape,</b> the kind sold in the heating aisle for sealing ductwork. Rated for heat, reflective itself, about 10 dollars a roll.</li>
+        <li><b>Painter's tape instead,</b> if you rent and need the wall to come clean later. Fine on a hot water radiator wall. Foil tape holds longer.</li>
+        <li><b>Thin cardboard,</b> for radiators too close to the wall to get your hands behind.</li>
+        <li><b>Tape measure, scissors, a rag,</b> and a vacuum or duster wand.</li>
+      </ul>
+      <div class="num">
+        <div><span class="big">about $17</span><span>The whole job with the tape.</span></div>
+        <div><span class="big">about 4</span><span>Radiators 2 feet tall and 4 feet wide from one roll.</span></div>
+        <div><span class="big">10 minutes</span><span>About how long each radiator takes, start to finish.</span></div>
+      </div>
+      <h2>Which radiators</h2>
+      <ul class="check">
+        <li><b>Only radiators on outside walls.</b> An interior wall radiator warms a wall that is inside your house anyway. Most radiators sit under windows on outside walls, so start with those.</li>
+        <li><b>Skip hot water baseboard,</b> the long low metal strips along the floor. Baseboard already has a steel back plate and heats almost entirely with moving air.</li>
+        <li><b>Skip every electric heater,</b> including electric baseboard. See the safety box.</li>
+      </ul>
+      <img class="art" src="radiator-foil-art-2.jpg" alt="Hands pressing foil flat to the wall beside a radiator">
+      <div class="artcap">Flat to the wall, edges taped, pressed down hard with a rag.</div>
+    </div>
+    <div class="col">
+      <h2>Step by step</h2>
+      <ol>
+        <li>Turn the heat off and let the radiator cool until you can rest your hand on it.</li>
+        <li>Vacuum the gap behind it first. The dust back there now ends up on your foil.</li>
+        <li>Measure the back face of the radiator. Cut the foil an inch bigger than that on every side.</li>
+        <li>The 5 dollar roll is 12 inches wide, so check the width on your box. For a radiator 2 feet tall, run 3 strips sideways, each above the last, overlapping by an inch. That covers about 34 inches of height.</li>
+        <li>For a radiator 4 feet wide, each strip is about 50 inches long.</li>
+        <li>Face the shiny side toward the radiator out of habit. The difference between the sides is tiny, and both reflect well.</li>
+        <li>Run foil tape along all four edges and press it down hard with a rag.</li>
+        <li>Too tight to reach behind? Tape the foil to thin cardboard, foil side out. Slide the panel down from the top, cardboard against the wall, foil facing the metal. Do not let it touch the radiator.</li>
+        <li>Panel radiators on wall brackets: cut a slot in the cardboard for each bracket before you slide it in.</li>
+        <li>Radiator inside a wooden or metal cover: lift the cover off, do the wall the same way, put the cover back.</li>
+        <li>When the heat comes back on, feel the wall just above the foil again. It will be noticeably cooler.</li>
+      </ol>
+      <div class="box">
+        <h2>Keep every edge clear</h2>
+        <p style="margin-bottom:0;">Do not wrap foil around the pipes or the valve. Do not cover the top of the radiator, and do not let foil hang down and block the gap at the floor. A radiator pulls cool air in at the bottom and pushes warm air out the top. Choke that path, and you lose more heat than the foil saves.</p>
+      </div>
+      <div class="box" style="margin-top:10px;">
+        <h2>Once a year</h2>
+        <p style="margin-bottom:0;">Run a duster wand or a vacuum brush down the gap. Dust absorbs far more infrared than clean foil. Tarnish matters less: bare aluminum creeps from about 3 percent emissivity to about 8 to 12 percent, then levels off, and still reflects close to 90 percent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Winter Heat · Page 3 · Is It Worth It in Your House</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>The two places this goes wrong</h2>
+        <ul class="check">
+          <li><b>Electric heaters, including electric baseboard.</b> The maker sets the clearances around the heating elements, and foil conducts electricity. Nothing metal goes near the wiring or the elements. Leave electric heaters exactly the way they came.</li>
+          <li><b>Foam behind a steam radiator.</b> Steam radiators run at about 215 F at the surface. Foil is fine there, since aluminum does not melt until around 1,200 F. Foam board is not: polystyrene starts to soften around 200 F and will sag and give off fumes against hot metal. On steam, use foil and foil tape on the wall, and nothing else.</li>
+        </ul>
+      </div>
+      <h2 style="margin-top:10px;">The flashlight test</h2>
+      <ol>
+        <li>Pick an outlet on an outside wall and switch off its breaker.</li>
+        <li>Pull the cover plate and shine a flashlight into the crack around the box.</li>
+        <li><b>Fiber or foam:</b> the wall is insulated, and the foil will do less.</li>
+        <li><b>Bare wood and a dark gap:</b> nothing in there, and the foil will pay.</li>
+        <li><b>Brick or block:</b> solid masonry with no insulation at all. That is where foil helps most.</li>
+        <li>Put the cover back and the breaker on before you do anything else.</li>
+      </ol>
+      <img class="art" src="radiator-foil-art-3.jpg" alt="Flashlight shining beside an outlet box into the wall cavity">
+      <div class="artcap">Breaker off, cover plate off, light into the crack around the box.</div>
+      <p class="note">About 9 million American homes heat with a hot water or steam boiler, most built decades ago. A Pacific Northwest National Laboratory study found up to 43 percent of homes built before 1992 have little or no wall insulation. Britain's Building Research Establishment found the gain is minimal on a wall with filled cavities.</p>
+    </div>
+    <div class="col">
+      <h2>What the tests found</h2>
+      <div class="num">
+        <div><span class="big">7.1 to 3.1</span><span>Watts per square meter through the wall behind the radiator, before and after plain foil. Harris, Napier University, Edinburgh, 1995, with a cool 109 F radiator. More than half cut.</span></div>
+        <div><span class="big">under 30%</span><span>His best case: the loss behind the radiator fell below 30 percent of where it started.</span></div>
+        <div><span class="big">up to 6%</span><span>Drop in heating energy for his whole test room, built around one radiator on one outside wall.</span></div>
+        <div><span class="big">45%</span><span>The maker's test of Radflek, a British laminated foil sheet. A 3 sheet pack costs about 22 pounds, close to 30 dollars. Harris found plain foil only marginally less effective.</span></div>
+      </div>
+      <h2>What it is worth</h2>
+      <div class="num">
+        <div><span class="big">2 to 5%</span><span>Working range for a whole old house with radiators on bare outside walls. Italian modeling found up to 8.8 percent on the worst walls. A German study found about 4 percent, and 1.6 percent on well insulated walls.</span></div>
+        <div><span class="big">$13 to $32</span><span>A winter, for the average gas heated home, expected to spend 642 dollars on heat (Energy Information Administration).</span></div>
+        <div><span class="big">$28 to $70</span><span>A winter, for the average heating oil home, expected to spend 1,390 dollars.</span></div>
+        <div><span class="big">20 to 35%</span><span>Share of a finned panel radiator's heat that leaves as infrared. The rest is warm air the foil never touches, which is why the whole house number is small.</span></div>
+      </div>
+      <p>At about 17 dollars, the job pays for itself the first winter on an oil heated house, and usually within a winter or two on gas.</p>
+      <div class="box">
+        <h2>The expensive fix</h2>
+        <p style="margin-bottom:0;">Blowing loose insulation into the walls runs about 1 to 2 dollars a square foot installed, somewhere between 2,000 and 8,000 dollars for a whole house. It fixes the entire wall and is the right long term answer. The foil is what you can do this weekend.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> <a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">youtube.com/@SketchySurvival101</a><br>
+    <b>More free sheets:</b> <a href="https://sketchysurvival101.com/free" target="_blank" rel="noopener">sketchysurvival101.com/free</a><br>
+    Subscribe so next winter's heating bill does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Every number on this sheet comes straight from the video and its sources. Prices move, so check the current listing. Savings depend on your walls, your radiators, and your fuel.</div>
+</section>
+</body>
+</html>
