@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solar Panels That Also Heat Water. Every Number. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:30px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box ul{ margin-bottom:0; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .sh{ background:var(--ink); color:var(--yellow); font-family:Anton; font-size:13px; padding:5px 10px; letter-spacing:.5px; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+  .eq{ font-family:Archivo,Arial,sans-serif; font-weight:800; font-size:12px; background:var(--ink); color:var(--yellow); padding:6px 10px; border-radius:5px; margin:4px 0 8px; display:block; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet · Solar</div>
+    <h1>Solar Panels That Also Heat Water: Every Number</h1>
+    <div class="sub">The hybrid panel that grabs the sun as power and heat at once, why Europe installs them and America almost never does, and the safety line that makes this a read, not a weekend build.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">A normal solar panel turns 15 to 20 percent of sunlight into power. Another 65 to 70 percent leaves as heat, wasted. A hybrid panel, sometimes called PVT, bolts a heat exchanger on the back and carries some of that heat away. One roof area, two outputs: electricity and hot water.</p>
+      <p>The catch is the physics. The cooler the fluid runs, the more heat the panel captures, which is exactly why a hybrid wants a partner that likes lukewarm water: a heat pump.</p>
+
+      <h2>Round 1: the physics</h2>
+      <div class="num">
+        <div><span class="big">15 to 20%</span><span>Share of sunlight a typical solar cell turns into electricity.</span></div>
+        <div><span class="big">65 to 70%</span><span>Share that leaves as heat on a plain panel. The hybrid chases part of this.</span></div>
+        <div><span class="big">61% + 15%</span><span>One favorable worked example from international researchers: 61 percent of sunlight to heat, 15 percent to electricity, adding to 76 percent. Those outputs are not equally useful, and this is not an annual guarantee.</span></div>
+        <div><span class="big">about 60%</span><span>Thermal efficiency one German maker says lab tests confirmed. The test used no wind, with air and module at 25 degrees Celsius.</span></div>
+      </div>
+      <p class="note">The worked example assumes the fluid is as cool as the surrounding air. On an unglazed panel, raising the fluid temperature drops the useful heat it captures.</p>
+    </div>
+    <div class="col">
+      <h2>The cool fluid clue</h2>
+      <p>One real datasheet, run at 1,000 watts of sunlight per square meter and 1 meter per second of wind:</p>
+      <div class="num">
+        <div><span class="big">about 43%</span><span>Thermal efficiency of an uninsulated French panel with fluid 10 degrees Celsius above the air.</span></div>
+        <div><span class="big">about 11%</span><span>The same panel at 30 degrees Celsius above the air. The hotter you run it, the less it catches.</span></div>
+        <div><span class="big">over 100%</span><span>Researchers note a hybrid's heat output can top 100 percent of the sunlight hitting it, because the cool panel also pulls warmth from the air. Partly a quirk of how efficiency is defined.</span></div>
+        <div><span class="big cy">3 to 5x</span><span>Over a year, many heat pump systems in that research return 3 to 5 units of heat for every 1 unit of electricity.</span></div>
+      </div>
+      <h3>Heat hurts the electricity too</h3>
+      <p>A 2018 study says crystalline silicon panels often run about 30 degrees Celsius above outdoor air on clear days, and estimates around 12 percent power loss above 50 degrees Celsius, against the 25 degree rating. Cooling the cells wins back only slight extra power. The main prize is useful heat.</p>
+      <div class="num">
+        <div><span class="big">about 61%</span><span>Share of reported world hybrid collector area that was unglazed liquid panels by end of 2024.</span></div>
+        <div><span class="big">about 71%</span><span>Drop in annual heat one maker modeled for evacuated tubes on an Athens roof, between fluid of 25 and 75 degrees Celsius.</span></div>
+        <div><span class="big">2.5% low</span><span>British Library roof, London: 240 hybrid tubes beside 710 heat only tubes. First year hybrid electricity came in about two and a half percent under simulation.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">Scoreboard R1</div><div class="sh" style="flex:1;background:var(--ink-2);">Physics</div></div>
+    <div class="srow"><div class="scell lose"><span class="tag">Plain panel</span>Recovers no useful heat. The 65 to 70 percent leaves the roof.</div><div class="scell win"><span class="tag">Hybrid + heat pump</span>Captures heat and lifts it to a useful temperature. A real edge when the building needs the heat. Money has not spoken yet.</div></div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Solar · Page 2 · Why America Dropped It</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>The map today</h2>
+      <div class="num">
+        <div><span class="big">1 million m2</span><span>Hybrid collector area Europe reported by end of 2024, just over one million square meters.</span></div>
+        <div><span class="big">under 12,000</span><span>Square meters the United States and Canada reported together.</span></div>
+        <div><span class="big">about 92x</span><span>How much larger Europe's reported area was, across all hybrid types.</span></div>
+      </div>
+      <p class="note">America already has a written standard for these panels, including fire testing. The gap is adoption, not rulebook.</p>
+
+      <h2>America pioneered it, then quit</h2>
+      <div class="num">
+        <div><span class="big">1972 to 1973</span><span>University of Delaware physicist Karl Boer founded an energy institute in 1972; his team broke ground by November. Solar One, a two bedroom house in Newark, was dedicated in 1973 to supply power and heat.</span></div>
+        <div><span class="big">100,000+</span><span>Visitors Solar One drew in its first year. One historical review calls it the first building to explore the air hybrid concept.</span></div>
+        <div><span class="big">1976</span><span>Researcher Martin Wolf published an analysis calling a house powered and heated this way technically feasible and cost effective.</span></div>
+        <div><span class="big">1978</span><span>Two American labs tested full size prototypes from two companies; a review calls the performance insufficient. Boer put 13 liquid hybrid collectors on his own home, Solar Knoll.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Then the money changed</h2>
+      <div class="num">
+        <div><span class="big">end of 1985</span><span>The federal residential energy credit expired. Falling energy prices also cut demand. A 2007 government lab blamed both for the collapse of the solar water heating market.</span></div>
+        <div><span class="big">21M to 8M</span><span>American collector shipments fell from about 21 million square feet in 1981 to about 8 million by 2000. That count includes pool collectors and exports, so it is a rough picture.</span></div>
+        <div><span class="big">2012</span><span>A building science writer argued plain solar electric had become cheaper than solar thermal, and wrote that unless you are building a laundromat or college dorm, solar thermal is dead.</span></div>
+        <div><span class="big">about 95%</span><span>Share of newly installed American solar thermal area in 2022 that was unglazed, mostly for pools. New flat plate area fell from about 50,000 square meters in 2021 to under 30,000 in 2023.</span></div>
+      </div>
+      <h3>Clue four and five: paperwork and neglect</h3>
+      <p>A hybrid panel carries separate thermal and electrical requirements, and a thermal certificate can exclude electrical safety, needing a second listing. The Energy Department's own 2024 report says American adoption is slow, public data is thin, it is unclear which incentives even cover a hybrid, and the country has done little to encourage it.</p>
+    </div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">Scoreboard R2</div><div class="sh" style="flex:1;background:var(--ink-2);">History and policy</div></div>
+    <div class="srow"><div class="scell lose"><span class="tag">What killed it</span>Tax support lapsed at the end of 1985, energy prices fell, and cheaper plain solar electric arrived. Losing support made the economics harder.</div><div class="scell win"><span class="tag">Remember this</span>Policy and prices shaped the market more than physics did. That lesson comes back when you look at Europe.</div></div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Solar · Page 3 · What It Costs and When It Pays</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Europe's lead, and its wobble</h2>
+      <div class="num">
+        <div><span class="big">2009 / 2010</span><span>Cees Mager founded Triple Solar in the Netherlands in 2009; a 2024 interview reports more than six thousand apartments and buildings equipped. Dualsun began in France in 2010, first panel on a roof in August 2011.</span></div>
+        <div><span class="big">about 90%</span><span>Drop in reported French hybrid sales in 2022, after France pulled air hybrids from a major home renovation subsidy.</span></div>
+        <div><span class="big">46% then 27%</span><span>A 2025 international report puts the global decline in new area above 46 percent in 2022, then another 27 percent in 2023. The market recovered modestly in 2024, led by Germany, the Netherlands, and Spain, with a record 46 makers reporting sales.</span></div>
+        <div><span class="big">630k / 185k / 142k</span><span>Square meters by end of 2024: France about 630,000, Germany about 185,000, the Netherlands about 142,000. Germany added about 22,000 that year.</span></div>
+      </div>
+      <p class="note">Highly subsidy sensitive. Germany's building subsidy covers qualifying hybrids used for heating or as a heat pump source, with the electrical part deducted from eligible costs.</p>
+
+      <h2>Upfront price</h2>
+      <div class="num">
+        <div><span class="big">1.5 to 2x</span><span>A 2016 British report put hybrid install cost at one and a half to two times plain solar of equal electrical capacity, excluding thermal storage.</span></div>
+        <div><span class="big">about 50%</span><span>One French maker's estimate: a hybrid install costs about 50 percent more than plain solar of the same size. Its 2021 datasheet lists a 10 year product and 25 year power warranty.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Payback: wide and conditional</h2>
+      <div class="num">
+        <div><span class="big">15 to 21 yr</span><span>The 2016 British model, without policy support, assuming a household used half the electricity and all the heat. Only about 500 systems existed then, with little reliable monitoring.</span></div>
+        <div><span class="big">7 to 12 yr</span><span>A 2021 research summary for many hybrid heat pump installs.</span></div>
+        <div><span class="big">4 to 5 yr</span><span>Favorable Mediterranean hotels, with daytime power use, year round heat demand, and high fuel costs, measured against electric or gas supply.</span></div>
+      </div>
+      <p class="note">A Bari, Italy simulation placed the hybrid between plain solar electric and solar thermal. A Naples pool simulation did not pay back without public funding.</p>
+
+      <h3>Two real price tags</h3>
+      <div class="num">
+        <div><span class="big">27,000 EUR</span><span>Near Stuttgart, a single family home got 20 hybrid panels, a heat pump, and an ice store in 2018: about twenty seven thousand euros before tax, with a seven thousand euro subsidy, and a seasonal performance factor of four point seven. But the home was still empty, with no hot water drawn, so it is not proof of typical use.</span></div>
+        <div><span class="big">26,500 EUR</span><span>A Dutch maker advertises complete electric heating systems from about twenty six thousand five hundred euros installed. That already assumes a heat pump subsidy and a tax refund, and it is a whole heating system, not a panel price.</span></div>
+      </div>
+      <p class="note">A 2017 Swiss survey found firms that skipped hybrids most often blamed high costs and poor economics. Three experienced firms preferred separate systems.</p>
+    </div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">Scoreboard R3</div><div class="sh" style="flex:1;background:var(--ink-2);">Money</div></div>
+    <div class="srow"><div class="scell lose"><span class="tag">The cost</span>Higher upfront than plain solar of similar power. Paybacks swing from 4 to 5 years to 15 to 21, and some modeled projects never pay back without support.</div><div class="scell win"><span class="tag">The honest read</span>No single payback number is real. The studies use different prices, assumptions, and rivals. Treat every figure as that study's case, not a promise.</div></div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Solar · Page 4 · Safety and When It Makes Sense</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>Do not build this yourself</h2>
+        <p>This sheet is for education, not a build guide. The sources reviewed did not establish a safe, repeatable homeowner build. The one low cost example was a university prototype. A typical indirect system circulates a water and antifreeze mix near electrical parts on the roof, and permits and inspections may be required.</p>
+        <ul class="check" style="margin-top:6px;">
+          <li><b>Use certified equipment and qualified installers.</b> Plumbing and electrical both, done right.</li>
+          <li>One small experiment reported about 10 percent more electrical power from water cooling under its test conditions, but did not establish long term maintenance performance.</li>
+        </ul>
+      </div>
+      <div class="box amber">
+        <h2>The day the pump stops</h2>
+        <p>In a pumped system the pump carries heat off the collector. Controls may stop it when the tank hits its limit. If the sun keeps shining with no heat removal, the panel climbs toward its stagnation temperature.</p>
+        <div class="num" style="margin-bottom:0;">
+          <div><span class="big">80C / 176F</span><span>Example hybrid stagnation temperature in a British report.</span></div>
+          <div><span class="big">over 200C</span><span>Plain solar thermal collectors can exceed 200 Celsius, or 392 Fahrenheit.</span></div>
+          <div><span class="big">about 150C</span><span>Swiss figure for covered hybrids, or 302 Fahrenheit. Ordinary plastic around the cells can degrade fast at these temperatures.</span></div>
+          <div><span class="big">under 90 / 120C</span><span>Swiss typical unglazed stagnation: below about 90 Celsius with no rear insulation, below 120 with it. Typical values, not guaranteed limits.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="box red">
+        <h2>Hot water and legionella</h2>
+        <ul class="check">
+          <li><b>Store above 60 degrees Celsius, or 140 Fahrenheit.</b> Building water guidance recommends this as one measure to control legionella bacteria.</li>
+          <li><b>Use a mixing valve at showers</b> to drop the temperature and reduce scalding.</li>
+          <li>Common unglazed collectors generally suit water only up to about 50 degrees Celsius, so a system usually needs a heat pump or another heater to reach the safe hot storage temperature.</li>
+          <li>Covered flat panels can trap condensation that cuts performance; an intact sealed evacuated tube avoids that internal problem.</li>
+        </ul>
+      </div>
+      <h2>Where a hybrid makes sense</h2>
+      <ul class="dot">
+        <li><b>Tight roof space with steady heat demand.</b> Two outputs from one roof area is the whole point.</li>
+        <li><b>Feeding a heat pump.</b> The cool water a hybrid makes is exactly what a heat pump likes; it returns 3 to 5 units of heat per unit of electricity.</li>
+        <li><b>Recharging the ground around heat pump boreholes.</b> Summer heat warms the ground, the pump pulls it back in winter. The Swiss survey called this, with ice storage, a promising use.</li>
+        <li><b>Pools and preheating</b> for common unglazed panels; covered and evacuated designs can reach hotter water directly.</li>
+      </ul>
+      <h3>The strongest rival</h3>
+      <p>Plain solar panels with an ordinary heat pump. Compare it hard when roof space is plentiful. One 2022 simulation had a particular hybrid design use 9 percent less electricity than panels with an air source heat pump, but that depended on the design and sizing and was not a cost comparison for every home.</p>
+      <div class="box">
+        <h3 style="margin-top:0;">The tax note, American homeowners</h3>
+        <p style="margin-bottom:0;" class="note">The 30 percent federal solar credit ended for new installs completed after December 31, 2025. Paying early does not preserve eligibility if work finishes later. Under the law checked in October 2026, a new hybrid install does not qualify for that homeowner credit, though unused credits from earlier qualifying installs can carry forward. Business rules differ, so ask a tax professional. No current American retail price was verified in the sources reviewed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> <a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">youtube.com/@SketchySurvival101</a><br>
+    <b>More free sheets:</b> <a href="https://sketchysurvival101.com/free" target="_blank" rel="noopener">sketchysurvival101.com/free</a><br>
+    Subscribe so the next blackout does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Every number on this sheet comes straight from the video, with its hedges kept: worked examples, single maker claims, dated and foreign estimates, and typical values that are not safety limits. Prices and laws move, so check current listings and a tax professional before you act.</div>
+</section>
+</body>
+</html>
