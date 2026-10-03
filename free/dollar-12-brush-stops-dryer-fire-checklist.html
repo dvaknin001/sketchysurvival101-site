@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 12 Dollar Brush vs the Dryer Fire. Every Number. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:29px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ol.step{ counter-reset:step; }
+  ol.step li{ padding-left:26px; margin-bottom:7px; }
+  ol.step li::before{ counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:18px; height:18px; background:var(--ink); color:var(--yellow); font-family:Anton; font-size:11px; border-radius:4px; text-align:center; line-height:18px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box ul{ margin-bottom:0; }
+  table{ width:100%; border-collapse:collapse; margin-bottom:11px; font-size:11px; }
+  th{ background:var(--ink); color:var(--yellow); font-family:Anton; font-weight:400; letter-spacing:.5px; text-align:left; padding:6px 8px; font-size:11px; }
+  td{ border:1px solid var(--line); padding:6px 8px; line-height:1.3; vertical-align:top; }
+  tr:nth-child(even) td{ background:#f7f7f3; }
+  td.hot{ color:var(--amber); font-family:Archivo; font-weight:800; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .sh{ background:var(--ink); color:var(--yellow); font-family:Anton; font-size:13px; padding:5px 10px; letter-spacing:.5px; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 &middot; Free Cheat Sheet &middot; Fire Safety</div>
+    <h1>The 12 Dollar Brush vs the Dryer Fire: Every Number</h1>
+    <div class="sub">A 12 dollar brush clears the lint packed duct behind your dryer. A 1,500 dollar dryer bolts onto that same duct. Here is every figure said in the video, the steps, and the safety checks.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">The top cause of dryer fires is lint packed into the duct that runs from the back of the dryer to an outside wall. A vent brush pushes through that duct so the hot, wet air can leave the house again. Your dryer connects to the same duct no matter what it cost, so a brand new machine starts with the same clog on its first load.</p>
+      <p>The physics in one line: the heater does not slow down when the air slows down. It stays on until a thermostat cuts it. A clear duct carries the heat out the back. A restricted duct puts the same heat into less air, so the temperature near the heater climbs.</p>
+
+      <h2>The fire numbers (NFPA, 2010 to 2014)</h2>
+      <div class="num">
+        <div><span class="big">about 16,000</span><span>Home fires a year that involved a dryer or a washer, by NFPA estimate.</span></div>
+        <div><span class="big">92%</span><span>Of those involved a dryer.</span></div>
+        <div><span class="big">82%</span><span>Of dryer fires started in the laundry room or laundry area.</span></div>
+        <div><span class="big">13 and 440</span><span>Deaths and injuries a year on average from dryer and washer fires.</span></div>
+        <div><span class="big">238 million</span><span>Dollars a year in property damage. Most harm lands on the house, not the people.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>What starts them</h2>
+      <div class="num">
+        <div><span class="big">33%</span><span>Failure to clean, the leading factor. Linked to about half of dryer fire deaths, though the death counts are small.</span></div>
+        <div><span class="big">27% / 26%</span><span>First item to catch was dust, fiber, or lint in 27 percent, clothing in 26 percent.</span></div>
+        <div><span class="big">28% / 17%</span><span>Mechanical failure or malfunction 28 percent, electrical 17 percent. A brush does not fix these.</span></div>
+      </div>
+      <h3>When they start (USFA, 2008 to 2010)</h3>
+      <div class="num">
+        <div><span class="big">8am to 12</span><span>Most dryer fires started between 8 in the morning and midnight. Fewest between 3 and 6 in the morning.</span></div>
+        <div><span class="big">11%</span><span>January had the most of any month.</span></div>
+        <div><span class="big">62% / 16%</span><span>Smoke alarms were present in 62 percent of dryer fires, absent in 16 percent. Firefighters could not tell in most of the rest.</span></div>
+      </div>
+      <h3>How far the fire spread</h3>
+      <table>
+        <tr><th>Spread</th><th>Share</th><th>Avg loss</th></tr>
+        <tr><td>Stayed in the dryer</td><td>54%</td><td>under 2,000</td></tr>
+        <tr><td>Stayed in the room</td><td>32%</td><td>about 6,800</td></tr>
+        <tr><td>Spread through building</td><td>9%</td><td>about 49,500</td></tr>
+      </table>
+      <p class="note">All losses are in 2010 dollars. How far it spreads sets the bill.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Fire Safety &middot; Page 2 &middot; The Physics and the Lab</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>How a dryer moves heat</h2>
+      <p>A dryer is an air machine. Air enters at the back, passes over the heater, flows through the drum and the lint screen, and a fan pushes it into the duct and outdoors. The Consumer Product Safety Commission found that order in all four electric designs it examined.</p>
+      <div class="num">
+        <div><span class="big cy">1.5 gallons</span><span>Water a full load of wet clothes can hold, per the fire administration. All of it leaves as vapor in the air stream, and lint rides the same route.</span></div>
+        <div><span class="big">2 switches</span><span>At least two temperature switches in every dryer examined. An operating thermostat after the lint screen, and a backup high limit switch near the heater intake.</span></div>
+      </div>
+      <p>Lint is called highly combustible. Other blockers: bird or animal nests, damaged duct, and plastic or vinyl exhaust material. Reduced airflow from lint buildup can make a dryer overheat.</p>
+
+      <div class="box">
+        <h3 style="margin-top:0;">The one gram clue</h3>
+        <p style="margin-bottom:0;">In one test, staff bypassed the main thermostat and a dryer started cycling on its backup switch. The cause was lint on the outside vent hood screen that weighed less than one gram, spread evenly. Removing it stopped the cycling. The duct and the hood are the parts you can check and clean yourself.</p>
+      </div>
+    </div>
+    <div class="col">
+      <h2>What the lab measured (CPSC, 2003)</h2>
+      <p>An adjustable iris blocked 25, 50, or 75 percent of a standard 4 inch rigid metal duct, with a plate to block it fully. Six probes tracked temperatures inside four dryers. The fake clog was the only fault.</p>
+      <table>
+        <tr><th>Duct blockage</th><th>Heater area (one dryer)</th></tr>
+        <tr><td>Clear</td><td class="hot">just over 100 C, about 212 F</td></tr>
+        <tr><td>Up to 50% blocked</td><td>about the same as clear</td></tr>
+        <tr><td>75% blocked</td><td class="hot">150 C, about 300 F</td></tr>
+        <tr><td>Housing at 75 and 100%</td><td class="hot">200 to 250 C, about 390 to 480 F</td></tr>
+        <tr><td>Plugged completely</td><td class="hot">nearly 600 C, around 1,100 F</td></tr>
+      </table>
+      <div class="num">
+        <div><span class="big cy">70 to 30 C</span><span>Past 50 percent blocked, the highest exhaust vent temperature fell from around 70 Celsius to around 30. Less air moving, less heat leaving.</span></div>
+      </div>
+      <p class="note">The clog was a plate or iris, not real lint, and real clogs are lumpier. CPSC says the report should not be used to suggest current dryers are unsafe or defective. What it shows is the direction: the tighter the exit, the hotter the heater area.</p>
+      <h3>What lint does at those temperatures</h3>
+      <p style="margin-bottom:0;">Lint on the heater housing could easily ignite when the exhaust was blocked and the high limit switch had failed. Lint near the intake could ignite before the switch shut the heater off. Embers could light more lint and fabric downstream. The high limit switch can fail early when it sits in high surrounding temperatures.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Fire Safety &middot; Page 3 &middot; Test It and Clean It</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Is your vent blocked? Two checks</h2>
+      <ul class="dot">
+        <li><b>Drying time.</b> Clothes still damp after a normal cycle, or drying takes longer than usual, points to a blocked lint screen or duct.</li>
+        <li><b>Outside air.</b> Run the dryer, walk to the outside hood, and see whether air comes out and the flap opens. No air escaping means the vent or duct may be blocked. Whirlpool gives the same test.</li>
+      </ul>
+      <p class="note">The outside check matters because up to 50 percent blocked, inside temperatures stayed about the same. A half packed duct may give little warning from inside the house.</p>
+
+      <h2>Measure before you start</h2>
+      <ul class="dot">
+        <li>Trace the duct from the dryer to the outside hood and count the elbows.</li>
+        <li>The model residential code allows a 35 foot run. Take off 5 feet for each 90 degree elbow and 2 and a half feet for each 45 degree elbow.</li>
+        <li>Your dryer manual may allow less, so check it too. If your run is longer than your kit reaches, hire a professional.</li>
+      </ul>
+
+      <h2>Prices</h2>
+      <div class="num">
+        <div><span class="big">10 to 30</span><span>Dollar range for the eight vent cleaning kits Bob Vila tested. The 12 dollar kit sits inside it. The longest kits reach 30 feet.</span></div>
+        <div><span class="big">about 145</span><span>Dollars for an average professional vent cleaning, per HomeAdvisor. Once a year is about 725 dollars over five years. A brush kit can be reused every year.</span></div>
+        <div><span class="big">500 to 2,000</span><span>Dollar range for electric dryers at big retailers. The 1,500 dollar dryer sits at the premium end, and bolts to the same duct.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Clean an electric dryer vent</h2>
+      <ol class="step">
+        <li>Unplug the dryer before you touch anything. Slide it out far enough to reach the back. Wear glasses and a dust mask, lint dust flies.</li>
+        <li>Loosen the clamp and pull the short duct off the dryer outlet. Pull out the lint you can reach by hand, then follow with a vacuum hose.</li>
+        <li>Feed the brush into the duct from the dryer end, adding rod sections as it goes. Turn by hand or on a drill at medium speed.</li>
+        <li>Spin clockwise only. Counterclockwise can unscrew the rod sections inside the duct. If it jams, pull back slowly, never force it.</li>
+        <li>Pull the brush out, vacuum what came with it, and repeat until little lint comes back.</li>
+        <li>Go outside, open the hood flap, pull out the lint on the flap and inside the hood, then brush the last stretch from outside and vacuum.</li>
+        <li>Reconnect the duct with the clamp. Tape any joint with foil tape. Code does not allow screws poking into the duct more than an eighth of an inch.</li>
+        <li>Check the duct behind the dryer. Replace white vinyl or foil accordion with rigid or corrugated semi rigid metal duct.</li>
+        <li>Plug in and run empty 10 to 15 minutes, per Whirlpool. Feel the air at the hood. It should be strong and the flap should stay open.</li>
+      </ol>
+      <p class="note">Code does not allow a screen on the outside hood, since lint collects on it. If yours has one, ask a professional to replace the hood.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Fire Safety &middot; Page 4 &middot; Safety and Limits</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>Stop and call a professional</h2>
+        <ul class="dot">
+          <li><b>Gas dryer.</b> A job for a professional. Do not pull it out unless you know how to shut off and reconnect its gas line.</li>
+          <li><b>Smell gas?</b> Leave the house and call the gas company from outside.</li>
+          <li>Hire a professional if the vent goes through the roof, if the run is longer than your kit reaches, or if the duct is hidden in a wall or crawl space where you cannot reach both ends.</li>
+          <li>A brush that jams and will not come free, or a damaged hood, are both professional jobs.</li>
+          <li>If you find scorched lint, or melted or discolored duct, stop using the dryer until someone has inspected it.</li>
+        </ul>
+      </div>
+
+      <div class="box amber">
+        <h2>Gas dryers and carbon monoxide</h2>
+        <p style="margin-bottom:0;">A gas dryer sends combustion exhaust out the same duct. A blocked duct on a gas model is a carbon monoxide question as well as a fire question. Keep a working carbon monoxide alarm near your bedrooms, and have a professional inspect fuel burning appliances.</p>
+      </div>
+    </div>
+    <div class="col">
+      <h2>What the brush does not reach</h2>
+      <p>Lint starts collecting inside the dryer cabinet from the first use, even with a clean lint screen and a clear duct. It builds on the heater and the cabinet floor, and a vent brush cannot reach it. Have a qualified service person clean inside the dryer from time to time, and vacuum behind and under it while it is pulled out.</p>
+
+      <h2>Daily habits</h2>
+      <ul class="check">
+        <li>Clean the lint filter before or after every load. Never run the dryer without the filter.</li>
+        <li>Do not leave a dryer running when you leave the home.</li>
+        <li>Take care with clothes soiled with gasoline, cooking oil, or cleaning agents. Wash more than once or hang to dry.</li>
+        <li>Do not leave dried clothes piled in the dryer or a basket. Keep foam backed rugs and athletic shoes out of the dryer.</li>
+      </ul>
+      <p class="note">How often to clean depends on use, the duct length and turns, and the dryer age and type, per Underwriters Laboratories. Once a year is the common advice. A large household, a long run with elbows, or an already clogged duct all point to cleaning more often.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Get the full build, free.</b><br>
+    Watch the video: youtube.com/@SketchySurvival101<br>
+    More free cheat sheets: sketchysurvival101.com/free<br>
+    Subscribe so the next load does not start a fire you never saw coming.
+  </div>
+  <div class="foot">Sources in the video description. Numbers from NFPA, the US Fire Administration, the Consumer Product Safety Commission, HomeAdvisor, Bob Vila, Whirlpool, and Underwriters Laboratories. Cheat sheet for the video "This 12 Dollar Brush Tackles the Top Cause of Dryer Fires. A 1,500 Dollar Dryer Doesn't."</div>
+</section>
+
+</body>
+</html>
