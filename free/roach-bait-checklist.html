@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roach Bait That Beats Sprays and Bug Bombs. Every Number. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:28px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  ol.step{ counter-reset:st; }
+  ol.step li{ padding-left:26px; margin-bottom:7px; }
+  ol.step li::before{ counter-increment:st; content:counter(st); position:absolute; left:0; top:0; width:17px; height:17px; background:var(--ink); color:var(--yellow); font-family:Anton; font-size:11px; border-radius:4px; text-align:center; line-height:17px; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:13px; color:var(--amber); min-width:96px; flex:0 0 96px; }
+  .big.cy{ color:var(--cyan); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box ul{ margin-bottom:0; }
+  .tbl{ width:100%; border-collapse:collapse; margin-bottom:11px; border:2px solid var(--ink); }
+  .tbl th{ background:var(--ink); color:var(--yellow); font-family:Anton; font-weight:400; font-size:11.5px; letter-spacing:.5px; text-align:left; padding:5px 8px; }
+  .tbl td{ font-size:11px; line-height:1.35; padding:5px 8px; border-top:1px solid var(--line); vertical-align:top; }
+  .tbl tr td:first-child{ font-weight:600; }
+  .tbl .win{ background:#f2faf2; } .tbl .lose{ background:#fdf3f3; } .tbl .mid{ background:#fffdf2; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .sh{ background:var(--ink); color:var(--yellow); font-family:Anton; font-size:13px; padding:5px 10px; letter-spacing:.5px; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet · Pest</div>
+    <h1>About 31 Dollars of Roach Bait: Every Number</h1>
+    <div class="sub">Bug bombs did not cut roach counts in 20 infested homes. About 31 dollars of the right bait cut counts in Kentucky apartments, and researchers called it comparable to professional gel. Here is every number, the placement map, and the safety line.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">Bait is food with a slow poison in it. The roach eats, carries it back to its hiding place, and the poison travels through the colony as roaches eat each other's droppings and dead bodies. That reaches the roaches you never see, which is why sprays on the counter cannot fix the colony in the wall.</p>
+
+      <h2>The study behind this</h2>
+      <div class="num">
+        <div><span class="big">2025 study</span><span>32 apartments with German cockroaches, in Kentucky. The source this sheet leans on most.</span></div>
+        <div><span class="big">2021 to 2024</span><span>The test ran in real apartments from 2021 to early 2024. Each home kept its one treatment the whole time.</span></div>
+        <div><span class="big">4 treatments</span><span>Hot Shot liquid bait stations, Combat bait stations, Combat gel, and professional gel as a best case comparison.</span></div>
+        <div><span class="big">1, 2, 4 mo</span><span>Bait restocked three times over two months. Roaches counted again at months one, two, and four.</span></div>
+      </div>
+      <p class="note">Keep the size in mind. It is 32 apartments, four treatments, one state. The paper reports averages, so some homes did better than others, and nobody promised zero roaches.</p>
+    </div>
+    <div class="col">
+      <h2>Lab versus real kitchens</h2>
+      <div class="num">
+        <div><span class="big">over 80%</span><span>In the lab, all six baits killed more than 80 percent of roaches within 14 days, including roaches collected from the study apartments.</span></div>
+        <div><span class="big">54 to 95%</span><span>In the Kentucky lab tests, between 54 and 95 percent of roaches were dead after two days, depending on the product.</span></div>
+        <div><span class="big">about 81%</span><span>Combat bait stations killed about 81 percent of roaches by day 14 in the lab, yet never showed a significant drop in real homes.</span></div>
+      </div>
+      <p>A lab kill rate does not promise a home result. Those same Combat stations passed the lab and still failed in real kitchens, which is why your own trap counts matter.</p>
+
+      <h2>What happened in the homes</h2>
+      <div class="num">
+        <div><span class="big">within 1 mo</span><span>With Hot Shot stations the average daily trap count was significantly lower by month one, and stayed lower through month four. Professional gel showed the same pattern.</span></div>
+        <div><span class="big">about 30%</span><span>Combat gel was slower. It cut counts about 30 percent at one month, and the drop only became significant at month two.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">Verdict</div><div class="sh" style="flex:1;background:var(--ink-2);">Bait beats sprays and bombs</div></div>
+    <div class="srow"><div class="scell lose"><span class="tag">Sprays and bug bombs</span>Bug bombs reduced no roach populations in 20 infested homes. Sprays kill the one you hit, not the colony in the wall.</div><div class="scell win"><span class="tag">The right bait</span>Hot Shot liquid stations, about 31 dollars, matched professional gel in real apartments. Combat gel is a slower, cheaper second choice.</div></div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Pest · Page 2 · Which Brand and What It Costs</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Which brand worked</h2>
+      <table class="tbl">
+        <tr><th>Product</th><th>Real home result</th></tr>
+        <tr class="win"><td>Hot Shot liquid stations</td><td>Best record in this test. Matched professional gel. Significant drop by month one.</td></tr>
+        <tr class="mid"><td>Combat gel</td><td>Slower second choice. About 30 percent at one month, significant at month two. About 20 dollars if you can wait.</td></tr>
+        <tr class="lose"><td>Combat bait stations</td><td>Skip. Never a significant drop, even after passing the lab test. Team suspects dried bait or the plastic station, but did not test that.</td></tr>
+        <tr class="win"><td>Professional gel</td><td>Best case comparison. Applied as hundreds of small dots. About 114 dollars in materials, before labor.</td></tr>
+      </table>
+      <p class="note">The researchers say the store bought station failures may call for a fresh look at recommending those baits. A professional using gel applies the same kind of product you can buy, so you pay for labor and expertise, and the bait itself is cheap.</p>
+
+      <h2>How the money lines up</h2>
+      <table class="tbl">
+        <tr><th>Item</th><th>Cost (from the study and a cost guide)</th></tr>
+        <tr><td>Hot Shot six pack</td><td>about 10 dollars per pack</td></tr>
+        <tr class="win"><td>Hot Shot per home</td><td>average 18 stations, which is three packs, about 31 dollars over the study</td></tr>
+        <tr><td>Combat gel</td><td>about 10 dollars a tube, homes averaged about two tubes</td></tr>
+        <tr><td>Professional gel materials</td><td>about 114 dollars, before any labor</td></tr>
+        <tr class="lose"><td>Professional visit</td><td>about 150 to 350 dollars, one cost guide</td></tr>
+        <tr class="lose"><td>Ongoing plan</td><td>about 50 to 100 dollars a month</td></tr>
+      </table>
+    </div>
+    <div class="col">
+      <div class="box amber">
+        <h2>The headline price gap</h2>
+        <p style="margin-bottom:0;">Even at the low end, a professional visit costs about <b>five times</b> what three packs of Hot Shot stations did. Neither number counts your time or the sticky traps. Local quotes vary, and so do shelf prices.</p>
+      </div>
+
+      <h2>Pick your route</h2>
+      <ul class="dot">
+        <li><b>Best record:</b> Hot Shot liquid stations, about 31 dollars.</li>
+        <li><b>Cheapest that worked, if you can wait:</b> Combat gel, about 20 dollars, significant drop at month two.</li>
+        <li><b>Do not bother:</b> Combat bait stations.</li>
+        <li><b>Hands off or serious infestation:</b> a licensed professional applies the same cheap bait plus expertise.</li>
+      </ul>
+
+      <h2>First, confirm the roach</h2>
+      <ul class="check">
+        <li>German cockroach, about half an inch long, with two dark stripes behind the head.</li>
+        <li>If yours are much bigger, or have no stripes, this test does not cover them.</li>
+        <li>Your county extension office can identify them for you.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Pest · Page 3 · How To Set It Up</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>The steps in order</h2>
+      <ol class="step">
+        <li><b>Look for clues.</b> Dark specks of droppings along cabinet edges and behind appliances mark the spots roaches use most.</li>
+        <li><b>Clear hiding places.</b> Remove cardboard boxes, paper bags, and clutter in the kitchen and bathroom. Seal cracks and openings where you can.</li>
+        <li><b>Count first.</b> Set four sticky traps in the kitchen, along cabinet and wall edges, near the refrigerator, under the sink, and in cabinets where you have seen roaches. Leave a week, then count, and write down the number and the date.</li>
+        <li><b>Cut off food and water.</b> Fix leaks, seal food, keep trash lids tight, empty food trash every night, wipe spills right away, and vacuum crumbs behind the stove and refrigerator.</li>
+        <li><b>Place the bait.</b> Follow the label. Put it where your traps caught the most roaches.</li>
+        <li><b>Give it time.</b> It can take seven days or longer to see fewer roaches. Recount each week or two.</li>
+      </ol>
+
+      <div class="box">
+        <h3 style="margin-top:0;">Reading your trap count</h3>
+        <p style="margin-bottom:0;">Say you catch 40 in the first week. Many roaches are caught in the first 24 hours, so you get a real number fast. If you are catching 10 a week by month one, the bait is working. If you are still at 40, something is off. Use the same spots for every later count.</p>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Placement, the Kentucky map</h2>
+      <ul class="dot">
+        <li><b>Hot Shot stations:</b> the label allows up to five in the kitchen and one in the bathroom. Pull the side tab to break the vial seal, then set each near walls where roaches travel.</li>
+        <li>Put stations under or next to the stove, the refrigerator, and large appliances, behind smaller appliances, inside cabinets, and behind the toilet.</li>
+        <li><b>Gel instead:</b> small pea sized dabs in cracks and crevices where roaches travel, extra focus on spots that show roach signs. Follow your label for dab size.</li>
+        <li>Keep gel off food surfaces and utensils, and never put it in or on electrical equipment.</li>
+        <li>Behind the toilet and under the stove can also be spots a cat or dog reaches. Think about your own animals before you copy those spots.</li>
+      </ul>
+
+      <h2>While you bait</h2>
+      <div class="num">
+        <div><span class="big">no sprays</span><span>Skip roach sprays, foggers, and bug spray in the kitchen while you bait. Florida's extension service says a repellent near the bait can make it ineffective.</span></div>
+        <div><span class="big">6 months</span><span>Gel baits aged up to six months still killed more than 93 percent of roaches at moderate and low humidity. An older tube is not a dud.</span></div>
+        <div><span class="big">watch mold</span><span>Gel bait in very humid air grew mold. If your bathroom stays steamy, check it more often and swap out anything moldy.</span></div>
+        <div><span class="big">3 months</span><span>The Hot Shot label says replace stations every three months regardless. Replace an empty station with a new one, and do not refill it.</span></div>
+        <div><span class="big">100 days</span><span>The German cockroach life cycle runs about 100 days, so real control takes weeks. Keep traps out the whole time.</span></div>
+      </div>
+      <p class="note">Expect the count to drop by month one. If not, recheck placement and cleanup. Still flat at month two, switch to a bait with a different active ingredient, not just a different brand, or call a professional.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Pest · Page 4 · Safety and Why Sprays Fall Short</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>Safety and who should skip this</h2>
+        <ul class="check">
+          <li><b>Roach bait is a pesticide. Follow the label.</b> Keep every station and dab of gel where children and pets truly cannot reach it.</li>
+          <li>A heavy appliance or a cabinet latch is not a guarantee. A child or pet can chew into even a sealed station.</li>
+          <li>Wash your hands with soap and water after handling stations. Do not reuse an empty one.</li>
+          <li><b>Skip the do it yourself route</b> if a crawling baby, or a pet that gets into cabinets, can reach the spots you need to treat. Hire a licensed pest professional instead.</li>
+          <li>Do the same for a serious infestation. Roaches walking in daylight usually mean a large population that needs more than one tactic.</li>
+          <li><b>If you rent, tell your landlord.</b> Sprays can push roaches into neighboring units. Ask them to treat the whole building, and show them your dated trap counts.</li>
+        </ul>
+      </div>
+      <div class="box amber">
+        <h2>If someone swallows bait</h2>
+        <p>Call Poison Help right away at <b>1 800 222 1222</b> in the United States. It is free, and someone answers around the clock. Do not make them vomit, and keep the package handy.</p>
+        <p style="margin-bottom:0;">If the person collapses, has a seizure, or struggles to breathe, call <b>911</b> instead. For a pet, call your vet or an animal poison line.</p>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Why sprays and bombs fall short</h2>
+      <div class="num">
+        <div><span class="big">none</span><span>2019 test: four bug bomb products set off in 20 infested homes reduced no cockroach populations. Pesticide on kitchen surfaces was a median 85 times higher afterward. In 10 other homes, gel baits at a similar price caused significant declines.</span></div>
+        <div><span class="big">5 days</span><span>2024 lab study: sprays killed roaches hit directly, but when roaches only walked across dried spray for 30 minutes far fewer died. Some products needed up to five days of constant contact.</span></div>
+        <div><span class="big">25 to 4</span><span>2004 public housing trial: monthly sprays and dusts had little effect over a year. Bait, vacuuming, and growth regulator devices cut the average count from about 25 to about 4 by month four.</span></div>
+      </div>
+      <h3>Why there are so many</h3>
+      <div class="num">
+        <div><span class="big">30 to 40</span><span>A female makes four to eight egg cases of 30 to 40 eggs each. An adult fits into a crack one sixteenth of an inch wide.</span></div>
+        <div><span class="big">30,000</span><span>The University of California says one female and her offspring can produce as many as thirty thousand roaches in a year.</span></div>
+      </div>
+      <h3>How bait spreads through the colony</h3>
+      <div class="num">
+        <div><span class="big">38 of 50</span><span>2008 lab study: the droppings of one adult that ate bait killed 38 of 50 young roaches within 72 hours. Those dead young then killed 16 of 20 adult males within another 72 hours.</span></div>
+        <div><span class="big">glucose</span><span>Some German cockroaches reject glucose, a sugar in many baits. A 2023 study found droppings pass that along, so fewer young die. Researchers suggest rotating different kinds of baits.</span></div>
+      </div>
+      <p class="note">Roaches matter for asthma too. A 1997 study of 476 inner city children found those allergic to roach allergen and living with high levels had 37 hospitalizations per 100 children a year, against 11 for others. That is an association, not proof. Killing roaches does not remove the allergen, so keep cleaning as you bait, soapy water then a clean water rinse, around the bait, never over it.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> <a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">youtube.com/@SketchySurvival101</a><br>
+    <b>More free sheets:</b> <a href="https://sketchysurvival101.com/free" target="_blank" rel="noopener">sketchysurvival101.com/free</a><br>
+    Subscribe so the next infestation does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Every number on this sheet comes straight from the video, with its hedges kept: dated studies, best case comparisons, lab versus real home results, single state samples, and averages that are not promises. Shelf prices and local quotes move, so check current listings before you buy.</div>
+</section>
+</body>
+</html>
