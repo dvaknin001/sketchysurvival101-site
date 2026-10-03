@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 10 Dollar Box That Finishes Cooking With No Fuel. Every Number. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:30px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ol.step{ counter-reset:step; }
+  ol.step li{ counter-increment:step; }
+  ol.step li::before{ content:counter(step); position:absolute; left:0; top:1px; width:16px; height:16px; background:var(--ink); color:var(--yellow); border-radius:50%; font-family:Anton; font-size:11px; text-align:center; line-height:16px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box ul{ margin-bottom:0; }
+  table.tbl{ width:100%; border-collapse:collapse; margin-bottom:10px; border:2px solid var(--ink); }
+  table.tbl th{ background:var(--ink); color:var(--yellow); font-family:Anton; font-weight:400; font-size:11.5px; letter-spacing:.5px; text-align:left; padding:6px 8px; text-transform:uppercase; }
+  table.tbl td{ font-size:11.5px; line-height:1.35; padding:6px 8px; border-top:1px solid var(--line); vertical-align:top; }
+  table.tbl tr:nth-child(even) td{ background:#f6f6f2; }
+  table.tbl td.boil{ font-family:Archivo; font-weight:800; color:var(--yellow-2); white-space:nowrap; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .sh{ background:var(--ink); color:var(--yellow); font-family:Anton; font-size:13px; padding:5px 10px; letter-spacing:.5px; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+  .eq{ font-family:Archivo,Arial,sans-serif; font-weight:800; font-size:12px; background:var(--ink); color:var(--yellow); padding:6px 10px; border-radius:5px; margin:4px 0 8px; display:block; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 &middot; Free Cheat Sheet &middot; Off Grid Cooking</div>
+    <h1>The 10 Dollar Box That Finishes Cooking With No Fuel</h1>
+    <div class="sub">Boil for 10 minutes, seal the pot in a box of blankets, and the stored heat keeps cooking for hours. The physics, the build, the boil times, and the safety line that keeps the food from making you sick.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">A storage tote or cardboard carton stuffed with the blankets in your closet. You boil the pot on the stove for 10 minutes, seal it in the box, and walk away. Hours later the food is still above 170 degrees and still cooking, on no extra fuel. It is the old hay box cooker, rebuilt for 10 dollars.</p>
+      <p>The trick: a boiling pot stops getting hotter at 212 degrees. After that, the flame is only replacing heat that leaks out the sides. Insulate the pot and the leak slows to a crawl, so the stored heat does the long simmer for you.</p>
+
+      <h2>Where the fuel actually goes</h2>
+      <div class="num">
+        <div><span class="big">10 min</span><span>Time a flame spends raising the pot to a boil. After that the water holds at 212 degrees, no matter how big the flame.</span></div>
+        <div><span class="big">about 65 W</span><span>Heat a lidded pan of 4 liters of boiling water leaks on a bench, from a 2014 university lab test in Bangladesh. It fell to 149 degrees in about two and a half hours.</span></div>
+        <div><span class="big">about 3,000 W</span><span>A camp stove burner wide open. Even turned low it puts out many times what the pot leaks, so the extra leaves as steam.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>What the box does to the leak</h2>
+      <div class="num">
+        <div><span class="big">about 18 W</span><span>Same 4 liters, same lab, now inside a padded Wonderbag cooking bag from South Africa. It took about 9 hours to fall to 149 degrees. Insulation cut the leak to roughly a quarter.</span></div>
+        <div><span class="big">172&deg;F at 4 hr</span><span>A 1919 United States Department of Agriculture bulletin packed a 6 quart kettle of boiling water in a box of crumpled newspaper. Still 172 degrees after 4 hours.</span></div>
+        <div><span class="big">155&deg;F at 8 hr</span><span>Same 1919 test, 8 hours in. That full kettle of newspaper insulation is where the 170 degree promise comes from.</span></div>
+      </div>
+      <h3>Think of the pot as a battery</h3>
+      <p>The stove charges it in 10 minutes. The box only has to stop it draining.</p>
+      <div class="num" style="margin-bottom:0;">
+        <div><span class="big">about 500 Wh</span><span>Rough heat a 6 quart pot at a boil holds above room temperature.</span></div>
+        <div><span class="big">65 vs 18 W</span><span>Leaking at 65 watts, most of it is gone by bedtime. Leaking at 18, it lasts through the night.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">The idea</div><div class="sh" style="flex:1;background:var(--ink-2);">Stove vs box</div></div>
+    <div class="srow"><div class="scell lose"><span class="tag">Stove at a simmer</span>Burns fuel the whole cook just to replace heat the pot leaks out the sides.</div><div class="scell win"><span class="tag">The box</span>Slows the leak so the heat already in the pot finishes the cook on no fuel at all.</div></div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Off Grid Cooking &middot; Page 2 &middot; Why It Cooks, and the Build</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Why half raw is not the risk</h2>
+      <p>Cooking is chemistry that runs on temperature, and most of it runs well below a boil.</p>
+      <div class="num">
+        <div><span class="big">about 150&deg;F</span><span>Rice starch starts to swell and soften.</span></div>
+        <div><span class="big">about 160&deg;F</span><span>Tough collagen in a cheap cut of beef starts turning to gelatin. That change needs time more than heat, which is why stew takes hours on any stove.</span></div>
+        <div><span class="big">212 to 172&deg;F</span><span>A pot drifting down over 4 hours stays above both those numbers the whole time.</span></div>
+        <div><span class="big">22 to 48%</span><span>Energy the 2014 Bangladesh team saved on foods needing short simmers. Rice, potatoes, chicken, and mixed vegetables all came out done, and they rated the texture better than the stovetop. On beans and long stews the saving should be larger, but that study did not test them.</span></div>
+      </div>
+
+      <h2>Shopping list</h2>
+      <div class="num">
+        <div><span class="big">about $7</span><span>An 18 gallon Sterilite tote at Walmart. A grocery store cardboard box is free.</span></div>
+        <div><span class="big">about $4</span><span>A fleece throw at Walmart. Old towels, a spare blanket, a sleeping bag, or crumpled newspaper all work too.</span></div>
+        <div><span class="big">under $10</span><span>Either combination. The pot you already own does the rest.</span></div>
+        <div><span class="big">about $93</span><span>What the commercial bag from the lab test sells for new on eBay, for comparison.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Build the box</h2>
+      <ol class="step">
+        <li>Pick a shell with walls and a lid that leaves 4 to 6 inches of space around the pot on every side, and a few inches above it.</li>
+        <li>Pack the bottom 4 inches solid with soft dry insulation. Press it firm, do not crush it, since the trapped air is what insulates.</li>
+        <li>Line the sides so the pot sits in a nest. Keep the packing firm, the top layer loose.</li>
+        <li>Set a wood cutting board or a folded towel in the bottom of the nest. A pot straight off the boil is 212 degrees and never sits on bare plastic or foam.</li>
+        <li>Get a real rolling boil on the stove, then move the pot straight into the nest with the lid on tight.</li>
+        <li>Press a folded towel or pillow over the pot lid, since heat rises and the top is where most of it leaves. Then close the box lid.</li>
+      </ol>
+
+      <h2>Get the pot right</h2>
+      <ul class="check">
+        <li>Use a tight lid. A loose lid dumps steam and heat.</li>
+        <li>Keep the pot at least three quarters full. The Bangladesh team advised 80 percent full, since their small loads cooled fastest. The heat is stored in the food, so a half empty pot is a half charged battery.</li>
+        <li>For a small batch, set the small pot inside a bigger pot of boiling water and box the pair, so the water carries the heat. That fix is from the 1919 bulletin.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Off Grid Cooking &middot; Page 3 &middot; Boil Times and the Beans Rule</div>
+  </div>
+  <h2>Boil first, then box it</h2>
+  <p class="lead">Get a full rolling boil on the stove, move the pot into the nest, close it up, and leave it alone. The rice, oatmeal, and bean times come straight from the 1919 government bulletin.</p>
+  <table class="tbl">
+    <thead>
+      <tr><th style="width:26%;">Food</th><th style="width:22%;">Boil on stove</th><th style="width:22%;">Then in the box</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Plain rice</td><td class="boil">5 min</td><td class="boil">45 min to 1 hr</td><td>From the 1919 bulletin.</td></tr>
+      <tr><td>Oatmeal, the real kind</td><td class="boil">10 min</td><td class="boil">2 to 3 hr</td><td>From the 1919 bulletin. Good as an overnight pot.</td></tr>
+      <tr><td>Soup or stew with meat</td><td class="boil">until cooked through</td><td class="boil">4 to 6 hr</td><td>Cut meat small. A thermometer in the thickest piece should read 165 degrees before it goes in the box.</td></tr>
+      <tr><td>Dried kidney beans</td><td class="boil">full 30 min</td><td class="boil">about 6 hr</td><td>Soak and boil first, see the box below. If still firm, boil 5 min and put them back.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box red">
+    <h2>Kidney beans carry a toxin, do this first</h2>
+    <p>Red kidney beans hold a natural toxin that a low slow heat does not destroy. Slow cookers have caused outbreaks because they never get hot enough.</p>
+    <div class="num" style="margin-bottom:8px;">
+      <div><span class="big">4 or 5 beans</span><span>As few as this, eaten raw, can set off hours of vomiting, per the Food and Drug Administration.</span></div>
+    </div>
+    <ul class="check">
+      <li>Soak the beans at least 5 hours, then pour that water off.</li>
+      <li>Boil them in fresh water for a full 30 minutes. Both steps are the agency's own advice.</li>
+      <li>Only then give them about 6 hours in the box, the time the 1919 bulletin used.</li>
+    </ul>
+  </div>
+
+  <p class="note">The box handles anything you would boil or stew. It will not fry, roast, bake, or brown.</p>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Off Grid Cooking &middot; Page 4 &middot; Safety, Cold Kitchens, Fuel Math</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>The rules that keep it safe</h2>
+        <p>Raw meat gets fully cooked at the boil, before it ever goes in the box. After that, one number keeps it safe, and it is 140 degrees.</p>
+        <div class="num" style="margin-bottom:8px;">
+          <div><span class="big">40 to 140&deg;F</span><span>The Department of Agriculture danger zone, where bacteria can double in as little as 20 minutes.</span></div>
+          <div><span class="big">over 2 hr</span><span>Time in that zone after which food gets thrown out.</span></div>
+          <div><span class="big">140&deg;F</span><span>At or above, and cooked through, it is safe to serve. Below 140, you do not know how long it sat, so throw it out. Reheating will not make it safe.</span></div>
+        </div>
+        <ul class="check">
+          <li>Keep the pot full and the lid shut. Every peek dumps heat you cannot get back, and small loads cool much faster than full ones.</li>
+          <li>For small children, anyone pregnant, older people, or anyone with a weak immune system, bring it back to a full boil right before serving, even at 140 or above.</li>
+          <li><b>Never</b> put a hot brick, heated stone, or any heat source inside a cardboard or plastic box. The 1919 bulletin warns a hot stone can set paper packing on fire. The box holds a pot of hot food and nothing else.</li>
+          <li>Keep the box on the floor of the warmest room, on a rug, away from where a child can tip it. It is 6 quarts of near boiling liquid in a soft package.</li>
+        </ul>
+      </div>
+      <div class="box amber">
+        <h2>Carbon monoxide: the stove stays outside</h2>
+        <p style="margin-bottom:6px;">The box makes no exhaust, so the long cook can happen inside. The flame that starts the boil cannot.</p>
+        <div class="num" style="margin-bottom:0;">
+          <div><span class="big">400+ a year</span><span>Americans killed by accidental carbon monoxide, not counting fires, per the Centers for Disease Control. Camp stoves, grills, and generators are on its list. Never run them inside a home, basement, or garage, even with a door open.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Cold kitchens and overnight pots</h2>
+      <p>Heat leaks in proportion to the gap between the pot and the room, so a cold kitchen drains the pot faster.</p>
+      <div class="num">
+        <div><span class="big">130&deg; gap</span><span>A 200 degree pot in a 70 degree kitchen.</span></div>
+        <div><span class="big">155&deg; gap</span><span>The same pot in a 45 degree kitchen. It leaks about a fifth faster, by simple proportion.</span></div>
+      </div>
+      <p>The fix is more blanket and a fuller pot, in the warmest room, on a rug, never on bare concrete. For the overnight oats, boil 10 minutes at 10 at night. Beans still get their full 30 minute boil first. In the morning, the thermometer goes in before anything else. The 8 hour test reading was 155 with a full kettle, so a well packed full pot should stay above 140. Under 140, throw it out.</p>
+
+      <h2>The fuel math</h2>
+      <div class="num">
+        <div><span class="big">about 2 hr</span><span>What one 16 ounce canister runs a single Coleman burner on high. The spec is both burners for about an hour, so call it 4 to 6 hours at a simmer. That part is an estimate, since Coleman does not publish low flame figures.</span></div>
+        <div><span class="big">3 pots</span><span>Beef stew cooked the normal way, about two thirds of a canister each, gets roughly three pots from two canisters.</span></div>
+        <div><span class="big">6 to 8 pots</span><span>With the box you only boil, about a quarter to a third of a canister each. Two canisters make six to eight pots, roughly double. Treat these as estimates.</span></div>
+        <div><span class="big">about $5.50</span><span>A canister at Walmart on a normal day. The day a storm gets a name, that shelf is one of the first to empty. A box stretches every canister you already stored.</span></div>
+      </div>
+      <p class="note">Keep canisters outdoors in a shaded, airy spot, never in the house or a closed garage.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> <a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">youtube.com/@SketchySurvival101</a><br>
+    <b>More free sheets:</b> <a href="https://sketchysurvival101.com/free" target="_blank" rel="noopener">sketchysurvival101.com/free</a><br>
+    No propane at all? The 2 dollar rocket stove video shows how to get a rolling boil from a handful of twigs. Subscribe so the next outage does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Every number on this sheet comes straight from the video, with its hedges kept: a 2014 lab test, a 1919 government bulletin, best case energy savings, and fuel figures that are estimates because the maker does not publish low flame numbers. This is food safety, so when in doubt, check a thermometer and throw it out.</div>
+</section>
+</body>
+</html>
