@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>40 Dollars of Barrels Beats a 2,000 Dollar Water Tank. Every Number. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:28px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  ol.step{ counter-reset:s; }
+  ol.step li{ padding-left:26px; }
+  ol.step li::before{ counter-increment:s; content:counter(s); position:absolute; left:0; top:0; width:17px; height:17px; background:var(--ink); color:var(--yellow); font-family:Anton; font-size:11px; border-radius:4px; text-align:center; line-height:17px; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box ul{ margin-bottom:0; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .sh{ background:var(--ink); color:var(--yellow); font-family:Anton; font-size:13px; padding:5px 10px; letter-spacing:.5px; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+  .eq{ font-family:Archivo,Arial,sans-serif; font-weight:800; font-size:12px; background:var(--ink); color:var(--yellow); padding:6px 10px; border-radius:5px; margin:4px 0 8px; display:block; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet · Water</div>
+    <h1>40 Dollars of Barrels Beats a 2,000 Dollar Water Tank</h1>
+    <div class="sub">Two used food grade drums hold 27 days of drinking water for four, as safe as a two thousand dollar tank, because darkness, a sealed lid, and a trace of chlorine do the real work.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">Two 55 gallon food grade drums hold 110 gallons. The Centers for Disease Control says to store 1 gallon per person per day and aim for at least 2 weeks, so 110 gallons is enough for four people for 27 days. What keeps water safe inside any container, cheap or expensive, is darkness, a sealed lid, and a trace of chlorine.</p>
+
+      <h2>The storage math</h2>
+      <div class="num">
+        <div><span class="big">1 gallon</span><span>Per person per day to store, the CDC minimum. Aim for at least 2 weeks of supply.</span></div>
+        <div><span class="big">110 gallons</span><span>Two 55 gallon drums together.</span></div>
+        <div><span class="big">27 days</span><span>What 110 gallons covers for four people at the survival rate. Drinking, cooking, and brushing teeth only. Not flushing or showers.</span></div>
+      </div>
+      <p class="note">The gallon a day is a minimum. The CDC says children, nursing mothers, and sick people may need more, and hot weather can double what anyone needs. Pets need water too. If that describes your house, plan on fewer days per drum, or add a third one.</p>
+    </div>
+    <div class="col">
+      <h2>Shopping list and rough cost</h2>
+      <div class="num">
+        <div><span class="big">about 20 ea</span><span>Used food grade drum. Drum exchanges list them from about 15 to 44 dollars each, so call it 20.</span></div>
+        <div><span class="big">about 10</span><span>A bung wrench, to open the plugs without chewing them up.</span></div>
+        <div><span class="big">about 25</span><span>A food safe siphon pump, to lift water out. You cannot tip 460 pounds.</span></div>
+        <div><span class="big">near 75</span><span>Whole setup, two drums plus wrench plus pump. The barrels themselves are the 40 in the title.</span></div>
+      </div>
+      <p class="note">Also on hand: plain unscented bleach, a permanent marker, and optional pool test strips that read free chlorine for a few cents each.</p>
+
+      <h2>Flushing is a separate supply</h2>
+      <p>The 27 days does not cover flushing. Fill the bathtub the moment you hear of a water problem. When you need to flush, pour a bucket down the bowl. That water never has to be clean.</p>
+    </div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">Scoreboard</div><div class="sh" style="flex:1;background:var(--ink-2);">Two drums vs a 2,000 dollar tank</div></div>
+    <div class="srow"><div class="scell win"><span class="tag">Two drums</span>About 36 cents per gallon of storage. 110 gallons, 27 days for four, fits a basement corner. Right tool for a house on city water.</div><div class="scell lose"><span class="tag">1,500 gallon tank</span>About 1 dollar 33 cents per gallon, just under 2,000 dollars, over 12,000 pounds full, needs a level outdoor or barn pad. Made of the same light blocking plastic. The real difference is how much it holds.</div></div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Water · Page 2 · Why the Taps Go Dry, and Picking the Drum</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>How the taps go dry</h2>
+      <div class="num">
+        <div><span class="big">250k to 300k</span><span>Water main breaks a year in this country, the American Society of Civil Engineers estimate. Most are a nuisance. The dangerous failures hit a whole system at once.</span></div>
+        <div><span class="big">17 million+</span><span>People told to boil their tap water during Winter Storm Uri, February 2021. A study published by the Public Library of Science counted more than two thousand public water systems that issued boil water notices. Some lasted a day, some more than a month.</span></div>
+        <div><span class="big">7 weeks</span><span>How long the boil water notice lasted in Jackson, Mississippi, August 2022, a city of about a hundred and fifty thousand. Heavy rain changed the raw water, treatment slowed, tanks drained, pressure collapsed. The National Guard handed out bottled water.</span></div>
+      </div>
+      <p class="note">In both places, bottled water got hard to find fast, because everyone needed it at the same moment. The water already inside your house is the supply that is left.</p>
+    </div>
+    <div class="col">
+      <h2>Choosing the drum</h2>
+      <p>Be picky here. You want a closed top drum, the kind with two screw plugs on the lid. It must be food grade, and you must know exactly what it held. If its history is a mystery, walk away.</p>
+      <ul class="check">
+        <li>Best picks held water, or were never used at all.</li>
+        <li>Syrup or juice concentrate drums can work, but take more cleaning.</li>
+        <li>Open a plug and smell it. If it smells like anything but plastic, pass. Brine smell stays in the plastic, so most pickle and olive drums are out.</li>
+        <li>Car wash drums held soap, so they are out. Anything that carried solvent, soap, or something off a factory floor is out at any price.</li>
+        <li>The CDC rules out old milk and juice jugs, because milk protein and fruit sugar are hard to wash out.</li>
+      </ul>
+      <p class="note">The plastic is high density polyethylene. It soaks up some of whatever it held, which is why history matters. Bottling plants and bakeries sell food drums, often with no shipping cost on local listings.</p>
+    </div>
+  </div>
+
+  <h2>Cleaning it</h2>
+  <div class="row">
+    <div class="col">
+      <ol class="step">
+        <li>Wash the inside with dish soap and hot water.</li>
+        <li>For a syrup or juice drum, rinse with hot water several times, until the rinse runs clear and no longer tastes sweet.</li>
+        <li>Sanitize: mix 1 teaspoon of plain, unscented bleach into each quart of water. For a drum, that is 4 teaspoons in a gallon.</li>
+        <li>Cap it and roll it on its side, so the solution wets every wall.</li>
+        <li>Wait at least 30 seconds, pour it out, and let it air dry.</li>
+      </ol>
+    </div>
+    <div class="col">
+      <div class="box amber">
+        <h3 style="margin-top:0;">Quick sanitize recipe</h3>
+        <span class="eq">1 teaspoon plain unscented bleach per quart = 4 teaspoons per gallon</span>
+        <p style="margin-bottom:0;" class="note">This is for sanitizing the empty drum, not for dosing the stored water. The water dose is different and is on page 3.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Water · Page 3 · Where It Sits, Filling, and Keeping It Good</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Where it sits</h2>
+      <p>Position it before you fill it. Once full it is not moving, so fill it where it will live.</p>
+      <div class="num">
+        <div><span class="big">about 460 lb</span><span>Weight of a full 55 gallon drum, because a gallon weighs just over 8 pounds. Heavier than most refrigerators, all on a circle about 2 feet across.</span></div>
+        <div><span class="big cy">50 to 70 F</span><span>Cool, dark spot the CDC asks for. A basement is ideal. Set it on a scrap of plywood, since extension services say to keep drums off bare concrete.</span></div>
+      </div>
+      <ul class="check">
+        <li>Put it on a slab or basement floor. Never upstairs on a wood framed floor.</li>
+        <li>An unheated garage can get too hot in summer, and can freeze in a storm like Uri. A frozen drum is useless, and ice can split the plastic or pop the plugs. Choose a spot that stays above freezing.</li>
+        <li>Keep it away from where gasoline or pesticides are stored. The plastic can absorb those fumes.</li>
+      </ul>
+
+      <h2>Filling and dosing</h2>
+      <p>Fill from the tap, or from a hose rated for drinking water. An ordinary garden hose is not rated for it.</p>
+      <p class="note">Utah State's extension service says most city treated water is safe to store without adding anything, and suggests a chlorine dose as insurance. On a well, the dose is not optional, because well water has no chlorine to begin with.</p>
+    </div>
+    <div class="col">
+      <div class="box amber">
+        <h3 style="margin-top:0;">The dose, EPA emergency rate</h3>
+        <span class="eq">8 drops of 6 percent bleach per gallon, OR 6 drops of the 8 percent kind</span>
+        <div class="num" style="margin-bottom:0;">
+          <div><span class="big">2 Tbsp + 1 tsp</span><span>Of 6 percent bleach for a full 55 gallon drum.</span></div>
+          <div><span class="big">1 Tbsp + 2 tsp</span><span>Of 8 percent bleach for a full 55 gallon drum.</span></div>
+        </div>
+      </div>
+      <ul class="check">
+        <li>Use plain bleach. Skip the scented kind, the splashless kind, and anything with added cleaners.</li>
+        <li>Stir it in, cap both plugs, and write the date on the side with a marker.</li>
+        <li>The water should smell faintly of chlorine, the same check the agency uses.</li>
+        <li>For a number instead of a sniff, dip a pool test strip at fill and again at three months. If it reads zero, that drum is due for a refill early.</li>
+      </ul>
+      <h3>Rotate every six months</h3>
+      <p class="note">Empty it into the garden or washing machine and refill. Buy a fresh jug of bleach each time, because Clorox says bleach loses strength after about a year on the shelf. Draw water with the pump, never by dipping. Crack the second plug a turn while you pump so air can replace the water, then close it again.</p>
+    </div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">Why it stays good</div><div class="sh" style="flex:1;background:var(--ink-2);">Darkness, seal, chlorine</div></div>
+    <div class="srow"><div class="scell win"><span class="tag">The opaque drum wins</span>Treated tap water arrives with a small chlorine residual. The EPA caps that dose at 4 milligrams per liter and requires a detectable amount through the system. The blue drum blocks light, the tight plugs keep dust and spores out and the chlorine from gassing off, and the cool spot slows every reaction.</div><div class="scell lose"><span class="tag">A clear jug in the sun loses</span>Ultraviolet light breaks down hypochlorite, the working form of chlorine. A 2024 study in the American Journal of Tropical Medicine and Hygiene found stored water in direct sunlight lost its chlorine 2 to almost 4 times faster than the same water in shade. Sunlight also powers algae.</div></div>
+  </div>
+  <p class="note" style="margin-top:2px;">Utah State's extension service says water that is properly disinfected and stored has an indefinite shelf life. Even in the dark the chlorine fades slowly, and warm water speeds that up, so the six month rotation replaces it before it is gone.</p>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Water · Page 4 · Safety, the Tank, and the Refill</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>Safety first</h2>
+        <ul class="check" style="margin-top:2px;">
+          <li><b>Never put 460 pounds on a wood framed upstairs floor.</b> Store the same water in 5 to 7 gallon jugs spread along a wall, sanitized and dosed the same way. Use jugs too if you have nowhere dark and cool.</li>
+          <li><b>Guard against freezing.</b> Ice can split the plastic or pop the plugs, leaving you with nothing when you need it.</li>
+          <li><b>Never drink from a drum whose history you do not know.</b> If a drum smells of fuel or anything chemical, do not drink it. Boiling does not remove chemicals.</li>
+          <li><b>A drum filled before a boil water notice, from water that was safe then, is still safe to drink.</b></li>
+        </ul>
+      </div>
+      <div class="box amber">
+        <h2>If you are worried about germs</h2>
+        <p>Bring the water to a rolling boil for 1 minute, or 3 minutes at high altitude.</p>
+        <h3 style="margin-top:4px;">Treating questionable water once the drums run dry</h3>
+        <span class="eq">8 drops of 6 percent bleach per gallon, stir, wait 30 minutes</span>
+        <ul class="dot" style="margin-top:2px;">
+          <li>If the water is cloudy, let it settle and pour it through a clean cloth first.</li>
+          <li>It should smell faintly of chlorine. If it does not, dose again and wait another 15 minutes.</li>
+        </ul>
+      </div>
+      <div class="box red">
+        <h2>The water heater trap</h2>
+        <p>Your water heater holds another 40 to 50 gallons. The moment you hear of a problem, close your home's main water shutoff so nothing contaminated gets pulled in.</p>
+        <ul class="check">
+          <li>Shut off its power or gas, and close the cold inlet. Open a hot tap upstairs to let air in, drain from the valve at the bottom.</li>
+          <li><b>That water sits near 120 to 140 degrees and can scald you in seconds.</b> Let it cool fully before you drain and drink it.</li>
+          <li>If it is electric, refill the tank completely before you turn the power back on, or the element burns out.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <h2>What 2,000 dollars buys</h2>
+      <div class="num">
+        <div><span class="big">under 2,000</span><span>Tank Depot sells a Bushman fifteen hundred gallon tank, approved for drinking water, for just under two thousand dollars.</span></div>
+        <div><span class="big">12,000 lb+</span><span>What it weighs full. It needs a level pad, outdoors or in a barn.</span></div>
+        <div><span class="big">1.33 vs .36</span><span>Cost per gallon of storage: about 1 dollar 33 cents for the tank, about 36 cents for two used drums.</span></div>
+        <div><span class="big">1,500 gal</span><span>More than a year of drinking water for four at the survival rate. Right tool if you run livestock, or a well pump that dies with the power.</span></div>
+      </div>
+
+      <h2>The obvious alternative</h2>
+      <div class="num">
+        <div><span class="big">about 830</span><span>Half liter bottles needed to match 110 gallons. Those are the shelves that empty first. Keep a couple of cases for the car. Bottled water never needs rotating.</span></div>
+      </div>
+
+      <h2>Where the refill comes from</h2>
+      <div class="num">
+        <div><span class="big cy">15,000 gal</span><span>Rain a typical roof sheds in a year, the biggest catch surface you own. Some states limit how much you can keep. See our video on the roof that catches fifteen thousand gallons of free water a year.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> <a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">youtube.com/@SketchySurvival101</a><br>
+    <b>More free sheets:</b> <a href="https://sketchysurvival101.com/free" target="_blank" rel="noopener">sketchysurvival101.com/free</a><br>
+    Subscribe so the next boil water notice does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Every number on this sheet comes straight from the video, with its hedges kept: minimums not guarantees, dated storm figures, single maker and single study estimates, and best case rates. Doses follow the CDC, EPA, Utah State extension, and the bleach maker. Check current listings and your local rules before you act.</div>
+</section>
+</body>
+</html>
