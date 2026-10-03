@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A 180 Dollar Battery Runs a CPAP All Week. Every Number. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:28px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  ol.step{ counter-reset:s; }
+  ol.step li{ padding-left:26px; }
+  ol.step li::before{ counter-increment:s; content:counter(s); position:absolute; left:0; top:0; width:17px; height:17px; background:var(--ink); color:var(--yellow); font-family:Anton; font-size:11px; border-radius:4px; text-align:center; line-height:17px; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box ul{ margin-bottom:0; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .sh{ background:var(--ink); color:var(--yellow); font-family:Anton; font-size:13px; padding:5px 10px; letter-spacing:.5px; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+  .eq{ font-family:Archivo,Arial,sans-serif; font-weight:800; font-size:12px; background:var(--ink); color:var(--yellow); padding:6px 10px; border-radius:5px; margin:4px 0 8px; display:block; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 · Free Cheat Sheet · Power and Medical</div>
+    <h1>A 180 Dollar Battery Runs a CPAP All Week</h1>
+    <div class="sub">A 12 volt lithium iron phosphate battery, 50 amp hours, under 12 pounds, holds about 640 watt hours. A ResMed AirSense 10 with the humidifier off draws 7 watts, so one battery covers more than a week of nights, silently, right in the bedroom where a generator would kill you.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">The whole trick is one unit: the watt hour. A watt hour is one watt for one hour, and it is the only unit that matters for a battery. The machine sips a few watts, the battery stores hundreds of watt hours, so the math is just draw times hours. The battery sits in a box under the nightstand. No fuel, no fumes, no noise.</p>
+
+      <h2>The watt hour math</h2>
+      <div class="num">
+        <div><span class="big">640 Wh</span><span>What the battery holds. Listings give amp hours, which mean nothing until you multiply by volts. These cells sit at about 12.8 volts, so 50 amp hours works out to roughly 640 watt hours.</span></div>
+        <div><span class="big">600 Wh</span><span>Plan on this as usable. The maker rates a full discharge, but never run it to the floor.</span></div>
+      </div>
+      <p class="note">Power stations at the hardware store print watt hours on the box. So does this battery, which lets you compare them straight across.</p>
+    </div>
+    <div class="col">
+      <h2>Shopping list and rough cost</h2>
+      <div class="num">
+        <div><span class="big">180</span><span>Redodo 12 volt, 50 amp hour lithium iron phosphate battery.</span></div>
+        <div><span class="big">about 95</span><span>A direct current converter made for your machine. ResMed lists one for the AirSense 11, and one for the AirSense 10, at supply stores.</span></div>
+        <div><span class="big">about 15</span><span>A fused 12 volt socket with ring terminals, the kind sold for boats and campers.</span></div>
+        <div><span class="big">up to 80</span><span>A lithium iron phosphate charger from the battery maker.</span></div>
+        <div><span class="big">under 375</span><span>The whole kit. The generator, at twelve hundred dollars, cannot safely come inside at all.</span></div>
+      </div>
+      <p class="note">No wiring at all? A portable power station with a 12 volt socket and around 500 watt hours does the same job, charger and display built in. You usually pay more for the same stored energy, but there is nothing to bolt together.</p>
+    </div>
+  </div>
+  <h2>Nightly draws, from ResMed's own power table</h2>
+  <div class="num">
+    <div><span class="big">7 watts</span><span>Machine alone, humidifier off. Over an 8 hour night, about 56 watt hours. More than a week of nights on one battery.</span></div>
+    <div><span class="big">22 watts</span><span>Machine plus the heated humidifier.</span></div>
+    <div><span class="big">34 watts</span><span>Machine plus heated humidifier plus the heated tube. All on, about 270 watt hours a night, which is only about two nights on the battery.</span></div>
+    <div><span class="big">5 watts</span><span>Standby. Over a 16 hour day that is 80 watt hours, more than a full night of therapy.</span></div>
+  </div>
+  <div class="score">
+    <div class="srow"><div class="sh" style="flex:0 0 120px;">Scoreboard</div><div class="sh" style="flex:1;background:var(--ink-2);">The battery vs a generator, for this one job</div></div>
+    <div class="srow"><div class="scell win"><span class="tag">The 180 dollar battery</span>Silent, fumeless, sits under the nightstand. Delivers about 56 watt hours a night to a 7 watt machine. More than a week of nights with the humidifier heat off.</div><div class="scell lose"><span class="tag">A 1,200 dollar generator</span>A Honda 2200 makes eighteen hundred running watts, but makes carbon monoxide, so it can only run from outside, 20 feet from the house. Burns most of a gallon of gasoline a night to deliver the same 56 watt hours.</div></div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Power and Medical · Page 2 · The Humidifier Catch and Getting Power In</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box amber">
+        <h2>The humidifier catch</h2>
+        <p>On grid power nobody notices 34 watts, because it is nothing next to a fridge. On a battery, the heat is four fifths of your load. The difference between about two nights and better than a week is the heated water tank and the heated tube together.</p>
+        <ul class="check" style="margin-top:2px;">
+          <li><b>In a blackout, turn the humidifier's heat off before you plug in.</b> The machine then runs for a week instead of two nights.</li>
+          <li>You can leave water in the tub with the heater off, which takes some of the edge off the dry air.</li>
+        </ul>
+      </div>
+      <div class="box red">
+        <h3 style="margin-top:0;">One habit that costs a whole night</h3>
+        <p style="margin-bottom:0;">The machine draws about 5 watts in standby, per that same ResMed table. Over a 16 hour day that is 80 watt hours, more than a full night of therapy. Unplug the machine from the battery in the morning, or you spend a night's worth of power while nobody sleeps.</p>
+      </div>
+
+      <h2>Who sleeps with a machine</h2>
+      <div class="num">
+        <div><span class="big">30 million</span><span>Americans with obstructive sleep apnea, the American Academy of Sleep Medicine estimates. About 80 percent of them do not know it yet.</span></div>
+        <div><span class="big">3 million+</span><span>Medicare patients who use electricity dependent medical equipment, per the federal empower program at Health and Human Services. It says an outage can put those people in a life threatening spot within hours or days.</span></div>
+      </div>
+      <p class="note">For plain apnea, a missed night usually is not a medical emergency. It is interrupted breathing and dipping oxygen, then a day spent exhausted, often behind the wheel. On a bilevel or servo ventilation machine, ask your doctor how many nights you can safely miss. Anyone on a home ventilator should not improvise at all.</p>
+    </div>
+    <div class="col">
+      <h2>Getting the power in, two ways</h2>
+      <h3>Way one: an inverter</h3>
+      <p>It turns the battery's 12 volts of direct current into 120 volts of alternating current, and you plug in the machine's normal power brick.</p>
+      <ul class="dot">
+        <li>Buy a <b>pure sine wave</b> model, not modified sine. The pure type makes the same smooth wave as your wall outlet, which is what the brick was designed for.</li>
+      </ul>
+      <div class="num">
+        <div><span class="big">50 to 225</span><span>Price of a 300 watt pure sine inverter, depending on brand.</span></div>
+        <div><span class="big">about 6 watts</span><span>Idle draw just to keep it awake. Samlex lists its 300 watt unit at under half an amp, which is about 6 watts at 12 volts.</span></div>
+        <div><span class="big">about 14 watts</span><span>What a 7 watt machine turns into at the battery, about double, after a loss of roughly 15 percent plus the idle. Still about 5 nights with the humidifier off.</span></div>
+      </div>
+      <h3>Way two: a direct current converter, the better pick</h3>
+      <p>Made for your machine. It plugs into a 12 volt socket, like the one in a car, and feeds the machine the voltage it wants. Other brands make their own, so check your maker's accessory list.</p>
+      <div class="num">
+        <div><span class="big">about 95</span><span>ResMed's converter for the AirSense 11. One exists for the AirSense 10 too.</span></div>
+        <div><span class="big">about 8 watts</span><span>What the 7 watt machine draws at the battery after the converter's 10 to 15 percent loss. That is 64 watt hours a night.</span></div>
+        <div><span class="big">about 9 nights</span><span>What 600 usable watt hours gives you through the converter.</span></div>
+      </div>
+      <p class="note">Those draw figures are for the AirSense 10. Newer machines land in the same range, but your test night is the real answer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Power and Medical · Page 3 · Why This Battery, and Wiring It Safe</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Why lithium iron phosphate, not the car battery</h2>
+      <p>You already have a 12 volt battery in the driveway. It is the wrong one.</p>
+      <ul class="dot">
+        <li><b>A car battery is a starting battery.</b> Thin lead plates for a huge surge lasting seconds. Drain it slowly to the bottom and the plates shed material. A deep cycle like that can wreck it in as few as 30 to 150 cycles. It is also the battery your car needs to start.</li>
+        <li><b>A marine deep cycle is closer, but still lead acid.</b> The design target is 50 percent depth of discharge. Running it to 80 percent cuts life about in half, so a 100 amp hour lead acid really gives you about 50, and it weighs several times the lithium one. A flooded one gives off gas while charging, so it needs ventilation, away from sparks, and never in a bedroom.</li>
+      </ul>
+      <div class="num">
+        <div><span class="big">4,000+ cycles</span><span>What the maker rates the 50 amp hour Redodo at, at 100 percent depth of discharge. It claims a ten year life and weighs under 12 pounds.</span></div>
+        <div><span class="big">about 3%</span><span>Self discharge a month. Charge it in the fall, check it over the holidays, and it is ready in the dead of winter with no gasoline going stale.</span></div>
+      </div>
+      <p class="note">It does not release gas in normal use, though damage, overheating, or misuse can still make a lithium cell vent something harmful. Its built in management board cuts the output before the cells are damaged, so the battery protects itself when you cannot.</p>
+      <div class="score">
+        <div class="srow"><div class="sh" style="flex:0 0 96px;">Which battery</div><div class="sh" style="flex:1;background:var(--ink-2);">Starting vs marine vs lithium</div></div>
+        <div class="srow"><div class="scell lose"><span class="tag">Car battery</span>Wrecks in 30 to 150 deep cycles. Needed to start the car.</div><div class="scell lose"><span class="tag">Marine lead acid</span>100 amp hours really gives 50. Heavy. Gasses when charging.</div><div class="scell win"><span class="tag">Lithium iron phosphate</span>Full discharge, 4,000 plus cycles, under 12 pounds, self protecting.</div></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Wiring it so it is safe</h2>
+      <ol class="step">
+        <li>Put a fuse on the positive lead, close to the battery terminal. About 15 amps for the converter socket, about 40 amps for a 300 watt inverter. Many sockets come with a fuse already in the lead.</li>
+        <li>Use ring terminals that bolt to the battery posts, not alligator clips, so nothing slips off in the dark. Keep the terminal covers on.</li>
+        <li>Set the battery on the floor beside the nightstand, not on a shelf it can fall from. Keep it clear of blankets so it stays cool.</li>
+        <li>Charge with a lithium iron phosphate charger, indoors, at room temperature. A 10 amp charger refills it from empty in about 5 hours.</li>
+        <li>Test the whole chain on a normal night before the season. Run the machine off the battery until morning and look at the charge left.</li>
+      </ol>
+      <div class="box red">
+        <h3 style="margin-top:0;">Charging cautions</h3>
+        <ul class="dot" style="margin-top:2px;">
+          <li><b>Never charge below freezing.</b> In a winter outage the house might get that cold.</li>
+          <li>Do not top it off with a car battery charger unless it has a setting made for lithium iron phosphate.</li>
+          <li>If you use a lead acid battery instead, never charge it in the bedroom.</li>
+        </ul>
+      </div>
+      <p class="note">On the Bluetooth version the charge shows on your phone. On the basic one a voltmeter tells you little, because this chemistry holds almost the same voltage until it is nearly empty. Use a small battery monitor, or just count your nights on the test run. If the machine throws a low voltage alarm or will not start on the converter, you want to know that while the lights still work.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 · Power and Medical · Page 4 · The Carbon Monoxide Rule and Who This Is Not For</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>Why the generator stays outside</h2>
+        <p>A gasoline engine makes carbon monoxide. The gas is colorless, odorless, and tasteless. Once you breathe it in, it binds to hemoglobin about 200 times more tightly than oxygen, so the red cells fill with the wrong gas. The Centers for Disease Control says sleeping people can die before they feel a single warning sign.</p>
+        <div class="num">
+          <div><span class="big">200+</span><span>Americans die each year from carbon monoxide from consumer products, says the Consumer Product Safety Commission.</span></div>
+          <div><span class="big">100+</span><span>Of those deaths each year are from portable generators. One puts out as much carbon monoxide as hundreds of cars.</span></div>
+          <div><span class="big">about 400</span><span>People who went to emergency rooms with carbon monoxide poisoning after Hurricane Beryl hit Texas in July of 2024, per state data in the Texas Tribune. At least 2 died in Harris County. The same paper tied generators to at least 10 deaths in the 2021 winter storm.</span></div>
+        </div>
+        <p style="margin-bottom:0;"><b>The rule is blunt.</b> Outdoors only, at least 20 feet from the house, exhaust facing away, and never in a garage or basement, even with the door open. For this job a generator is also absurdly wasteful: at a quarter load Honda says it burns just under a gallon in about 8 hours, and your machine uses less than 2 percent of that load. So you burn most of a gallon a night to deliver about 56 watt hours, an estimate since Honda does not publish fuel use that low. The battery delivers the same 56 watt hours in silence.</p>
+      </div>
+      <div class="box amber">
+        <h3 style="margin-top:0;">Carbon monoxide alarms, every time</h3>
+        <ul class="dot" style="margin-top:2px;">
+          <li>Keep battery powered carbon monoxide alarms on every level of the house, and outside each sleeping area. Test them every month.</li>
+          <li>If a neighbor or a relative brings a generator, the same rule applies. Outside, 20 feet from the house, exhaust pointed away, never in the garage.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="box red">
+        <h2>Who this build is not for</h2>
+        <div class="num">
+          <div><span class="big">350 watts</span><span>What a home oxygen concentrator like the Philips EverFlo averages, 50 times the sleep apnea machine. This battery would run it a little under 2 hours. Two batteries would not get you through a night.</span></div>
+        </div>
+        <ul class="check" style="margin-top:2px;">
+          <li><b>Home oxygen needs the supplier's backup, not this.</b> This battery is not a ventilator backup either.</li>
+          <li>Same for a home ventilator, for anyone whose machine maker forbids third party power, and for anyone who cannot check a fuse or a terminal themselves. Call your supplier before the outage and ask what the plan is.</li>
+          <li>Ready dot gov tells every device user to have that conversation with the supplier and the doctor.</li>
+        </ul>
+      </div>
+      <h2>What happens on night ten</h2>
+      <p>Nine nights is a long outage, but not an impossible one, and at some point the battery reads empty. There is still one more generator on the property, and it sits in the driveway where it belongs. The car makes electricity every time the engine turns. Our video on the physics of blackouts explains why a car runs a fridge but never the house.</p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Watch the full video:</b> <a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">youtube.com/@SketchySurvival101</a><br>
+    <b>More free sheets:</b> <a href="https://sketchysurvival101.com/free" target="_blank" rel="noopener">sketchysurvival101.com/free</a><br>
+    Subscribe so the next blackout does not catch you flat footed.
+  </div>
+  <div class="foot">Sketchy Survival 101. Physics first survival. Every number on this sheet comes straight from the video, with its hedges kept: maker ratings, single study and single maker estimates, dated storm figures, and best case rates. Draw figures are for the ResMed AirSense 10; your test night is the real answer. Check current listings and talk to your equipment supplier and doctor before you act.</div>
+</section>
+</body>
+</html>
