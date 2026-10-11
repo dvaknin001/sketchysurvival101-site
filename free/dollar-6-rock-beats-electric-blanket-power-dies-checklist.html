@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 6 Dollar Brick Bed Warmer: Every Number and the Burn Rules. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:29px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ol.step{ counter-reset:step; }
+  ol.step li{ padding-left:26px; margin-bottom:7px; }
+  ol.step li::before{ counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:18px; height:18px; background:var(--ink); color:var(--yellow); font-family:Anton; font-size:11px; border-radius:4px; text-align:center; line-height:18px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .big.rd{ color:#b23; }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box.cyan{ border-color:var(--cyan); }
+  .box.cyan h2{ background:var(--cyan); }
+  .box ul{ margin-bottom:0; }
+  table{ width:100%; border-collapse:collapse; margin-bottom:11px; font-size:11px; }
+  th{ background:var(--ink); color:var(--yellow); font-family:Anton; font-weight:400; letter-spacing:.5px; text-align:left; padding:6px 8px; font-size:11px; }
+  td{ border:1px solid var(--line); padding:6px 8px; line-height:1.3; vertical-align:top; }
+  tr:nth-child(even) td{ background:#f7f7f3; }
+  td.hot{ color:var(--amber); font-family:Archivo; font-weight:800; }
+  td.cool{ color:var(--cyan); font-family:Archivo; font-weight:800; }
+  td.bad{ color:#b23; font-family:Archivo; font-weight:800; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 &middot; Free Cheat Sheet &middot; Blackout Warmth</div>
+    <h1>The 6 Dollar Brick Bed Warmer: Every Number and the Burn Rules</h1>
+    <div class="sub">When the power dies, an electric blanket stops making heat. A dense firebrick warmed by a fire stores heat you can bring to bed. Here is the physics, the right brick to buy, the stones you must never heat, and the burn and carbon monoxide rules that matter more than any of it.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">Not a rock from your yard. A dense firebrick: a block of fired clay made to handle heat. You warm it by a fire you already have going, wrap it in thick cotton or wool towels, and use it to warm the cold bed and the cold foot end.</p>
+      <p>The physics in one line: blankets don't make heat, they only slow how fast you lose it. A hot brick is stored heat. It hands that heat back as it cools, and the wrap decides how fast.</p>
+      <p>The honest limit: nobody has tested a safe overnight recipe for a hot brick in a bed. Low temperature burns are real (page 4). The safest use is to prewarm the bed, then take it out before you sleep.</p>
+
+      <h2>Why the bed matters in a blackout</h2>
+      <div class="num">
+        <div><span class="big">needs power</span><span>Even a gas furnace runs its blower, igniter, and controls on electricity.</span></div>
+        <div><span class="big cy">about 8 hours</span><span>In one cold weather model, an older 1950s house fell below 40 F in about 8 hours without heat (RMI). Newer houses last longer, but none hold forever.</span></div>
+        <div><span class="big cy">below 95 F</span><span>Core temperature where hypothermia starts. Older adults can get it indoors, even in a 60 to 65 F home (National Institute on Aging).</span></div>
+        <div><span class="big rd">246</span><span>Deaths Texas tied to the February 2021 winter storm and blackout. Hypothermia caused 158, the top cause. Carbon monoxide caused 19 of the 246.</span></div>
+        <div><span class="big">50 to 200 W</span><span>What most electric blankets draw. With no grid and no backup power, the heating stops. It's just a blanket again.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Your bed is the warmest room</h2>
+      <div class="num">
+        <div><span class="big">90 to 93 F</span><span>The "bed climate" sleep researchers measure in the air under your covers when sleep is comfortable.</span></div>
+        <div><span class="big">about 80 W</span><span>Body heat from a resting adult (a bit less asleep, around 72 W). Thick enough covers hold it in. That's the heater you already own.</span></div>
+        <div><span class="big cy">cold sheets</span><span>An unused bed in a 50 F room sits near 50 F. Your body has to warm the bedding around you first.</span></div>
+      </div>
+
+      <h3>The warm feet study</h3>
+      <p>In 1999, researchers in Basel, Switzerland published "Warm Feet Promote the Rapid Onset of Sleep" in the journal Nature. In 18 healthy young men, the best predictor of how fast they fell asleep was how much warmer their hands and feet got compared with sites closer to the body's center. Cold feet clamp down blood flow to protect your core, which can slow sleep. Warm feet help it along.</p>
+
+      <h2>The math</h2>
+      <table>
+        <tr><th>Step</th><th>Number</th></tr>
+        <tr><td>Full size dense firebrick (9 by 4.5 by 2.5 inch)</td><td class="hot">roughly 7 to 8 pounds</td></tr>
+        <tr><td>Half thick dense split</td><td class="hot">about 3.6 to 4 pounds, about half the heat</td></tr>
+        <tr><td>Fired clay or stone vs water, pound for pound</td><td class="hot">about a fifth as much heat</td></tr>
+        <tr><td>Stored heat, full size brick, the video's worked example</td><td class="hot">roughly 70 watt hours</td></tr>
+        <tr><td>A 100 watt blanket running flat out for 7 hours</td><td>700 watt hours, about ten times more</td></tr>
+        <tr><td>70 watt hours given back over about three and a half hours</td><td class="hot">about 20 watts on average</td></tr>
+        <tr><td>20 watts next to your 80 watts of body heat</td><td class="hot">about a quarter more</td></tr>
+      </table>
+      <p class="note">A worked estimate, not a measurement. A cooling brick gives off the most heat at the start, then fades. How long yours stays useful depends on the brick, the wrap, and your bed. Time your own on a test night before you count on it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Blackout Warmth &middot; Page 2 &middot; Pick the Right Stone</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Shopping list</h2>
+      <p class="note" style="margin-bottom:6px;">Prices checked October 2026. They change by shop and region.</p>
+      <ul class="check">
+        <li><b>Dense firebrick, half thick split:</b> about 6 dollars each (a 6 pack ran 34.49 dollars at Amazon and Lowe's). Holds about half the heat of a full brick.</li>
+        <li><b>Dense firebrick, full size:</b> about 11 to 12 dollars each in a 2 pack, around 16 dollars bought singly.</li>
+        <li><b>Infrared thermometer:</b> budget models run about 15 to 30 dollars.</li>
+        <li>Oven mitts or fireplace tongs, and a metal baking sheet</li>
+        <li>Old cotton bath towels, or a scrap of wool blanket</li>
+        <li>Large safety pins, or a pillowcase</li>
+        <li>A carbon monoxide alarm with battery power or battery backup</li>
+        <li>Wool socks and a warm hat</li>
+      </ul>
+      <p class="note">Fireplace shops and masonry suppliers often stock plain firebrick too.</p>
+
+      <h2>Two kinds of firebrick</h2>
+      <table>
+        <tr><th></th><th>Dense firebrick</th><th>Insulating firebrick</th></tr>
+        <tr><td>Feel</td><td class="hot">Heavy and hard</td><td class="bad">About a quarter to a third the weight, soft enough to scratch with a fingernail</td></tr>
+        <tr><td>Built to</td><td class="hot">Hold heat</td><td class="bad">Block heat, store little</td></tr>
+        <tr><td>For a bed warmer</td><td class="hot">Buy this one</td><td class="bad">Skip it</td></tr>
+      </table>
+      <p class="note">Online listings mix the two. Check the weight: a full size dense brick is roughly 7 to 8 pounds.</p>
+
+      <h3>Upgrade: real soapstone</h3>
+      <p>Soapstone is a natural rock, denser than ordinary firebrick, so the same size piece can hold more heat. How much more depends on the stone. Countertop shops sometimes sell scraps.</p>
+      <p><b>Not quartz countertop.</b> Engineered quartz has resin in it. Never use it, or granite you can't identify, as a fire heated bed warmer.</p>
+    </div>
+    <div class="col">
+      <div class="box red">
+        <h2>The stones you never heat</h2>
+        <ul class="dot">
+          <li>River rocks, lake stones, beach stones, and anything pulled out of wet ground.</li>
+          <li>Concrete, cinder block, and patio pavers.</li>
+          <li>Any stone you can't identify.</li>
+        </ul>
+        <h3>Why they can burst</h3>
+        <p>Many stones and concrete hold water in tiny pores and cracks. Heat turns that water to steam, and freely expanding steam takes up roughly 1,600 to 1,700 times the room of the water. If the vapor can't escape fast enough, pressure and uneven heating can crack the stone apart and throw hot chips. That's why the Forest Service warns that rocks heated in a campfire can explode.</p>
+      </div>
+
+      <div class="box amber">
+        <h2>Keep good bricks dry</h2>
+        <ul class="dot">
+          <li>Even a dense firebrick soaks up water. One maker lists about 15 percent water absorption.</li>
+          <li>Store bricks dry and covered, indoors is easiest.</li>
+          <li>A brick that sat in rain or snow must be fully dry before it goes near a fire. If you aren't sure it's dry, don't heat it.</li>
+          <li>Cracked or flaking? Retire it from bed duty.</li>
+        </ul>
+      </div>
+
+      <div class="score">
+        <div class="srow"><div class="scell lose"><span class="tag">Electric blanket, grid down</span>About 110 dollars for a queen. With no backup power it makes no heat, and a battery power station to run one all night costs hundreds if you don't own one.</div><div class="scell win"><span class="tag">Dense firebrick</span>About 6 dollars for a half thick split. No wires, nothing to leak. It needs a fire you already have, and it needs respect.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Blackout Warmth &middot; Page 3 &middot; Charge It, Wrap It, Breathe Safe</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Charge it</h2>
+      <ol class="step">
+        <li><b>Use a fire you're already running safely.</b> A wood stove or fireplace that vents outside. Set the brick on the hearth facing the fire, and turn it now and then so the faces warm evenly.</li>
+        <li><b>Never bury it in the coals or embers.</b> That overheats it and can carry burning material with it.</li>
+        <li><b>Stove tops run hot.</b> A wood stove's normal surface range can be 400 to 600 F (one maker's manual). If the brick sits there, take it off and let it cool well before wrapping.</li>
+        <li><b>Gas range: only by the manual.</b> Some burners can be lit with a match in an outage. Only do it if your model's manual allows it. Use a dry cast iron skillet, keep the burner low, and stay with it the whole time.</li>
+        <li><b>Grills and camp stoves: outdoors only.</b> Never inside, never in the garage, even with the door open.</li>
+        <li><b>Move it with heat rated mitts or tongs</b> on a metal baking sheet. Brush off any ash or embers. Never set it on carpet, a wood floor, or anything plastic.</li>
+      </ol>
+
+      <div class="box amber">
+        <h2>About temperature</h2>
+        <ul class="dot">
+          <li>There is no tested safe temperature for a hot brick in a bed. A firebrick can take far more heat than your skin can.</li>
+          <li>An infrared thermometer reads only the surface spot you aim at. The inside can be hotter.</li>
+          <li>Heat keeps soaking out into the wrap after you bundle it. A bundle that felt fine at the stove can run hotter later.</li>
+          <li>When in doubt, let it cool longer. Warmer than the bed is the whole goal, not hot.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Wrap it</h2>
+      <ol class="step" start="7" style="counter-reset:step 6;">
+        <li><b>Cotton or wool next to the brick:</b> an old bath towel or a scrap of wool blanket.</li>
+        <li><b>Then several more thick towel layers.</b> More wrap means slower, gentler heat. The wrap is the dial.</li>
+        <li><b>Never plastic, paper, or synthetic fleece</b> against the stone.</li>
+        <li><b>Close the bundle</b> with large safety pins, a tie, or a pillowcase folded shut, so it can't open if it gets pushed around.</li>
+        <li><b>Prewarm the bed:</b> set the bundle under the covers before bed to take the chill off the sheets.</li>
+      </ol>
+      <p class="note">No wrap makes a hot brick burn proof. Read the burn rules on page 4 before it goes near skin.</p>
+
+      <div class="box red">
+        <h2>Carbon monoxide rules</h2>
+        <ul class="dot">
+          <li>Never use a gas oven or range to heat the room.</li>
+          <li>Grills, camp stoves, and generators never run inside the home or garage. Big winter blackouts bring waves of carbon monoxide poisonings from exactly these.</li>
+          <li>Burning anything inside? Run a carbon monoxide alarm with batteries or battery backup near where people sleep. An alarm doesn't make banned indoor burning safe.</li>
+          <li>Keep the stove or fireplace exhaust path open and the chimney clear.</li>
+        </ul>
+        <h3>Signs</h3>
+        <p>Headache, dizziness, weakness, upset stomach, vomiting, chest pain, confusion. It can feel like the flu.</p>
+        <ul class="check">
+          <li>Alarm sounding, or several people or pets sick together? Get everyone outside into fresh air, then call 911.</li>
+          <li>Don't go back in until responders say it's safe.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Blackout Warmth &middot; Page 4 &middot; Burn Rules and the Limits</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>Low temperature burns</h2>
+        <div class="num" style="background:#fff;">
+          <div><span class="big rd">111 F</span><span>Held against skin for about 6 hours, this can cause a burn. Harvard burn researchers showed in the 1940s that skin can burn at heat that only feels warm.</span></div>
+          <div><span class="big rd">104 F</span><span>The most the Consumer Product Safety Commission says hot tub water should ever be.</span></div>
+        </div>
+        <ul class="dot">
+          <li>A bundle that feels pleasant to your palm can still burn a foot that rests on it for hours. A touch test can't clear it for overnight contact.</li>
+          <li><b>Safest use: prewarm the bed, then take the brick out before you sleep.</b> Regulators give that rule for hot water bottles (Australia's ACCC) and say to turn heating pads off before sleep (US CPSC). A hot brick deserves the same respect.</li>
+          <li>If it stays in the bed, keep it at the foot end, feet near it, never on it. Never lie, sit, or lean on it. Never tuck it under the mattress.</li>
+          <li>Wear socks. Repeated heat on the same patch of skin can cause "toasted skin syndrome," a lacy brown rash. Avoid long, repeated contact.</li>
+        </ul>
+      </div>
+
+      <div class="box amber">
+        <h2>Who should skip it</h2>
+        <ul class="dot">
+          <li>Babies and toddlers. Never in a bed with a young child.</li>
+          <li>Anyone with reduced feeling in the feet, such as diabetic nerve damage. They can't feel a burn starting.</li>
+          <li>Anyone who's been drinking, took a sleeping pill, or can't easily move away from heat.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Brick vs hot water bottle</h2>
+      <table>
+        <tr><th></th><th>Dense brick</th><th>Hot water bottle</th></tr>
+        <tr><td>Heat per pound</td><td>About a fourth to a fifth of water</td><td class="cool">Four to five times a stone's</td></tr>
+        <tr><td>How hot it goes</td><td>Far past boiling, which is exactly why it can burn</td><td>Hot water, never boiling; fill no more than about two thirds</td></tr>
+        <tr><td>Failure mode</td><td>Can't leak, but can overheat</td><td class="bad">Old or damaged bottles can split and scald</td></tr>
+        <tr><td>Same rule for both</td><td colspan="2">Prewarm, then out of the bed before sleep. Covers cut burn risk but don't remove it.</td></tr>
+      </table>
+
+      <div class="box cyan">
+        <h2>Know the limits</h2>
+        <ul class="dot">
+          <li>A brick heats you, not the room. It won't keep pipes from freezing or warm the air you breathe.</li>
+          <li>Layer up: hat, wool socks, and blankets over everything, but never over your face.</li>
+          <li>A second brick lets you swap only while you're awake and tending a fire. Fire safety guidance says put a fireplace fire out before bed.</li>
+          <li>A 12 volt car blanket can drain a starting battery and leave the car dead.</li>
+          <li>Hypothermia signs (shivering, confusion, slurred speech, drowsiness)? Call 911. A hot brick or hot water bottle is not treatment.</li>
+          <li>Room keeps getting colder? Leave early for a warming center or a home with power, before anyone gets sick.</li>
+        </ul>
+      </div>
+
+      <div class="cta">
+        <b>Get the full breakdown, free.</b><br>
+        Watch the video: youtube.com/@SketchySurvival101<br>
+        More free cheat sheets: sketchysurvival101.com/free<br>
+        Next up: When the Power Goes Out, Your Bedroom Is Too Big. Subscribe so the next blackout does not catch you flat footed.
+      </div>
+    </div>
+  </div>
+  <div class="foot">Sources in the video description. Numbers from Carrier, RMI, the National Institute on Aging, Texas DSHS, CHOICE, ASHRAE, a 2012 sleep thermal review, Nature (1999), the National Academies, Superior Clay, HART, Morgan Thermal Ceramics, Paragon, GTK, Caesarstone, the USDA Forest Service, NIST, VITCAS, the Jotul F400 manual, GE Appliances, the CDC, the USFA, INSPQ, the CPSC, DermNet, NIDDK, the ACCC, NHS, and Hugo Frosch. Retail prices checked October 2026. The 70 watt hour figure is a worked estimate, not a test of any one brick. Cheat sheet for the video "This $6 Brick Beats a $100 Electric Blanket When the Power Dies."</div>
+</section>
+
+</body>
+</html>
