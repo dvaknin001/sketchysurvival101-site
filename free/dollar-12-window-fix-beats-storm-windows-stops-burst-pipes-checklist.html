@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 12 Dollar Window Fix vs Storm Windows. Every Number. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:29px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ol.step{ counter-reset:step; }
+  ol.step li{ padding-left:26px; margin-bottom:7px; }
+  ol.step li::before{ counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:18px; height:18px; background:var(--ink); color:var(--yellow); font-family:Anton; font-size:11px; border-radius:4px; text-align:center; line-height:18px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box.cyan{ border-color:var(--cyan); }
+  .box.cyan h2{ background:var(--cyan); }
+  .box ul{ margin-bottom:0; }
+  table{ width:100%; border-collapse:collapse; margin-bottom:11px; font-size:11px; }
+  th{ background:var(--ink); color:var(--yellow); font-family:Anton; font-weight:400; letter-spacing:.5px; text-align:left; padding:6px 8px; font-size:11px; }
+  td{ border:1px solid var(--line); padding:6px 8px; line-height:1.3; vertical-align:top; }
+  tr:nth-child(even) td{ background:#f7f7f3; }
+  td.hot{ color:var(--amber); font-family:Archivo; font-weight:800; }
+  td.cool{ color:var(--cyan); font-family:Archivo; font-weight:800; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .sh{ background:var(--ink); color:var(--yellow); font-family:Anton; font-size:13px; padding:5px 10px; letter-spacing:.5px; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta a{ color:var(--yellow); text-decoration:none; font-weight:600; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 &middot; Free Cheat Sheet &middot; Winter Prep</div>
+    <h1>The 12 Dollar Window Fix vs Storm Windows: Every Number</h1>
+    <div class="sub">A shrink film kit traps a still layer of air over a drafty single pane window. Installed storm windows use the same trick for a lot more money. Here is every figure from the video, the install steps, the safety checks, and the pipe checklist.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">A window shrink film kit is a big sheet of thin clear plastic and a roll of double sided tape. You tape the frame, press the film on, and warm it with a hair dryer until it pulls tight. That leaves a pocket of still air between the film and the glass, usually half an inch to a couple of inches deep, depending on the frame.</p>
+      <p>The physics in one line: almost none of a single pane window's insulation comes from the glass. It comes from thin layers of air at the glass surface. Wind speeds heat loss on the outside. A sealed, still air gap slows it down. The plastic is the fence that keeps that air from flowing.</p>
+      <p>The result: on a drafty single pane window, the film can cut heat loss through the glass by about half. That is the same range storm windows promise.</p>
+
+      <h2>The cost side</h2>
+      <div class="num">
+        <div><span class="big">9 to 20</span><span>Dollars for a kit that covers about five average windows, depending on the brand. The video's kit is about 12 dollars.</span></div>
+        <div><span class="big">200 to 500</span><span>Dollars each is a common range for installed storm windows. Two can run about 600 dollars.</span></div>
+        <div><span class="big">about 240</span><span>Dollars for a fresh 12 dollar kit every fall for 20 years, covering five windows, if the price holds.</span></div>
+      </div>
+    </div>
+    <div class="col">
+      <h2>Why it matters</h2>
+      <div class="num">
+        <div><span class="big">25 to 30%</span><span>Share of a typical home's heating and cooling energy lost to heat moving through windows, per the Department of Energy.</span></div>
+        <div><span class="big">25 to 50%</span><span>How much interior or exterior storm windows can cut heat loss through a window, per the Department of Energy.</span></div>
+        <div><span class="big cy">about 20 F</span><span>Outdoor temperature where University of Illinois research found pipes in unheated spaces start freezing. Cold air blowing over a pipe makes it freeze faster, so a draft can freeze one sooner.</span></div>
+        <div><span class="big">thousands</span><span>Of dollars in water damage a burst pipe can cause. Shut the main valve and the house can be without running water until it is repaired. After a hard freeze, plumbers can get booked fast.</span></div>
+      </div>
+
+      <h3>Storm windows vs film, honestly</h3>
+      <div class="score">
+        <div class="srow"><div class="scell win"><span class="tag">Film wins</span>Price. Speed: a freeze this weekend, film tonight. Same still air gap trick over single glass.</div><div class="scell lose"><span class="tag">Storm windows win</span>Last for decades. Tougher. Let you open the sash in summer. Coated (low e) versions bounce more heat back inside.</div></div>
+      </div>
+      <p class="note">Staying in the house for 20 years? Storm windows are a solid upgrade. Film is a one winter measure you redo each fall.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Winter Prep &middot; Page 2 &middot; The Physics and the Math</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>R value in plain words</h2>
+      <p>Builders rate insulation with a number called R value. The higher it goes, the slower heat escapes.</p>
+      <table>
+        <tr><th>What</th><th>R value, about</th></tr>
+        <tr><td>Single pane of glass (about an eighth of an inch thick)</td><td class="hot">1</td></tr>
+        <tr><td>Single pane plus a storm window</td><td class="cool">2</td></tr>
+        <tr><td>Any still air gap over single glass, film included</td><td class="cool">in that range</td></tr>
+        <tr><td>Insulated wall in a typical house</td><td>around 13</td></tr>
+      </table>
+      <p class="note">Square foot for square foot, bare single glass lets heat out more than ten times faster than the insulated wall around it. Values from standard building tables; real windows vary with the frame.</p>
+
+      <h2>The cold waterfall</h2>
+      <p>Air touching freezing glass cools, gets heavier, and slides down the pane. It spills off the sill and rolls across the floor, and warm room air gets pulled in at the top to replace it. That is why a locked window still feels drafty: some of the chill is outside air sneaking around the sash, and a lot of it is your own room air falling off cold glass.</p>
+      <p>With film on, the inside face stays far warmer than the glass behind it, so less air sinks. When the tape seal runs unbroken around the whole frame, it also blocks air leaking in around the sash.</p>
+    </div>
+    <div class="col">
+      <h2>One window, worked out</h2>
+      <p>The video's example: a single pane window 3 feet wide and 5 feet tall, room at 70 F, 10 F outside, standard heat loss math.</p>
+      <table>
+        <tr><th>Case</th><th>Heat leaking, about</th></tr>
+        <tr><td>Bare single pane, one window</td><td class="hot">nearly 300 watts</td></tr>
+        <tr><td>Same window, R value doubled by film</td><td class="cool">about 140 watts</td></tr>
+        <tr><td>Five bare windows</td><td class="hot">nearly a whole 1,500 watt heater</td></tr>
+        <tr><td>Saved across five filmed windows</td><td class="cool">roughly 700 watts</td></tr>
+      </table>
+      <div class="num">
+        <div><span class="big">one fifth</span><span>One bare window leaks about a fifth of a space heater on high, around the clock while those temperatures hold.</span></div>
+        <div><span class="big">close to 3</span><span>Dollars a day saved on a bitter day like that, if you heat with electric baseboards at typical American prices. A cold week at those temperatures can pay for the kit.</span></div>
+        <div><span class="big">gas heat</span><span>Costs less per day, so the payback runs slower. How fast depends on your gas price and furnace.</span></div>
+      </div>
+      <p class="note">These are worked examples for one window size and one steady temperature, not a promise for every house. Milder days and smaller windows save less. Windows that are already double pane will not see the same jump.</p>
+
+      <div class="box">
+        <h3 style="margin-top:0;">The key idea</h3>
+        <p style="margin-bottom:0;">A storm window's second pane is not what earns its number. The gap does. Still air is one of the best cheap insulators there is, and moving air is one of the worst. Film builds the same gap from plastic instead of glass and aluminum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Winter Prep &middot; Page 3 &middot; Install It Right</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Shopping list</h2>
+      <ul class="check">
+        <li>Shrink film kit with double sided tape (about 9 to 20 dollars for about five windows)</li>
+        <li>A hair dryer, not a heat gun</li>
+        <li>Scissors or a utility knife for trimming</li>
+        <li>A lead test kit if your house was built before 1978</li>
+        <li>Optional: caulk for gaps between the window frame and the wall</li>
+      </ul>
+
+      <h2>Hang the film</h2>
+      <ol class="step">
+        <li><b>Find your worst windows.</b> On a cold evening, move the back of your hand slowly along the glass and around the edges of the sash. Moving air goes to the top of the list. Any window above a sink or near plumbing goes first.</li>
+        <li><b>Check the paint.</b> Built before 1978? Read the lead box on the right before any tape touches the frame.</li>
+        <li><b>Clean the frame</b> where the tape goes and let it dry completely. Work while the room is warm. Double sided tape grips badly on cold or damp surfaces.</li>
+        <li><b>Tape the frame</b> all the way around, with no gaps.</li>
+        <li><b>Cut the film larger than the frame</b>, following your kit's directions for the extra margin.</li>
+        <li><b>Press it on</b> starting at the top, then down the sides, then along the bottom. Keep it smooth, but don't fuss over wrinkles yet.</li>
+        <li><b>Dry the sill,</b> then plug in the hair dryer. Set it on high and hold it about 6 inches from the film, or the distance your kit lists. Keep it moving.</li>
+        <li><b>Stop once the film is tight.</b> Shrinking too hard pulls the tape loose at the corners. Never let the nozzle touch the film.</li>
+        <li><b>Trim the extra</b> and put the scraps straight into the outside trash. Unplug the dryer and keep the cord clear of water.</li>
+        <li><b>Check the seal.</b> Run your hand around the edge again. No moving air means the pocket is sealed.</li>
+      </ol>
+    </div>
+    <div class="col">
+      <div class="box red">
+        <h2>Lead paint: the tape mistake</h2>
+        <ul class="dot">
+          <li>If your house was built before 1978, the paint on the window frames may contain lead. Windows are one of the worst spots, because opening and closing them grinds old paint into dust.</li>
+          <li>Double sided tape can rip that paint off when you pull it down in spring.</li>
+          <li>Never stick tape onto paint that's chipped or flaking.</li>
+          <li>A hardware store lead test kit gives you a first answer, not the final word. The EPA points to a certified inspector, or treating old paint as if it contains lead.</li>
+          <li>In spring, warm the tape with the hair dryer first, then peel it slowly back on itself.</li>
+          <li>Never scrape or sand old window paint to clean up what's left.</li>
+        </ul>
+      </div>
+
+      <div class="box amber">
+        <h2>Fire, escape, and air</h2>
+        <ul class="dot">
+          <li><b>Hair dryer, never a heat gun.</b> A heat gun can run hundreds of degrees hotter. It can melt the film fast, and heat near the edge of cold glass can damage the window.</li>
+          <li><b>Plastic film burns.</b> Keep space heaters at least 3 feet from a covered window, the same as a curtain. Keep candles off the sill and away from the film.</li>
+          <li><b>Bedroom windows are fire escapes.</b> Everyone in the room must be able to open them fast, without tools. Never screw anything solid over one or block it with furniture.</li>
+          <li><b>Kerosene or unvented gas heater?</b> Leave one window uncovered and cracked. Those heaters need outside air, and a sealed room is where carbon monoxide builds. Keep a working carbon monoxide alarm.</li>
+          <li><b>Plastic sheeting can suffocate a small child.</b> Dry cleaning bags carry the same warning. Scraps go straight to the outside trash.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Winter Prep &middot; Page 4 &middot; Moisture, Options, and Your Pipes</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box cyan">
+        <h2>Watch for water</h2>
+        <p>Warm indoor air carries moisture from cooking, showers, and your own breath. When it touches a cold enough surface, water beads up. A good seal helps, because the surface facing the room stays warmer. A leaky seal lets damp air slip behind the plastic onto freezing glass, where it can't dry out, and mold can start.</p>
+        <ul class="check">
+          <li>Check every covered window often, especially in the first weeks.</li>
+          <li>Water running down the glass or pooling on the sill: open it up, dry it, check the seal, and lower indoor humidity. If it keeps coming back, look for other leaks.</li>
+          <li>Run the bathroom fan during showers and the range hood while you cook.</li>
+          <li>The EPA suggests indoor humidity below 60 percent, ideally 30 to 50 percent.</li>
+        </ul>
+      </div>
+
+      <h2>Two other options</h2>
+      <h3>Bubble wrap, for windows nobody looks through</h3>
+      <p>Mist the glass with plain water from a spray bottle. Press the bubble side flat against the wet glass. It can cling for the season, though some pieces may need tape. The window still opens, so it suits a basement or bathroom. Wipe the sill dry after.</p>
+      <h3>A reusable interior storm panel</h3>
+      <p>A simple frame of thin wood strips, cut to fit snug inside the window opening, with shrink film stretched over both faces and foam weatherstrip around the edge so it presses in tight. It comes out and goes back in each fall. On a bedroom window, make sure anyone can pull it out fast.</p>
+
+      <h3>What film can't do</h3>
+      <ul class="dot">
+        <li>It does nothing for air leaking between the window frame and the wall behind the trim. A bead of caulk handles that.</li>
+        <li>It won't fix rotten wood or cracked glass.</li>
+        <li>It can't reliably protect a pipe inside a cold outside wall. The pipe needs its own defense.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2>Pipe checklist</h2>
+      <p>In a lot of kitchens, the sink sits under a window on an outside wall, with the water lines in that wall or the cabinet below. Close the cabinet on a frigid night and the pipes sit in a dark box against a cold wall.</p>
+      <ul class="check">
+        <li><b>Seal the holes.</b> Find where pipes and wires pass through outside walls and seal them with caulk or a can of foam. The Illinois research pointed at holes like these, where cable and phone lines enter. Leave vents and combustion air openings clear.</li>
+        <li><b>Sleeve the pipes.</b> Slip foam pipe sleeves over any pipe you can reach in a cabinet, a crawlspace, or the garage. A 6 foot length usually costs a few dollars.</li>
+        <li><b>Open the cabinets</b> on nights below about 20 F so room heat reaches the pipes. Move cleaners out of reach of kids first.</li>
+        <li><b>Let it drip.</b> Let the faucet on an outside wall drip a little cold water. It helps, but a drip is no guarantee.</li>
+        <li><b>Hold the heat steady</b> day and night, and never below 55 F, even when you're away. That is the Red Cross advice. A deep setback at night is when a cold house gets riskier.</li>
+        <li><b>Find your main water shutoff</b> before the freeze, and make sure it actually turns.</li>
+      </ul>
+
+      <div class="box red">
+        <h2>If a pipe freezes</h2>
+        <ul class="dot">
+          <li>Thaw it slowly with a hair dryer or warm towels.</li>
+          <li>Never use a torch or open flame.</li>
+          <li>If a pipe lets go, shut the main water valve right away. Every minute of spraying water adds to the bill.</li>
+          <li>Carbon monoxide alarm sounding, or a fire: get everyone out and call nine one one.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Get the full build, free.</b><br>
+    Watch the video: youtube.com/@SketchySurvival101<br>
+    More free cheat sheets: sketchysurvival101.com/free<br>
+    Next up: why a frozen pipe splits where there's no ice. Subscribe so the next hard freeze does not catch you flat footed.
+  </div>
+  <div class="foot">Sources in the video description. Numbers from the Department of Energy, standard building R value tables (ASHRAE), a lab test of a shrink film kit, Fixr, EIA electricity prices, University of Illinois freeze research, the EPA, the CPSC, NFPA, and the American Red Cross. Worked examples are estimates, not guarantees. Cheat sheet for the video "This $12 Window Fix Beats $600 Storm Windows and Helps Protect Pipes From Freezing."</div>
+</section>
+
+</body>
+</html>
