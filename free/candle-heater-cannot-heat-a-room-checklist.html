@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Candle Heater Math and the Safe Warmth Plan. Sketchy Survival 101</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --yellow:#ffd400; --yellow-2:#f5a300; --amber:#f5a300; --cyan:#1596a8; --ink:#0c0d0f; --ink-2:#161616; --soft:#4a4d52; --line:#d8dade; }
+  *{ box-sizing:border-box; }
+  @page{ size:Letter; margin:11mm; }
+  html,body{ margin:0; padding:0; background:#fff; color:var(--ink); font-family:Inter,Arial,sans-serif; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page{ padding:0 2mm; page-break-after:always; zoom:.82; }
+  .page:last-child{ page-break-after:auto; }
+  h1,h2,h3{ font-family:Anton,Impact,sans-serif; letter-spacing:.5px; text-transform:uppercase; margin:0; line-height:1; }
+  .kick{ font-family:Archivo,Arial,sans-serif; font-weight:800; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--yellow-2); }
+  .head{ border-bottom:4px solid var(--ink); padding-bottom:8px; margin-bottom:12px; }
+  .head h1{ font-size:29px; margin-top:2px; }
+  .sub{ font-family:Archivo,Arial,sans-serif; font-weight:600; color:var(--soft); font-size:13px; margin-top:6px; }
+  .row{ display:flex; gap:16px; align-items:flex-start; }
+  .col{ flex:1; }
+  h2{ font-size:18px; background:var(--ink); color:#fff; display:inline-block; padding:4px 10px; margin-bottom:9px; }
+  h3{ font-size:14px; margin:10px 0 5px; color:var(--ink); }
+  ul,ol{ margin:0 0 10px 0; padding-left:0; list-style:none; }
+  li{ font-size:12px; line-height:1.4; margin-bottom:5px; padding-left:22px; position:relative; }
+  ul.check li::before{ content:""; position:absolute; left:0; top:2px; width:13px; height:13px; border:2px solid var(--ink); border-radius:3px; }
+  ol.step{ counter-reset:step; }
+  ol.step li{ padding-left:26px; margin-bottom:7px; }
+  ol.step li::before{ counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:18px; height:18px; background:var(--ink); color:var(--yellow); font-family:Anton; font-size:11px; border-radius:4px; text-align:center; line-height:18px; }
+  ul.dot li::before{ content:""; position:absolute; left:3px; top:5px; width:7px; height:7px; background:var(--yellow-2); border-radius:50%; }
+  .num{ border:2px solid var(--ink); border-radius:6px; overflow:hidden; margin-bottom:11px; }
+  .num div{ display:flex; align-items:center; gap:10px; padding:5px 10px; border-top:1px solid var(--line); font-size:11.5px; line-height:1.35; }
+  .num div:first-child{ border-top:none; }
+  .big{ font-family:Anton; font-size:14px; color:var(--amber); min-width:104px; flex:0 0 104px; }
+  .big.cy{ color:var(--cyan); }
+  .big.rd{ color:#b23; }
+  .box{ border:3px solid var(--ink); border-radius:8px; padding:11px 13px; background:#fbfbf7; margin-top:4px; margin-bottom:10px; }
+  .box.red{ border-color:#b23; }
+  .box.red h2{ background:#b23; }
+  .box.amber{ border-color:var(--yellow-2); }
+  .box.amber h2{ background:var(--yellow-2); }
+  .box.cyan{ border-color:var(--cyan); }
+  .box.cyan h2{ background:var(--cyan); }
+  .box ul{ margin-bottom:0; }
+  table{ width:100%; border-collapse:collapse; margin-bottom:11px; font-size:11px; }
+  th{ background:var(--ink); color:var(--yellow); font-family:Anton; font-weight:400; letter-spacing:.5px; text-align:left; padding:6px 8px; font-size:11px; }
+  td{ border:1px solid var(--line); padding:6px 8px; line-height:1.3; vertical-align:top; }
+  tr:nth-child(even) td{ background:#f7f7f3; }
+  td.hot{ color:var(--amber); font-family:Archivo; font-weight:800; }
+  td.cool{ color:var(--cyan); font-family:Archivo; font-weight:800; }
+  .score{ border:3px solid var(--ink); border-radius:8px; overflow:hidden; margin-bottom:10px; }
+  .score .srow{ display:flex; gap:0; border-top:2px solid var(--ink); }
+  .score .srow:first-of-type{ border-top:none; }
+  .score .scell{ flex:1; padding:7px 10px; font-size:11.5px; line-height:1.35; border-left:1px solid var(--line); }
+  .score .scell:first-child{ border-left:none; }
+  .score .win{ background:#f2faf2; } .score .lose{ background:#fdf3f3; }
+  .score .tag{ font-family:Archivo; font-weight:800; text-transform:uppercase; letter-spacing:1px; font-size:9.5px; display:block; margin-bottom:2px; }
+  .score .win .tag{ color:#2a7; } .score .lose .tag{ color:#b23; }
+  .cta{ border:3px solid var(--yellow); border-radius:8px; padding:10px 14px; margin-top:10px; background:var(--ink); color:#fff; font-size:12.5px; line-height:1.6; }
+  .cta b{ font-family:Anton; font-weight:400; letter-spacing:.5px; }
+  .foot{ font-size:9.5px; color:var(--soft); margin-top:6px; font-family:Archivo,Arial,sans-serif; }
+  p{ font-size:12px; line-height:1.45; margin:0 0 8px; }
+  .lead{ font-size:13px; }
+  .note{ font-size:10.5px; color:var(--soft); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page">
+  <div class="head">
+    <div class="kick">Sketchy Survival 101 &middot; Free Cheat Sheet &middot; Blackout Warmth</div>
+    <h1>The Candle Heater Math and the Safe Warmth Plan</h1>
+    <div class="sub">The viral flowerpot heater is four tealights under a clay pot. Here is why it can't be your heat in a freezing blackout, what it really puts out, and the plan that keeps you warm for a night or two with nothing burning where you sleep.</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>What it is</h2>
+      <p class="lead">Two terracotta pots, one nested inside the other, hang on a long bolt with a stack of washers. Underneath, a metal loaf pan holds four lit tealights. The pot gets hot to the touch, and viral posts promise it will heat a room for pennies a day.</p>
+      <p>The physics in one line: a clay pot can't make heat. It stores some of what the flame gives it and changes how and when that heat reaches you. More pots can't multiply the fuel energy. Every watt leaving the pot came from the candles first.</p>
+      <p>The verdict: four tealights give off too little heat to count on as a room heater in a freezing blackout. Your own body is a better heater, and you are already running it.</p>
+
+      <h2>The candle math</h2>
+      <p class="note" style="margin-bottom:6px;">Worked from one common tealight: about 12 grams of paraffin that burns about four hours. Other candles differ.</p>
+      <table>
+        <tr><th>Step</th><th>Number</th></tr>
+        <tr><td>Wax in one tealight</td><td class="hot">about 12 grams, a little under half an ounce</td></tr>
+        <tr><td>Energy in paraffin, pound for pound</td><td class="hot">about the same as diesel fuel</td></tr>
+        <tr><td>One tealight, spread over four hours</td><td class="hot">roughly 30 to 40 watts</td></tr>
+        <tr><td>Four tealights</td><td class="hot">about 140 watts</td></tr>
+        <tr><td>Typical American space heater on high</td><td>1,500 watts</td></tr>
+        <tr><td>The flowerpot rig vs that heater</td><td class="hot">about a tenth</td></tr>
+      </table>
+    </div>
+    <div class="col">
+      <h2>How far 140 watts goes</h2>
+      <div class="num">
+        <div><span class="big">10 watts</span><span>Per square foot: a rough sizing rule heater sellers use for a standard insulated room. A real heat loss calculation is more accurate.</span></div>
+        <div><span class="big">14 sq ft</span><span>What 140 watts covers by that rule. Roughly the footprint of a bathtub (a 60 by 30 inch tub is 12.5 square feet).</span></div>
+        <div><span class="big">about 2 C</span><span>The rise a federal fire lab (NIST) recorded at its air sensor in a different four tea candle test. Not a whole room reading, and not a reason to heat with candles.</span></div>
+      </div>
+
+      <h2>Why the thermometer climbs</h2>
+      <p>A hot clay pot throws radiant heat, the kind you feel from a sunny window. A thermometer near it, with no shield, can read that hot spot instead of the room's air. The pot makes a warm spot, not a warm room you can count on.</p>
+      <p class="note">Want a real room reading? Put the thermometer well away from any heat source, out of its direct glow.</p>
+
+      <h3>Where the heat goes</h3>
+      <p>On a freezing night, the house leaks heat through every window and wall, plus air leaks. The room's walls, floor, and furniture also have to warm up, and they can store much more energy than the air. A few candles are usually far less than a room loses in freezing weather.</p>
+
+      <div class="score">
+        <div class="srow"><div class="scell lose"><span class="tag">Flowerpot rig</span>About 140 watts. Open flame, packed candles, a hot pot a child can touch, soot and carbon monoxide risk.</div><div class="scell win"><span class="tag">You</span>Around 100 watts resting. No flame, no soot, no combustion fumes. You just need to stop throwing it away.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Blackout Warmth &middot; Page 2 &middot; Candle vs Body, and the Real Dangers</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>A candle and your body</h2>
+      <p>Both burn a fuel that contains carbon: wax for the candle, food for you. Both combine it with oxygen and give off heat, water vapor, and carbon dioxide. Your body does it with controlled chemistry, not a flame.</p>
+      <p>Fire labs measure a fire's power by how much oxygen it uses up. Doctors can measure your metabolism the same way, from the oxygen in your breath. A candle and your body give off almost the same heat for the same oxygen.</p>
+      <table>
+        <tr><th>Heat per kilogram of oxygen used</th><th>About</th></tr>
+        <tr><td>Common fire fuels</td><td class="hot">13.1 megajoules</td></tr>
+        <tr><td>Paraffin wax</td><td class="hot">12.7 megajoules</td></tr>
+        <tr><td>The human body</td><td class="cool">14 megajoules</td></tr>
+      </table>
+      <div class="num">
+        <div><span class="big cy">around 100 W</span><span>A resting adult. A little less asleep, roughly 70 watts.</span></div>
+        <div><span class="big">1.5 adults</span><span>Four tealights, in heat and in oxygen, roughly equal one and a half resting adults on your couch.</span></div>
+        <div><span class="big cy">about 400 W</span><span>Four people resting in a small room. That is about ten tealights' worth, with no flame and no soot.</span></div>
+      </div>
+      <p class="note">Body heat keeps you warm only when clothes, bedding, and a small, well insulated space slow the loss enough. It is not a guarantee in a freezing house.</p>
+
+      <h2>Soot and carbon monoxide</h2>
+      <p>Push a cool surface into a flame and it starts to burn dirty. Combustion scientists call it flame quenching: the cool surface chills the flame before the fuel finishes burning. Unfinished burning leaves soot, which you can see, and carbon monoxide, which you can't see, smell, or taste.</p>
+      <ul class="dot">
+        <li>A blackened pot means soot, and soot means the flame isn't finishing its job.</li>
+        <li>No soot does not prove the air is safe. Only a working carbon monoxide alarm tells you.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="box red">
+        <h2>Candle fire, by the numbers</h2>
+        <div class="num" style="background:#fff;">
+          <div><span class="big rd">5,894</span><span>Home candle fires a year in the US, on average (NFPA estimate, 2020 to 2024).</span></div>
+          <div><span class="big rd">63 / 532</span><span>Civilian deaths and injuries a year from those fires.</span></div>
+          <div><span class="big rd">36%</span><span>Start in a bedroom. December is the peak month.</span></div>
+          <div><span class="big rd">over half</span><span>Happen because something that can burn was too close to the flame.</span></div>
+        </div>
+        <ul class="dot">
+          <li>Melted wax pools in each tealight's thin metal cup. Pack several tightly and they heat each other. The wax can overheat and flare, and the setup can become a serious fire.</li>
+          <li>Candle safety guides say to keep burning candles at least 3 inches apart. The flowerpot rig packs four shoulder to shoulder under a hot pot.</li>
+          <li>The hanging pot gets hot enough to burn a child or pet. One published test of a four tealight pot measured 270 F on the outside.</li>
+          <li>Built one? Don't use it as a heater, and never leave it burning.</li>
+        </ul>
+      </div>
+
+      <h2>What the cold really costs</h2>
+      <div class="num">
+        <div><span class="big rd">over 400</span><span>Americans killed each year by accidental carbon monoxide poisoning not linked to fires (CDC).</span></div>
+        <div><span class="big rd">over 100,000</span><span>Emergency room visits a year for it. Cases jump after winter storms and power loss.</span></div>
+        <div><span class="big rd">246</span><span>Deaths the Texas health department tied to the February 2021 freeze.</span></div>
+        <div><span class="big rd">158 / 19</span><span>Of those, hypothermia caused 158 (about two thirds). Carbon monoxide killed 19, from generators, grills, heaters, cars, and ice blocked vents.</span></div>
+        <div><span class="big cy">60 to 65 F</span><span>A home this cool can push an older person into hypothermia, the National Institute on Aging warns. It advises keeping the heat at 68 F or warmer.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Blackout Warmth &middot; Page 3 &middot; The Safe Warmth Plan</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>Shopping list</h2>
+      <ul class="check">
+        <li>Carbon monoxide alarms with batteries or battery backup</li>
+        <li>Battery smoke alarms</li>
+        <li>Wool or synthetic base layers, a warm hat, dry wool socks</li>
+        <li>A foam camping pad (flattened cardboard in a pinch)</li>
+        <li>A sleeping bag with a standard (ISO) comfort rating</li>
+        <li>A small tent, or a table and heavy blankets</li>
+        <li>A cheap room thermometer</li>
+        <li>A purpose made hot water bottle with a cover</li>
+        <li>Flashlights and spare batteries, for light</li>
+      </ul>
+
+      <h2>Do it in this order</h2>
+      <ol class="step">
+        <li><b>Alarms first, before the outage.</b> An alarm that only plugs into the wall goes silent when the grid does. Put one outside every sleeping area and one on every level. Test monthly. Replace at the maker's replacement age, at an end of life signal, or if a test fails.</li>
+        <li><b>Feed the heater.</b> Your hundred watts runs on food. Keep eating and drinking warm, nonalcoholic drinks. A snack and a few minutes of light movement before bed help, without working up a sweat.</li>
+        <li><b>Heat the person, not the house.</b> Dress in layers and keep the layer against your skin dry. Damp cloth pulls heat out of you far faster, so wool or synthetic beats cotton. Hat on. Dry socks, and change them if they get damp.</li>
+        <li><b>Get off the floor.</b> A cold floor pulls heat out of you by direct contact, and a blanket squashed under your weight loses its loft. Foam pad or a few layers of cardboard first, then blankets on top.</li>
+        <li><b>Use a rated sleeping bag.</b> Standard rated bags are tested on a heated mannequin. Read the comfort rating, not the limit rating. Ratings assume an adult, normal clothing, and an insulated pad under the bag.</li>
+      </ol>
+    </div>
+    <div class="col">
+      <ol class="step" start="6" style="counter-reset:step 5;">
+        <li><b>Shrink the space.</b> Pick one small room, ideally on the sunny side, with as few outside walls as possible. Move everyone in, pets included.</li>
+        <li><b>Seal the drafts, not the vents.</b> Roll a towel along the bottom of the door. Hang blankets over the windows at night and open them when sun hits the glass. Keep flues, heating vents, fresh air openings, and escape routes clear.</li>
+        <li><b>Put a thermometer in the room</b>, away from any heat source, so you know what you're dealing with.</li>
+        <li><b>Build a room inside the room.</b> Pitch a tent on the floor, or drape heavy blankets over a table. Pad or cardboard down first, sleeping bag on top. Keep the tent's vents open. Nothing burning inside it, ever.</li>
+        <li><b>Hot water bottles, if you have warning.</b> Follow the bottle's instructions (see the box).</li>
+      </ol>
+
+      <div class="box cyan">
+        <h2>Hot water bottle rules</h2>
+        <ul class="dot">
+          <li>Hot water from the tap or stove, not boiling. Stay within the maker's temperature limit.</li>
+          <li>Fill no more than about two thirds, push the air out, and screw the cap on tight.</li>
+          <li>Check the rubber for cracks and the seal for damage first. Old bottles can split. Damaged seal: don't use it.</li>
+          <li>A cover or towel cuts the burn risk but doesn't remove it. Avoid long contact with skin.</li>
+          <li>Never sit, lie, or lean on one. Pressure can burst it.</li>
+          <li>Use it to prewarm the bed, then take it out before you sleep.</li>
+          <li>A covered bottle stays warm roughly 2 to 6 hours, depending on conditions. It takes no flame at all.</li>
+          <li>Not for babies, young children, or anyone with reduced feeling in their skin.</li>
+        </ul>
+      </div>
+
+      <div class="box amber">
+        <h2>Babies sleep differently</h2>
+        <p style="margin-bottom:0;">None of the adult bedding plan applies to an infant. A baby needs its own firm, flat sleep surface, on its back, with no loose blankets and nothing covering its head. No shared adult bags or tents. If you can't keep a baby warm that way, move to a safely heated place.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="head" style="margin-bottom:10px;">
+    <div class="kick">Sketchy Survival 101 &middot; Blackout Warmth &middot; Page 4 &middot; Real Heat, Warning Signs, When to Leave</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="box red">
+        <h2>The mistake that kills</h2>
+        <p>A closed room holds heat, so people seal it completely, then light something to top it off. That is how a warm room turns deadly.</p>
+        <ul class="dot">
+          <li>Blankets over drafts are fine. An airtight room with anything burning inside isn't.</li>
+          <li>Never count on cracks and leaks to bring in the fresh air a flame needs.</li>
+          <li>Nothing unvented burns in the room where you sleep: no candles left lit, no camp stove, no grill, no charcoal.</li>
+          <li>Never use a gas oven or range as a heater.</li>
+          <li>A generator runs outside only, at least 20 feet from any door, window, or vent, exhaust pointed away. Never in the garage, even with the door open.</li>
+          <li>Never warm up a car in an attached garage, even with the door open.</li>
+        </ul>
+      </div>
+
+      <h2>When you need real heat</h2>
+      <h3>Wood stove or fireplace insert</h3>
+      <ul class="dot">
+        <li>It vents its exhaust outside only if the exhaust path is open and the chimney is clear.</li>
+        <li>Have the chimney and vent professionally inspected and cleaned as needed. Using it earlier this season doesn't prove it's safe. Check for storm ice, snow, or debris.</li>
+        <li>Keep a working carbon monoxide alarm in the room, placed as its instructions say.</li>
+      </ul>
+      <h3>Portable propane heater</h3>
+      <ul class="dot">
+        <li>Only a model approved for indoor home use, with an oxygen depletion shutoff. That shutoff doesn't detect carbon monoxide, so the alarm still matters.</li>
+        <li>Follow the manual's fresh air rule and your local rules. Never run it in the room you sealed with towels and blankets.</li>
+        <li>Keep it at least 3 feet from anything that can burn, tents and blankets included. Turn it off before you sleep.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="box red">
+        <h2>Carbon monoxide signs</h2>
+        <p>Headache, dizziness, weakness, upset stomach, vomiting, chest pain, confusion. It can feel like the flu.</p>
+        <ul class="check">
+          <li>Alarm sounding, or several people or pets sick together? Suspect carbon monoxide.</li>
+          <li>Get everyone outside into fresh air first, then call 911.</li>
+          <li>Don't go back in until responders say it's safe.</li>
+        </ul>
+        <p class="note" style="margin-bottom:0;">People who are asleep can die before they feel a symptom. That is why the alarm isn't optional.</p>
+      </div>
+
+      <div class="box cyan">
+        <h2>Hypothermia and when to leave</h2>
+        <p>Signs: shivering, exhaustion, fumbling hands, memory loss, slurred speech, confusion, drowsiness. Older people may shiver less or not at all.</p>
+        <ul class="check">
+          <li>Check the thermometer and check on anyone older, sick, or very young, often.</li>
+          <li>Room keeps getting colder even with the plan? Don't tough it out. For anyone older or frail, that line comes much sooner.</li>
+          <li>Leave early for a warming center or a friend's house with power, before anyone gets cold or sick. Check it's open and the roads are safe.</li>
+          <li>Anyone showing those signs: call 911.</li>
+        </ul>
+      </div>
+
+      <h2>Candles are for light</h2>
+      <ul class="dot">
+        <li>The Red Cross says use flashlights instead of candles in an outage.</li>
+        <li>If you burn one: a stable, heat resistant holder on a sturdy surface, at least a foot from anything that can burn.</li>
+        <li>Blow it out before you leave the room or go to sleep. Test your smoke alarms monthly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="cta">
+    <b>Get the full breakdown, free.</b><br>
+    Watch the video: youtube.com/@SketchySurvival101<br>
+    More free cheat sheets: sketchysurvival101.com/free<br>
+    Next up: When the Power Goes Out, Your Bedroom Is Too Big. Subscribe so the next blackout does not catch you flat footed.
+  </div>
+  <div class="foot">Sources in the video description. Numbers from NIST, the Department of Energy, ASHRAE, NIOSH, Dimplex, Lasko, NFPA, the National Candle Association, the CDC, the CPSC, the EPA, Texas DSHS, the National Institute on Aging, ISO 23537, Australia's product safety regulator (ACCC), and the American Red Cross. Candle math is a worked estimate, not a test of any one rig. Cheat sheet for the video "That Viral Candle Heater Can't Heat a Room. Here's What Actually Can."</div>
+</section>
+
+</body>
+</html>
