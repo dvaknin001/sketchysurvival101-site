@@ -59,3 +59,38 @@ their hyphens. Everything is staged, not committed.
 - All JSON-LD parses as valid JSON. sitemap.xml parses as valid XML.
 - No em dash, en dash, or hyphenated word in any title, meta, or new body copy.
 - All HTML parses without tag errors.
+
+# Story hub redesign (2026-10-20, staged, not committed)
+
+The channel pivoted to animated stick figure story series, so the site now leads with them and
+the home science content moves to an archive. Every old URL still resolves; nothing was deleted.
+
+## New pages
+| Page | Target keyword | Notes |
+|---|---|---|
+| series/zombie-outbreak.html | zombie outbreak survival story, survive 100 days trapped in a hospital, zombie apocalypse animation | CreativeWorkSeries JSON-LD with VideoObject per live episode (Ep 1 to Ep 3) + BreadcrumbList. Full chapter lists (deep links with ?t=) and every sourced "What is real" fact from the episode descriptions |
+| series/alien-invasion.html | alien invasion survival story, 60 days trapped on the 60th floor | Same pattern, VideoObject for Ep 1 (OwW2wPBjIv0) |
+
+## Changed pages
+- index.html: new title/meta/OG ("Animated Survival Stories With Real Science"), OG image now a local episode
+  thumbnail, Organization + WebSite + ItemList (the two series) JSON-LD. The SearchAction was dropped because the
+  site has no search endpoint. Old anchors #videos, #gear, #materials, #articles still exist (now inside #archive),
+  so inbound links from the free hub and articles keep working.
+- about.html: rewritten for the story series and how episodes are fact checked; new title/meta.
+- 404.html: new copy, root absolute links so it works at any depth.
+- articles/*, free/index.html, free/warm-room-survival-checklist.html, contact, disclosure, privacy: new shared
+  header/footer (links to both series pages = internal links into the new hub from every page), "From the archive"
+  note on articles, and a dash scrub of visible text (177 text edits, logged in the redesign tools folder).
+  Article JSON-LD headlines/descriptions were scrubbed the same way so they still match the visible H1.
+- Episode thumbnails are served locally from assets/thumbs/ (1280x720 JPEG, all under 200 KB, width/height set).
+
+## Sitemap
+- 15 URLs (13 old + 2 series pages), all lastmod 2026-10-20. Series pages priority 0.9, free hub 0.8,
+  articles 0.7. 404 and the legacy printable checklists stay out (noindex / canonicalized), as before.
+
+## Verification
+- Rendered DOM sweep in Chrome (CDP): zero hyphens or dashes in visible text, alt, aria-label, title or meta
+  on all 16 shared stylesheet pages. URLs and file names are exempt.
+- Link check: every internal href/src on those pages returns 200 and every #anchor exists. All YouTube IDs on
+  the site confirmed with oEmbed.
+- All JSON-LD blocks parse; sitemap.xml parses.

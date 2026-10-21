@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page Not Found · Sketchy Survival 101</title>
-<meta name="description" content="That page does not exist or has moved. Head back to Sketchy Survival 101 for cheap home cooling, heating, and off grid power builds.">
+<meta name="description" content="That page does not exist or has moved. Head back to Sketchy Survival 101 for animated survival stories, science guides and free printable PDFs.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://sketchysurvival101.com/404.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sketchy Survival 101">
 <meta property="og:title" content="Page Not Found · Sketchy Survival 101">
-<meta property="og:description" content="That page does not exist or has moved. Head back home for cheap home cooling, heating, and off grid power builds.">
+<meta property="og:description" content="That page does not exist or has moved. Head back to Sketchy Survival 101 for animated survival stories, science guides and free printable PDFs.">
 <meta property="og:url" content="https://sketchysurvival101.com/404.html">
 <meta property="og:image" content="https://i.ytimg.com/vi/zn5IiwhAxgU/maxresdefault.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,27 +24,76 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="/index.html"><span class="mark">SS</span> Sketchy Survival 101</a>
-    <nav class="nav-links">
-      <a href="/index.html">Home</a>
-      <a href="/index.html#articles">Articles</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <nav class="nav-links" id="menu" aria-label="Main">
+      <a href="/series/zombie-outbreak.html">Zombie Outbreak</a>
+      <a href="/series/alien-invasion.html">Alien Invasion</a>
+      <a href="/index.html#episodes">Episodes</a>
+      <a href="/free/index.html">Free PDFs</a>
+      <a href="/index.html#archive">Archive</a>
       <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+      <a class="nav-cta" href="https://www.youtube.com/@SketchySurvival101?sub_confirmation=1" target="_blank" rel="noopener">Watch on YouTube ▶</a>
     </nav>
   </div>
 </header>
-<main class="section" style="text-align:center;">
-  <div class="container">
-    <p class="eyebrow" style="color:var(--muted);font-weight:700;letter-spacing:.08em;text-transform:uppercase;">Error 404</p>
-    <h1>That page blew off the roof.</h1>
-    <p class="lede" style="max-width:48ch;margin:0 auto 1.6rem;">The link you followed doesn't exist (or moved). Let's get you back to something useful.</p>
-    <a class="btn btn--amber" href="/index.html">Back to home</a>
+<main class="section">
+  <div class="container lost">
+    <svg class="stick" viewBox="0 0 100 134" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A worried stick figure in a cap, lost in the dark"><rect x="2" y="2" width="96" height="130" rx="14" fill="#f7f6f1" stroke="#111317" stroke-width="3"/><path d="M50 64v38M50 76l-20 16M50 76l20 16M50 102l-14 24M50 102l14 24" stroke="#111317" stroke-width="3.5" stroke-linecap="round" fill="none"/><circle cx="50" cy="40" r="25" fill="#ffffff" stroke="#111317" stroke-width="3.5"/><path d="M27 36c-1-15 9-24 23-24s24 9 23 24z" fill="#3b3e44" stroke="#111317" stroke-width="3"/><path d="M71 33l15 3-15 4" fill="#3b3e44" stroke="#111317" stroke-width="3" stroke-linejoin="round"/><path d="M28 36l-3 8 6-4 1 7 4-9" fill="#111317"/><circle cx="41" cy="40" r="7" fill="#fff" stroke="#111317" stroke-width="2.5"/><circle cx="59" cy="40" r="7" fill="#fff" stroke="#111317" stroke-width="2.5"/><circle cx="42" cy="42" r="2.6" fill="#111317"/><circle cx="58" cy="42" r="2.6" fill="#111317"/><path d="M33 31l10-4M67 31l-10-4" stroke="#111317" stroke-width="3" stroke-linecap="round"/><ellipse cx="50" cy="56" rx="5" ry="4" fill="#e0675a" stroke="#111317" stroke-width="2.5"/><path d="M74 40c3 4 4 6 2 8s-5 0-4-3z" fill="#6cc7ff" stroke="#111317" stroke-width="1.5"/></svg>
+    <div>
+      <span class="kicker-badge">Error 404</span>
+      <h1 style="font-family:var(--f-display);font-weight:400;text-transform:uppercase;font-size:var(--step-4);line-height:.98;color:#fff;margin:.3rem 0 .8rem;">Lost in the dark</h1>
+      <p class="lede" style="max-width:48ch;">The page you followed doesn't exist, or it moved. Every old guide and free PDF is still here, so let's get you somewhere with the lights on.</p>
+      <div class="hero-actions">
+        <a class="btn btn--yellow" href="/index.html">Back to home</a>
+        <a class="btn btn--ghost" href="/series/zombie-outbreak.html">Zombie Outbreak</a>
+        <a class="btn btn--ghost" href="/free/index.html">Free PDFs</a>
+      </div>
+    </div>
   </div>
 </main>
 <footer class="site-footer">
-  <div class="container footer-bottom">
-    <span>&copy; 2026 Sketchy Survival 101</span>
-    <span><a href="/disclosure.html">Disclosure</a> · <a href="/privacy.html">Privacy</a></span>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/index.html" style="margin-bottom:.8rem;"><span class="mark">SS</span> Sketchy Survival 101</a>
+        <p style="max-width:42ch;">Animated stick figure survival stories told one day at a time. The monsters are made up. The survival science is real, and every rule is sourced.</p>
+        <a class="btn btn--yellow btn--sm" href="https://www.youtube.com/@SketchySurvival101?sub_confirmation=1" target="_blank" rel="noopener" style="margin-top:.4rem;">Subscribe on YouTube ▶</a>
+      </div>
+      <div>
+        <h4>Series</h4>
+        <ul>
+          <li><a href="/series/zombie-outbreak.html">Zombie Outbreak</a></li>
+          <li><a href="/series/alien-invasion.html">Alien Invasion</a></li>
+          <li><a href="/index.html#episodes">All episodes</a></li>
+          <li><a href="/index.html#science">The real science</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Archive</h4>
+        <ul>
+          <li><a href="/free/index.html">Free PDF cheat sheets</a></li>
+          <li><a href="/index.html#articles">Science articles</a></li>
+          <li><a href="/index.html#videos">Classic builds</a></li>
+          <li><a href="/index.html#gear">Gear picks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/disclosure.html">Affiliate disclosure</a></li>
+          <li><a href="/privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-disclosure"><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you buy through them we may earn a small commission at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. See our full <a href="/disclosure.html">disclosure</a>.</p>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Sketchy Survival 101</span>
+      <span><a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">YouTube</a> · <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Contact</a></span>
+    </div>
   </div>
 </footer>
+<script>var t=document.querySelector('.nav-toggle'),m=document.getElementById('menu');t&&t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false');});</script>
 </body>
 </html>

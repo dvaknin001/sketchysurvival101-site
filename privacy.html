@@ -16,6 +16,7 @@
 <meta name="twitter:title" content="Privacy Policy · Sketchy Survival 101">
 <meta name="twitter:description" content="What limited data this site collects and how it is used.">
 <meta name="twitter:image" content="https://i.ytimg.com/vi/zn5IiwhAxgU/maxresdefault.jpg">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,14 +26,15 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html"><span class="mark">SS</span> Sketchy Survival 101</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-    <nav class="nav-links" id="menu">
-      <a href="index.html">Home</a>
-      <a href="index.html#articles">Articles</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu">☰</button>
+    <nav class="nav-links" id="menu" aria-label="Main">
+      <a href="series/zombie-outbreak.html">Zombie Outbreak</a>
+      <a href="series/alien-invasion.html">Alien Invasion</a>
+      <a href="index.html#episodes">Episodes</a>
+      <a href="free/index.html">Free PDFs</a>
+      <a href="index.html#archive">Archive</a>
       <a href="about.html">About</a>
-      <a href="disclosure.html">Disclosure</a>
-      <a href="contact.html">Contact</a>
-      <a class="nav-cta" href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">YouTube ▶</a>
+      <a class="nav-cta" href="https://www.youtube.com/@SketchySurvival101?sub_confirmation=1" target="_blank" rel="noopener">Watch on YouTube ▶</a>
     </nav>
   </div>
 </header>
@@ -47,14 +49,14 @@
     <h2>Information we collect</h2>
     <p>We do not directly collect names, email addresses, or payment information through this website. We do not sell personal data. The only information involved comes from standard, automated sources:</p>
     <ul>
-      <li><strong>Server and analytics logs.</strong> Like most websites, our hosting provider and any analytics we use may record non-identifying technical data such as your browser type, approximate region, the pages you visit, and the time of your visit. This helps us understand which articles are useful.</li>
+      <li><strong>Server and analytics logs.</strong> Like most websites, our hosting provider and any analytics we use may record non identifying technical data such as your browser type, approximate region, the pages you visit, and the time of your visit. This helps us understand which articles are useful.</li>
       <li><strong>Cookies from third parties.</strong> If you click an affiliate link or interact with an embedded video, the destination service (for example, a retailer's affiliate network or YouTube) may set its own cookies under its own privacy policy.</li>
     </ul>
 
     <h2>Affiliate links</h2>
     <p>Some outbound links are affiliate links. When you click one, the retailer or its affiliate network may use a cookie to attribute a purchase to us. This does not change your price. See our <a href="disclosure.html">affiliate disclosure</a> for details.</p>
 
-    <h2>Third-party services</h2>
+    <h2>Third party services</h2>
     <p>Pages may load resources from third parties such as Google Fonts (for typography), YouTube (for embedded or linked videos), and affiliate networks. These providers have their own privacy policies governing any data they collect.</p>
 
     <h2>Children's privacy</h2>
@@ -73,10 +75,44 @@
 
 <footer class="site-footer">
   <div class="container">
-    <p class="footer-disclosure"><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you buy through them we may earn a small commission at no extra cost to you. As an Amazon Associate we earn from qualifying purchases.</p>
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:.8rem;"><span class="mark">SS</span> Sketchy Survival 101</a>
+        <p style="max-width:42ch;">Animated stick figure survival stories told one day at a time. The monsters are made up. The survival science is real, and every rule is sourced.</p>
+        <a class="btn btn--yellow btn--sm" href="https://www.youtube.com/@SketchySurvival101?sub_confirmation=1" target="_blank" rel="noopener" style="margin-top:.4rem;">Subscribe on YouTube ▶</a>
+      </div>
+      <div>
+        <h4>Series</h4>
+        <ul>
+          <li><a href="series/zombie-outbreak.html">Zombie Outbreak</a></li>
+          <li><a href="series/alien-invasion.html">Alien Invasion</a></li>
+          <li><a href="index.html#episodes">All episodes</a></li>
+          <li><a href="index.html#science">The real science</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Archive</h4>
+        <ul>
+          <li><a href="free/index.html">Free PDF cheat sheets</a></li>
+          <li><a href="index.html#articles">Science articles</a></li>
+          <li><a href="index.html#videos">Classic builds</a></li>
+          <li><a href="index.html#gear">Gear picks</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="disclosure.html">Affiliate disclosure</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-disclosure"><strong>Affiliate disclosure:</strong> Some links on this site are affiliate links. If you buy through them we may earn a small commission at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. See our full <a href="disclosure.html">disclosure</a>.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 Sketchy Survival 101</span>
-      <span><a href="index.html">Home</a> · <a href="disclosure.html">Disclosure</a> · <a href="contact.html">Contact</a></span>
+      <span><a href="https://www.youtube.com/@SketchySurvival101" target="_blank" rel="noopener">YouTube</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a></span>
     </div>
   </div>
 </footer>
