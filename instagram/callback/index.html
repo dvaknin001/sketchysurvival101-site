@@ -21,7 +21,7 @@
   var q = location.search || '';
   var p = new URLSearchParams(q);
   document.getElementById('code').textContent = p.get('code') ? 'code: ' + p.get('code') : (p.get('error') ? 'error: ' + p.get('error') + ' ' + (p.get('error_description') || '') : '');
-  if (q) location.replace('http://127.0.0.1:8765/instagram/callback' + q);
+  if (q) location.replace('http://127.0.0.1:47615/instagram/callback' + q);
 </script>
 </body>
 </html>
