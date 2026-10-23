@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Sketchy Survival Poster: sign in complete</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<main class="container" style="max-width:640px;padding:3rem 1rem;">
+  <h1>Sign in complete</h1>
+  <p id="msg">Handing the sign in back to the Sketchy Survival Poster tool on this computer...</p>
+  <p>If nothing happens, make sure the tool is running, or copy the code below and paste it into the tool.</p>
+  <pre id="code" style="white-space:pre-wrap;word-break:break-all;"></pre>
+  <p><a href="/privacy.html">Privacy policy</a> · <a href="/terms.html">Terms</a></p>
+</main>
+<script>
+  // Private OAuth bounce for our own posting tool: forwards the query string to the local listener.
+  var q = location.search || '';
+  var p = new URLSearchParams(q);
+  document.getElementById('code').textContent = p.get('code') ? 'code: ' + p.get('code') : (p.get('error') ? 'error: ' + p.get('error') + ' ' + (p.get('error_description') || '') : '');
+  if (q) location.replace('http://127.0.0.1:8765/tiktok/callback' + q);
+</script>
+</body>
+</html>
